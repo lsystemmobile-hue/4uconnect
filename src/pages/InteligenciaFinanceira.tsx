@@ -105,8 +105,8 @@ const InteligenciaFinanceira = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-center max-w-7xl mx-auto">
             <PricingCard
-              name="BPO Financeiro I"
-              price="R$ 590,00"
+              name="ESSENCIAL"
+              price="R$ 1.587,00"
               features={[
                 "Conciliação bancária diária",
                 "Gestão de Contas a Pagar",
@@ -118,11 +118,11 @@ const InteligenciaFinanceira = () => {
               delay={0}
             />
             <PricingCard
-              name="BPO Financeiro II"
-              price="R$ 890,00"
+              name="PERFORMANCE"
+              price="R$ 2.227,00"
               featured={true}
               features={[
-                "Tudo do BPO I",
+                "Tudo do Plano ESSENCIAL",
                 "Agendamento de pagamentos",
                 "Emissão de Notas Fiscais",
                 "Conciliação bancária premium",
@@ -132,10 +132,10 @@ const InteligenciaFinanceira = () => {
               delay={100}
             />
             <PricingCard
-              name="BPO Financeiro III"
+              name="ESTRATÉGICO"
               price="Sob Consulta"
               features={[
-                "Tudo do BPO II",
+                "Tudo do Plano PERFORMANCE",
                 "Gestão de cobrança ativa",
                 "Dashboards personalizados",
                 "Apoio na definição de KPIs",
