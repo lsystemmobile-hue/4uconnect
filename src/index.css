@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Colors */
+    --4u-green: 105 43% 43%;
+    --4u-green-rgb: 86, 157, 63;
+    --4u-green-light: 105 43% 53%;
+    --4u-black: 0 0% 0%;
+    --4u-black-rgb: 0, 0, 0;
+    --4u-navy: 222 57% 21%;
+    --4u-navy-rgb: 23, 42, 85;
+    --4u-navy-light: 222 57% 31%;
+    --4u-gray: 210 10% 96%;
+    --4u-gray-dark: 210 10% 40%;
+
+    /* Semantic Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 86 58% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 212 32% 25%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 10% 96%;
+    --muted-foreground: 210 10% 40%;
+
+    --accent: 86 58% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 10% 90%;
+    --input: 210 10% 90%;
+    --ring: 86 58% 48%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--4u-navy)) 0%, hsl(212 32% 15%) 100%);
+    --gradient-green: linear-gradient(135deg, hsl(var(--4u-green)) 0%, hsl(var(--4u-green-light)) 100%);
+    --gradient-navy: linear-gradient(135deg, hsl(var(--4u-navy)) 0%, hsl(var(--4u-navy-light)) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsla(0, 0%, 0%, 0.1);
+    --shadow-medium: 0 8px 30px -6px hsla(0, 0%, 0%, 0.15);
+    --shadow-strong: 0 12px 40px -8px hsla(0, 0%, 0%, 0.2);
+    --shadow-green: 0 8px 30px -6px hsla(86, 58%, 48%, 0.4);
+    --shadow-navy: 0 8px 30px -6px hsla(212, 32%, 25%, 0.4);
+    --shadow-black: 0 8px 30px -6px hsla(0, 0%, 0%, 0.5);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 212 32% 8%;
+    --foreground: 0 0% 98%;
+    --card: 212 32% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 212 32% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 86 58% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 212 32% 25%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 212 32% 20%;
+    --muted-foreground: 210 10% 70%;
+    --accent: 86 58% 48%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 212 32% 20%;
+    --input: 212 32% 20%;
+    --ring: 86 58% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins antialiased;
+  }
+}
+
+@layer components {
+
+  /* Circle Pillars */
+  .pillar-circle {
+    @apply relative flex flex-col items-center justify-center w-56 h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full transition-all duration-500 ease-out border-2 border-white/10 overflow-hidden;
+  }
+
+  .pillar-green {
+    @apply bg-4u-green text-white;
+    box-shadow: var(--shadow-green);
+  }
+
+  .pillar-green:hover {
+    box-shadow: 0 12px 40px -6px hsla(86, 58%, 48%, 0.6);
+  }
+
+  .pillar-black {
+    @apply bg-4u-black text-white;
+    box-shadow: var(--shadow-black);
+  }
+
+  .pillar-black:hover {
+    box-shadow: 0 12px 40px -6px hsla(0, 0%, 0%, 0.7);
+  }
+
+  .pillar-navy {
+    @apply bg-4u-navy text-white;
+    box-shadow: var(--shadow-navy);
+  }
+
+  .pillar-navy:hover {
+    box-shadow: 0 12px 40px -6px hsla(212, 32%, 25%, 0.6);
+  }
+
+  /* WhatsApp Button */
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-500 hover:scale-110 hover:shadow-xl;
+  }
+
+  /* Hero Section */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Section Title */
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-foreground;
+  }
+
+  /* Glass Effect */
+  .glass {
+    @apply bg-black/40 backdrop-blur-lg border-b border-white/10;
+  }
+
+  /* Service Card */
+  .service-card {
+    @apply p-6 rounded-2xl bg-card border border-border transition-all duration-500 hover:shadow-strong hover:-translate-y-2;
+  }
+
+  /* Pricing Card */
+  .pricing-card {
+    @apply p-8 rounded-3xl bg-card border-2 border-border transition-all duration-500 hover:shadow-strong hover:-translate-y-2;
+  }
+
+  .pricing-card-featured {
+    @apply p-8 rounded-3xl bg-gradient-to-br from-4u-navy to-4u-navy-light text-white border-2 border-transparent shadow-strong transition-all duration-500 hover:shadow-navy hover:-translate-y-3 hover:scale-[1.02];
+  }
+}
+
+@layer utilities {
+  .text-gradient-green {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-green);
+  }
+
+  .text-gradient-navy {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-navy);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-soft {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  .group:hover .animate-spin-360 {
+    animation: rotate360 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  @keyframes rotate360 {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .shadow-navy {
+    box-shadow: var(--shadow-navy);
+  }
+
+  .shadow-green {
+    box-shadow: var(--shadow-green);
+  }
+
+  .pricing-card-featured {
+    @apply relative overflow-hidden;
+  }
+
+  .pricing-card-featured::after {
+    content: "";
+    @apply absolute top-0 -left-[100%] w-full h-full pointer-events-none z-10;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: none;
+  }
+
+  .pricing-card-featured:hover::after {
+    left: 100%;
+    transition: all 0.7s ease-in-out;
+  }
+}
