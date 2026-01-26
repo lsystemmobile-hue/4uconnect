@@ -18,6 +18,7 @@ import PricingCard from "@/components/PricingCard";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 
+// Sync verification: 2026-01-25 21:35
 const InteligenciaFinanceira = () => {
   const bpoProcesses = [
     { title: "Diagnóstico", desc: "Mapeamento completo do fluxo financeiro atual.", icon: Search },
