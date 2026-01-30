@@ -227,7 +227,7 @@ const InteligenciaFinanceira = () => {
           </section>
 
           {/* BPO Financeiro Completo */}
-          <section className="py-24 bg-background">
+          <section className="py-24 bg-background overflow-hidden">
             <div className="container mx-auto px-4">
               <div className="text-center mb-16 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
                 <h2 className="text-3xl md:text-5xl font-bold text-4u-navy mb-4 tracking-tight">BPO Financeiro Completo</h2>
@@ -317,7 +317,7 @@ const InteligenciaFinanceira = () => {
           </section>
 
           {/* Processo Section */}
-          <section className="py-24 bg-background">
+          <section className="py-24 bg-background overflow-hidden">
             <div className="container mx-auto px-4">
               <div className="text-center mb-16 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
                 <h2 className="text-3xl md:text-5xl font-bold text-4u-navy mb-4 tracking-tight">Como Funciona o Processo</h2>
@@ -397,7 +397,7 @@ const InteligenciaFinanceira = () => {
           </section>
 
           {/* Pricing Section */}
-          <section id="planos-bpo" className="py-24 bg-background">
+          <section id="planos-bpo" className="py-24 bg-background overflow-hidden">
             <div className="container mx-auto px-4">
               <div className="text-center mb-16 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
                 <h2 className="text-3xl md:text-5xl font-bold text-4u-navy mb-4 tracking-tight">Planos BPO Financeiro</h2>
@@ -581,7 +581,7 @@ const InteligenciaFinanceira = () => {
           </section>
 
           {/* Missão e Visão */}
-          <section className="py-24 bg-background">
+          <section className="py-24 bg-background overflow-hidden">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                 <div className="p-10 bg-4u-navy text-white scroll-reveal opacity-0 translate-x-[-2rem] transition-all duration-700">
