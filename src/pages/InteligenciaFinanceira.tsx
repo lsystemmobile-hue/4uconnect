@@ -91,7 +91,7 @@ const InteligenciaFinanceira = () => {
                 }, 100);
               }}
               className={`group w-full max-w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 relative overflow-hidden ${activeTab === 'bpo'
-                ? 'bg-white text-4u-navy shadow-2xl shadow-white/30'
+                ? 'bg-white text-4u-navy shadow-2xl shadow-white/30 border-2 border-white'
                 : 'bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:shadow-xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95 backdrop-blur-sm'
                 }`}
             >
@@ -111,7 +111,7 @@ const InteligenciaFinanceira = () => {
                 }, 100);
               }}
               className={`group w-full max-w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 relative overflow-hidden ${activeTab === 'contabilidade'
-                ? 'bg-white text-4u-navy shadow-2xl shadow-white/30'
+                ? 'bg-white text-4u-navy shadow-2xl shadow-white/30 border-2 border-white'
                 : 'bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:shadow-xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95 backdrop-blur-sm'
                 }`}
             >

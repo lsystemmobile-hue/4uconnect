@@ -39,7 +39,7 @@ const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-500 backdrop-blur-xl border-b border-white/10 ${getHeaderBg()}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
             <img src="/logo-branca.png" alt="4U Connect" className="h-6 w-auto object-contain" />
           </Link>
 
@@ -62,7 +62,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 relative z-[1001] bg-white/5 rounded-lg active:scale-95 transition-transform"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
