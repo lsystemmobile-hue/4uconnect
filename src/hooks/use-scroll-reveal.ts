@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export const useScrollReveal = () => {
+export const useScrollReveal = (deps: any[] = []) => {
     const observerRef = useRef<IntersectionObserver | null>(null);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export const useScrollReveal = () => {
         elements.forEach((el) => observerRef.current?.observe(el));
 
         return () => observerRef.current?.disconnect();
-    }, []);
+    }, deps);
 
     return null;
 };

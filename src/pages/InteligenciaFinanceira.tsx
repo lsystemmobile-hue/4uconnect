@@ -37,7 +37,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 const InteligenciaFinanceira = () => {
   // Tab state management
   const [activeTab, setActiveTab] = useState<'bpo' | 'contabilidade'>('bpo');
-  useScrollReveal();
+  useScrollReveal([activeTab]);
 
   const bpoProcesses = [
     { title: "Diagnóstico", desc: "Mapeamento completo do fluxo financeiro atual.", icon: Search },
@@ -600,15 +600,15 @@ const InteligenciaFinanceira = () => {
                 </div>
               </div>
 
-              {/* Valores */}
+              {/* Valores Inegociáveis */}
               <div className="mt-16 text-center scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
-                <h3 className="text-2xl font-bold text-4u-navy mb-8 uppercase tracking-widest">Nossos Valores</h3>
-                <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+                <h3 className="text-2xl font-bold text-4u-navy mb-12 uppercase tracking-widest">Nossos Valores Inegociáveis</h3>
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 max-w-2xl mx-auto">
                   {[
                     "Excelência", "Integridade", "Inovação",
                     "Segurança", "Crescimento contínuo", "Responsabilidade social"
                   ].map((value, i) => (
-                    <div key={i} className="px-6 py-3 bg-muted border border-border/50 text-4u-navy font-bold text-sm">
+                    <div key={i} className="px-6 py-6 bg-muted border-2 border-border/50 text-4u-navy font-bold text-base hover:border-4u-navy/30 transition-all duration-300">
                       {value}
                     </div>
                   ))}
