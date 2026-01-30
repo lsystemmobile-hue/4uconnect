@@ -22,7 +22,11 @@ import {
   Building2,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
-import { Briefcase, MessageCircle } from "lucide-react";
+import {
+  Briefcase, MessageCircle,
+  HelpCircle,
+  CalendarDays,
+} from "lucide-react";
 import PageHero from "@/components/PageHero";
 import ServiceCard from "@/components/ServiceCard";
 import PricingCard from "@/components/PricingCard";
@@ -466,19 +470,19 @@ const ContabilidadeDigital = () => {
               href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20contabilidade%20digital%20da%204U%20Connect."
               target="_blank"
               rel="noopener noreferrer"
-              className="group/btn inline-flex items-center gap-2 px-8 py-5 bg-white text-4u-green rounded-none font-bold transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95"
+              className="group/btn inline-flex items-center justify-center gap-2 px-8 py-5 bg-white text-4u-green rounded-none font-bold transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95 w-full sm:w-72"
             >
               <WhatsAppIcon size={20} className="transition-transform group-hover/btn:rotate-12" />
               Falar com Especialista
             </a>
             <a
-              href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20proposta%20para%20os%20servi%C3%A7os%20de%20contabilidade%20digital%20da%204U%20Connect."
+              href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20para%20falar%20sobre%20os%20servi%C3%A7os%20de%20contabilidade%20digital%20da%204U%20Connect."
               target="_blank"
               rel="noopener noreferrer"
-              className="group/btn inline-flex items-center gap-2 px-8 py-5 bg-white/10 text-white border-2 border-white/20 rounded-none font-bold transition-all duration-300 hover:bg-white/20 hover:border-white hover:-translate-y-1 hover:shadow-xl hover:shadow-white/10 active:scale-95"
+              className="group/btn inline-flex items-center justify-center gap-2 px-8 py-5 bg-white/10 text-white border-2 border-white/20 rounded-none font-bold transition-all duration-300 hover:bg-white/20 hover:border-white hover:-translate-y-1 hover:shadow-xl hover:shadow-white/10 active:scale-95 w-full sm:w-72"
             >
-              <MessageCircle size={20} className="transition-transform group-hover/btn:scale-110" />
-              Solicitar Proposta
+              <CalendarDays size={20} className="transition-transform group-hover/btn:scale-110" />
+              Agendar Reunião
             </a>
           </div>
         </div>

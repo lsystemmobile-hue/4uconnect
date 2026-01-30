@@ -20,6 +20,7 @@ import {
   User,
   Zap,
   Lock,
+  CalendarDays,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import PageHero from "@/components/PageHero";
@@ -205,7 +206,7 @@ const Contabilidade = () => {
               Nossa Cultura
             </div>
             <h3 className="text-xl md:text-3xl font-bold text-4u-black mb-10 tracking-tight">Valores Inegociáveis</h3>
-            <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {[
                 { name: "Excelência", icon: Award },
                 { name: "Integridade", icon: ShieldCheck },
@@ -214,9 +215,9 @@ const Contabilidade = () => {
                 { name: "Crescimento contínuo", icon: TrendingUp },
                 { name: "Responsabilidade social", icon: Heart }
               ].map((val, i) => (
-                <div key={i} className="flex items-center gap-3 px-8 py-5 bg-background border-2 border-border/50 text-4u-black font-bold hover:border-4u-black/30 hover:shadow-xl transition-all duration-300">
-                  <val.icon className="w-6 h-6 text-4u-black/70" />
-                  <span>{val.name}</span>
+                <div key={i} className="flex flex-col items-center gap-4 px-6 py-8 bg-background border-2 border-border/50 text-4u-black font-bold hover:border-4u-black/30 hover:shadow-xl transition-all duration-300 group">
+                  <val.icon className="w-8 h-8 text-4u-black/70 group-hover:scale-110 group-hover:text-4u-black transition-all duration-300" />
+                  <span className="text-base md:text-lg">{val.name}</span>
                 </div>
               ))}
             </div>
@@ -353,19 +354,19 @@ const Contabilidade = () => {
               href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20Contabilidade%20Especializada%20da%204U%20Connect."
               target="_blank"
               rel="noopener noreferrer"
-              className="group/btn inline-flex items-center gap-2 px-8 py-5 bg-white text-4u-black rounded-none font-bold transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95"
+              className="group/btn inline-flex items-center justify-center gap-2 px-8 py-5 bg-white text-4u-black rounded-none font-bold transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95 w-full sm:w-72"
             >
               <WhatsAppIcon size={20} className="transition-transform group-hover/btn:rotate-12" />
               Falar com Especialista
             </a>
             <a
-              href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20proposta%20para%20os%20servi%C3%A7os%20de%20Contabilidade%20Especializada%20da%204U%20Connect."
+              href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20para%20falar%20sobre%20os%20servi%C3%A7os%20de%20Contabilidade%20Especializada%20da%204U%20Connect."
               target="_blank"
               rel="noopener noreferrer"
-              className="group/btn inline-flex items-center gap-2 px-8 py-5 bg-white/10 text-white border-2 border-white/20 rounded-none font-bold transition-all duration-300 hover:bg-white/20 hover:border-white hover:-translate-y-1 hover:shadow-xl hover:shadow-white/10 active:scale-95"
+              className="group/btn inline-flex items-center justify-center gap-2 px-8 py-5 bg-white/10 text-white border-2 border-white/20 rounded-none font-bold transition-all duration-300 hover:bg-white/20 hover:border-white hover:-translate-y-1 hover:shadow-xl hover:shadow-white/10 active:scale-95 w-full sm:w-72"
             >
-              <MessageCircle size={20} className="transition-transform group-hover/btn:scale-110" />
-              Solicitar Proposta
+              <CalendarDays size={20} className="transition-transform group-hover/btn:scale-110" />
+              Agendar Reunião
             </a>
           </div>
         </div>

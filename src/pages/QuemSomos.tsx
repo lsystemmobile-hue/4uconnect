@@ -20,6 +20,10 @@ import {
     CreditCard,
     Lightbulb,
     FileText,
+    Heart,
+    Lock,
+    Award,
+    TrendingUp,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import PageHero from "@/components/PageHero";
@@ -203,18 +207,28 @@ const QuemSomos = () => {
                             </p>
                         </div>
 
-                        {/* Valores */}
-                        <div className="group p-8 rounded-none bg-background border-2 border-border/50 scroll-reveal opacity-0 translate-y-8 transition-all duration-700 hover:shadow-2xl hover:shadow-4u-green/20 hover:border-4u-green/30 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden" style={{ transitionDelay: '300ms' }}>
-                            <div className="absolute top-0 left-0 w-2 h-0 bg-4u-green group-hover:h-full transition-all duration-500" />
-                            <div className="absolute inset-0 bg-gradient-to-br from-4u-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    </div>
 
-                            <div className="w-16 h-16 bg-gradient-to-br from-emerald-600 to-4u-green rounded-none flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg shadow-black/10">
-                                <ShieldCheck className="text-white" size={32} />
-                            </div>
-                            <h3 className="text-xl font-bold mb-4 text-4u-navy">Valores</h3>
-                            <p className="text-muted-foreground text-sm leading-relaxed relative z-10">
-                                <span className="text-foreground font-semibold">Excelência, Integridade, Inovação, Segurança, Crescimento contínuo</span> e Responsabilidade Social.
-                            </p>
+                    {/* Valores Inegociáveis */}
+                    <div className="scroll-reveal opacity-0 translate-y-8 transition-all duration-700 mt-20 text-center">
+                        <div className="inline-block px-4 py-1.5 bg-4u-navy/5 text-4u-navy text-xs font-bold uppercase tracking-widest mb-8 border-l-2 border-4u-navy">
+                            Nossa Cultura
+                        </div>
+                        <h3 className="text-2xl font-bold text-4u-navy mb-12 uppercase tracking-widest">Valores Inegociáveis</h3>
+                        <div className="grid grid-cols-2 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                            {[
+                                { name: "Excelência", icon: Award },
+                                { name: "Integridade", icon: ShieldCheck },
+                                { name: "Inovação", icon: Zap },
+                                { name: "Segurança", icon: Lock },
+                                { name: "Crescimento contínuo", icon: TrendingUp },
+                                { name: "Responsabilidade social", icon: Heart }
+                            ].map((val, i) => (
+                                <div key={i} className="flex flex-col items-center gap-4 px-6 py-8 bg-background border-2 border-border/50 text-4u-navy font-bold hover:border-4u-navy/30 hover:shadow-xl transition-all duration-300 group">
+                                    <val.icon className="w-8 h-8 text-4u-navy/70 group-hover:scale-110 group-hover:text-4u-navy transition-all duration-300" />
+                                    <span className="text-base md:text-lg">{val.name}</span>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
