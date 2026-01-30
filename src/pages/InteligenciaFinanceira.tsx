@@ -197,7 +197,7 @@ const InteligenciaFinanceira = () => {
                 </div>
 
                 <div className="bg-white p-8 md:p-12 border-2 border-border/50 shadow-2xl relative scroll-reveal opacity-0 translate-x-[2rem] transition-all duration-700">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-4u-navy/5 -mr-16 -mt-16 rotate-45" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-4u-navy/5 md:-mr-16 -mr-8 -mt-16 rotate-45" />
                   <h3 className="text-2xl font-bold text-4u-navy mb-6">O Que Se Perde Quando o Financeiro Trava</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                     {[

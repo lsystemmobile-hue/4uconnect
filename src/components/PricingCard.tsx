@@ -80,7 +80,7 @@ const PricingCard = ({
       className={cn(
         "p-8 rounded-none transition-all duration-500 opacity-0 animate-fade-in group hover:-translate-y-3 relative flex flex-col h-full overflow-hidden",
         featured
-          ? cn(featuredBgClass, "pricing-card-featured text-white shadow-2xl border-4 border-transparent md:scale-105 z-10")
+          ? cn(featuredBgClass, "pricing-card-featured text-white shadow-2xl border-4 border-transparent z-10")
           : cn("pricing-card bg-card border-2 border-border", styles.hoverBorder)
       )}
       style={{ animationDelay: `${delay}ms` }}
