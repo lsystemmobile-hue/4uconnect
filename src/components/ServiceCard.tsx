@@ -47,7 +47,7 @@ const ServiceCard = ({
         ["--icon-glow-color" as any]: glowClasses[variant]
       }}
     >
-      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${bgClasses[variant]}`}
+      <div className={`w-14 h-14 rounded-none flex items-center justify-center mb-6 transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 ${bgClasses[variant]}`}
         style={{ boxShadow: '0 0 20px transparent', ['--tw-shadow-color' as any]: glowClasses[variant] }}
       >
         <Icon size={28} className={`${colorClasses[variant]} transition-transform duration-500 icon-modern`} />

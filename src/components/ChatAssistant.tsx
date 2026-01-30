@@ -7,8 +7,16 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { toast } from "sonner";
 
-const ChatAssistant = () => {
+interface ChatAssistantProps {
+    onOpenStateChange?: (isOpen: boolean) => void;
+}
+
+const ChatAssistant = ({ onOpenStateChange }: ChatAssistantProps) => {
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        onOpenStateChange?.(isOpen);
+    }, [isOpen, onOpenStateChange]);
     const [videoEnded, setVideoEnded] = useState(false);
     const [messages, setMessages] = useState<Message[]>([]);
     const [input, setInput] = useState("");
@@ -67,8 +75,8 @@ const ChatAssistant = () => {
     return (
         <div
             className={cn(
-                "fixed z-50 flex flex-col items-end transition-all duration-300",
-                isOpen ? "bottom-0 right-0 p-4 w-full sm:w-auto h-full sm:h-auto pointer-events-none" : "bottom-6 right-6"
+                "flex flex-col items-end transition-all duration-300",
+                isOpen ? "w-full sm:w-auto h-full sm:h-auto pointer-events-none" : ""
             )}
         >
             {/* Chat Window */}
@@ -201,7 +209,7 @@ const ChatAssistant = () => {
             {!isOpen && (
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl bg-4u-green pointer-events-auto overflow-hidden relative"
+                    className="w-16 h-16 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl bg-4u-green pointer-events-auto overflow-hidden relative"
                     style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
                     aria-label="Abrir assistente"
                 >
@@ -230,7 +238,7 @@ const ChatAssistant = () => {
                         "transition-all duration-700 transform",
                         videoEnded ? "opacity-100 scale-100" : "opacity-0 scale-75"
                     )}>
-                        <Bot className="w-6 h-6 sm:w-8 sm:h-8" />
+                        <Bot className="w-8 h-8" />
                     </div>
                 </button>
             )}

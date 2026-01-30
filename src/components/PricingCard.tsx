@@ -78,83 +78,101 @@ const PricingCard = ({
   return (
     <div
       className={cn(
-        "p-8 rounded-3xl transition-all duration-500 opacity-0 animate-fade-in group hover:-translate-y-3 relative flex flex-col h-full",
+        "p-8 rounded-none transition-all duration-500 opacity-0 animate-fade-in group hover:-translate-y-3 relative flex flex-col h-full overflow-hidden",
         featured
-          ? cn(featuredBgClass, "pricing-card-featured text-white shadow-strong border-2 border-transparent md:scale-110 z-10")
+          ? cn(featuredBgClass, "pricing-card-featured text-white shadow-2xl border-4 border-transparent md:scale-105 z-10")
           : cn("pricing-card bg-card border-2 border-border", styles.hoverBorder)
       )}
       style={{ animationDelay: `${delay}ms` }}
     >
+      {/* Accent Bar - sempre presente */}
+      <div className={cn(
+        "absolute left-0 top-0 w-2 transition-all duration-500",
+        featured
+          ? "h-full opacity-100"
+          : "h-0 group-hover:h-full opacity-100",
+        variant === 'green' ? 'bg-4u-green' : variant === 'navy' ? 'bg-4u-navy' : 'bg-4u-black'
+      )} />
+
+      {/* Gradient Overlay on Hover */}
+      {!featured && (
+        <div className="absolute inset-0 bg-gradient-to-br from-4u-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      )}
+
       {featured && (
-        <div className={`absolute top-4 right-4 text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider z-20 ${styles.featuredBg}`}>
-          Mais Popular
+        <div className={`absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold px-6 py-2 rounded-none uppercase tracking-wider z-20 shadow-lg ${styles.featuredBg}`}>
+          ⭐ Mais Popular
         </div>
       )}
-      <h3
-        className={`text-xl font-bold mb-2 transition-colors duration-300 ${featured ? "text-white" : `text-foreground ${variant === 'green' ? "group-hover:text-4u-green" : variant === 'navy' ? "group-hover:text-4u-navy" : "group-hover:text-4u-black"}`
-          }`}
-      >
-        {name}
-      </h3>
-      <div className="flex items-baseline gap-1 mb-6">
-        <span
-          className={`text-4xl font-bold transition-all duration-300 ${styles.price}`}
-        >
-          {price}
-        </span>
-        {period && (
-          <span
-            className={`text-sm ${featured ? "text-white/70" : "text-muted-foreground"
-              }`}
-          >
-            {period}
-          </span>
-        )}
-      </div>
-      <ul className="space-y-3 mb-8">
-        {features.map((feature, index) => {
-          const isObject = typeof feature === 'object';
-          const text = isObject ? feature.text : feature;
-          const Icon = isObject && feature.icon ? feature.icon : Check;
 
-          return (
-            <li key={index} className="flex items-start gap-3 group/item">
-              <div className={cn(
-                "mt-0.5 flex-shrink-0 transition-all duration-500",
-                "group-hover:rotate-12 group-hover:scale-110" // Tilt effect on card hover
-              )}>
-                <Icon
-                  size={18}
-                  className={cn(
-                    "transition-transform duration-500",
-                    featured ? "text-white" : styles.icon
-                  )}
-                />
-              </div>
-              <span
-                className={`text-sm transition-colors duration-300 ${featured ? "text-white/90" : "text-muted-foreground group-hover/item:text-foreground"
-                  }`}
-              >
-                {text}
-              </span>
-            </li>
-          );
-        })}
-      </ul>
-      <a
-        href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20[NOME_DO_PLANO]."
-        target="_blank"
-        rel="noopener noreferrer"
-        className={cn(
-          "block w-full py-4 rounded-full text-center font-bold transition-all duration-300 transform group-hover:scale-105 group-hover:shadow-lg mt-auto",
-          styles.button
-        )}
-        onClick={(e) => {
-          (e.currentTarget as HTMLAnchorElement).href = (e.currentTarget as HTMLAnchorElement).href.replace("[NOME_DO_PLANO]", encodeURIComponent(name));
-        }}
-      >
-        Começar Agora
-      </a>
+      {/* Content */}
+      <div className="relative z-10">
+        <h3
+          className={`text-2xl font-bold mb-3 transition-colors duration-300 ${featured ? "text-white" : `text-foreground ${variant === 'green' ? "group-hover:text-4u-green" : variant === 'navy' ? "group-hover:text-4u-navy" : "group-hover:text-4u-black"}`
+            }`}
+        >
+          {name}
+        </h3>
+        <div className="flex items-baseline gap-1 mb-8">
+          <span
+            className={`text-5xl font-bold transition-all duration-300 ${styles.price}`}
+          >
+            {price}
+          </span>
+          {period && (
+            <span
+              className={`text-base ${featured ? "text-white/70" : "text-muted-foreground"
+                }`}
+            >
+              {period}
+            </span>
+          )}
+        </div>
+        <ul className="space-y-3 mb-8">
+          {features.map((feature, index) => {
+            const isObject = typeof feature === 'object';
+            const text = isObject ? feature.text : feature;
+            const Icon = isObject && feature.icon ? feature.icon : Check;
+
+            return (
+              <li key={index} className="flex items-start gap-3 group/item">
+                <div className={cn(
+                  "mt-0.5 flex-shrink-0 transition-all duration-500",
+                  "group-hover:rotate-12 group-hover:scale-110" // Tilt effect on card hover
+                )}>
+                  <Icon
+                    size={18}
+                    className={cn(
+                      "transition-transform duration-500",
+                      featured ? "text-white" : styles.icon
+                    )}
+                  />
+                </div>
+                <span
+                  className={`text-sm transition-colors duration-300 ${featured ? "text-white/90" : "text-muted-foreground group-hover/item:text-foreground"
+                    }`}
+                >
+                  {text}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+        <a
+          href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20[NOME_DO_PLANO]."
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            "block w-full py-5 rounded-none text-center font-bold text-base transition-all duration-500 transform group-hover:scale-105 group-hover:shadow-xl mt-auto",
+            styles.button
+          )}
+          onClick={(e) => {
+            (e.currentTarget as HTMLAnchorElement).href = (e.currentTarget as HTMLAnchorElement).href.replace("[NOME_DO_PLANO]", encodeURIComponent(name));
+          }}
+        >
+          Começar Agora
+        </a>
+      </div>
     </div>
   );
 };

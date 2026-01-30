@@ -111,6 +111,7 @@ export default {
         "slide-in-left": "slide-in-left 0.5s ease-out forwards",
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
         "bounce-subtle": "bounce-subtle 2s infinite",
+        "bounce-slow": "bounce-subtle 3s ease-in-out infinite",
       },
       boxShadow: {
         soft: "0 4px 20px -4px hsla(0, 0%, 0%, 0.1)",
