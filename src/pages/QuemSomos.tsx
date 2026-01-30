@@ -99,13 +99,13 @@ const QuemSomos = () => {
 
                     {/* Botões CTA - Hierarquia Visual */}
                     <div
-                        className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in"
+                        className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in px-4"
                         style={{ animationDelay: "400ms" }}
                     >
                         {/* Primary CTA */}
                         <a
                             href="#sobre"
-                            className="group px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-2 bg-white text-4u-navy shadow-2xl shadow-white/30 hover:scale-105 hover:shadow-3xl hover:shadow-white/50 hover:-translate-y-1 active:scale-95 relative overflow-hidden"
+                            className="group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-2 bg-white text-4u-navy shadow-2xl shadow-white/30 hover:scale-105 hover:shadow-3xl hover:shadow-white/50 hover:-translate-y-1 active:scale-95 relative overflow-hidden"
                         >
                             <Users className="w-5 h-5 transition-transform group-hover:rotate-12" />
                             <span className="relative z-10">
@@ -119,7 +119,7 @@ const QuemSomos = () => {
                             href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-2 bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-white/20 active:scale-95 backdrop-blur-sm relative overflow-hidden"
+                            className="group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-2 bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-white/20 active:scale-95 backdrop-blur-sm relative overflow-hidden"
                         >
                             <WhatsAppIcon size={20} className="transition-transform group-hover:rotate-12" />
                             <span className="relative z-10">

@@ -80,7 +80,7 @@ const InteligenciaFinanceira = () => {
 
           {/* Tab Selector Buttons */}
           <div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-4xl mx-auto opacity-0 animate-fade-in"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-4xl mx-auto opacity-0 animate-fade-in px-4"
             style={{ animationDelay: "400ms" }}
           >
             <button
@@ -90,7 +90,7 @@ const InteligenciaFinanceira = () => {
                   document.getElementById('bpo-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 100);
               }}
-              className={`group w-full sm:w-auto px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-2 relative overflow-hidden ${activeTab === 'bpo'
+              className={`group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 relative overflow-hidden ${activeTab === 'bpo'
                 ? 'bg-white text-4u-navy shadow-2xl shadow-white/30 scale-105'
                 : 'bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:shadow-xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95 backdrop-blur-sm'
                 }`}
@@ -110,7 +110,7 @@ const InteligenciaFinanceira = () => {
                   document.getElementById('contabilidade-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 100);
               }}
-              className={`group w-full sm:w-auto px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-2 relative overflow-hidden ${activeTab === 'contabilidade'
+              className={`group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 relative overflow-hidden ${activeTab === 'contabilidade'
                 ? 'bg-white text-4u-navy shadow-2xl shadow-white/30 scale-105'
                 : 'bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:shadow-xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95 backdrop-blur-sm'
                 }`}

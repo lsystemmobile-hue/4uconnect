@@ -63,13 +63,13 @@ const Contabilidade = () => {
           </p>
 
           <div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in px-4"
             style={{ animationDelay: "400ms" }}
           >
             {/* Primary CTA */}
             <a
               href="#servicos"
-              className="group px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-2 bg-white text-4u-navy shadow-2xl shadow-white/30 hover:scale-105 hover:shadow-white/50 hover:-translate-y-1 active:scale-95 relative overflow-hidden"
+              className="group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-2 bg-white text-4u-navy shadow-2xl shadow-white/30 hover:scale-105 hover:shadow-white/50 hover:-translate-y-1 active:scale-95 relative overflow-hidden"
             >
               <Building2 className="w-5 h-5 transition-transform group-hover:rotate-12" />
               <span className="relative z-10">
