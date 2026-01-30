@@ -168,7 +168,7 @@ const InteligenciaFinanceira = () => {
           </section>
 
           {/* Problemas Financeiros Mais Comuns */}
-          <section className="py-24 bg-4u-navy/5 border-y border-border/50">
+          <section className="py-24 bg-4u-navy/5 border-y border-border/50 overflow-hidden">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
                 <div className="scroll-reveal opacity-0 translate-x-[-2rem] transition-all duration-700">
