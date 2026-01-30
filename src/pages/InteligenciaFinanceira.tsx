@@ -63,11 +63,11 @@ const InteligenciaFinanceira = () => {
         <div className="absolute inset-0 z-1 bg-gradient-to-br from-4u-navy/90 via-black/75 to-black/95 backdrop-blur-[2px]" />
 
         {/* Animated accent elements */}
-        <div className="absolute top-20 right-20 w-72 h-72 bg-4u-green/5 rounded-none rotate-12 blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-4u-green/3 rounded-none -rotate-12 blur-2xl animate-pulse-slower" />
+        <div className="absolute top-20 right-20 w-72 h-72 bg-4u-green/5 rounded-none rotate-12 blur-3xl animate-pulse-slow z-0" />
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-4u-green/3 rounded-none -rotate-12 blur-2xl animate-pulse-slower z-0" />
 
         {/* Content */}
-        <div className="container relative z-10 mx-auto px-4 text-center">
+        <div className="container relative z-10 mx-auto px-4 text-center pt-24">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 opacity-0 animate-fade-in tracking-tight">
             Inteligência Financeira <span className="block mt-2 text-white/90">&amp; Contabilidade</span>
           </h1>
@@ -90,8 +90,8 @@ const InteligenciaFinanceira = () => {
                   document.getElementById('bpo-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 100);
               }}
-              className={`group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 relative overflow-hidden ${activeTab === 'bpo'
-                ? 'bg-white text-4u-navy shadow-2xl shadow-white/30 scale-105'
+              className={`group w-full max-w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 relative overflow-hidden ${activeTab === 'bpo'
+                ? 'bg-white text-4u-navy shadow-2xl shadow-white/30'
                 : 'bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:shadow-xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95 backdrop-blur-sm'
                 }`}
             >
@@ -110,8 +110,8 @@ const InteligenciaFinanceira = () => {
                   document.getElementById('contabilidade-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 100);
               }}
-              className={`group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 relative overflow-hidden ${activeTab === 'contabilidade'
-                ? 'bg-white text-4u-navy shadow-2xl shadow-white/30 scale-105'
+              className={`group w-full max-w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 relative overflow-hidden ${activeTab === 'contabilidade'
+                ? 'bg-white text-4u-navy shadow-2xl shadow-white/30'
                 : 'bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:shadow-xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95 backdrop-blur-sm'
                 }`}
             >

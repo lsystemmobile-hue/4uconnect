@@ -98,7 +98,7 @@ const AberturaEmpresa = () => {
               href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Quero%20abrir%20minha%20empresa%20gr%C3%A1tis%20com%20a%204U%20Connect!"
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-2 bg-white text-4u-green shadow-2xl shadow-white/30 hover:scale-105 hover:shadow-white/50 hover:-translate-y-1 active:scale-95 relative overflow-hidden"
+              className="group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 bg-white text-4u-green shadow-2xl shadow-white/30 hover:shadow-white/50 hover:-translate-y-1 active:scale-95 relative overflow-hidden"
             >
               <Building2 className="w-5 h-5 transition-transform group-hover:rotate-12" />
               <span className="relative z-10">
@@ -112,7 +112,7 @@ const AberturaEmpresa = () => {
               href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20abertura%20de%20empresa%20gratuita%20da%204U%20Connect."
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-2 bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:-translate-y-1 hover:shadow-xl hover:shadow-white/20 active:scale-95 backdrop-blur-sm relative overflow-hidden"
+              className="group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:-translate-y-1 hover:shadow-xl hover:shadow-white/20 active:scale-95 backdrop-blur-sm relative overflow-hidden"
             >
               <WhatsAppIcon size={20} className="transition-transform group-hover:rotate-12" />
               <span className="relative z-10">

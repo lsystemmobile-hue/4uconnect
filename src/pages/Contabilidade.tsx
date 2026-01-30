@@ -69,7 +69,7 @@ const Contabilidade = () => {
             {/* Primary CTA */}
             <a
               href="#servicos"
-              className="group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-2 bg-white text-4u-navy shadow-2xl shadow-white/30 hover:scale-105 hover:shadow-white/50 hover:-translate-y-1 active:scale-95 relative overflow-hidden"
+              className="group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 bg-white text-4u-navy shadow-2xl shadow-white/30 hover:shadow-white/50 hover:-translate-y-1 active:scale-95 relative overflow-hidden"
             >
               <Building2 className="w-5 h-5 transition-transform group-hover:rotate-12" />
               <span className="relative z-10">
