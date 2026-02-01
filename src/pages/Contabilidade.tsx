@@ -1,25 +1,13 @@
 import {
   TrendingUp,
   PieChart,
-  BarChart,
   Target,
-  ShieldCheck,
   CheckCircle2,
-  Eye,
-  Heart,
-  HelpCircle,
   Landmark,
   Shield,
   ClipboardCheck,
   Building2,
-  MessageCircle,
-  Rocket,
-  Award,
-  Users2,
-  Star,
-  User,
   Zap,
-  Lock,
   CalendarDays,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
@@ -104,126 +92,7 @@ const Contabilidade = () => {
         </div>
       </section>
 
-      {/* Diretoria */}
-      <section className="py-32 bg-4u-black/5 border-y border-border/50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
-            <div className="inline-block px-4 py-1.5 bg-4u-black/5 text-4u-black text-xs font-bold uppercase tracking-widest mb-4 border-l-2 border-4u-black">
-              Liderança de Elite
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-4u-black mb-4 tracking-tight">Nossa Diretoria</h2>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Antônio Dias */}
-            <div className="p-10 rounded-none bg-background border-2 border-border/50 hover:shadow-2xl hover:shadow-4u-black/10 hover:border-4u-black/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
-              <div className="absolute top-0 left-0 w-2 h-0 bg-4u-black group-hover:h-full transition-all duration-500" />
-              <div className="flex items-center gap-4 mb-8 relative z-10">
-                <div className="w-16 h-16 rounded-none overflow-hidden border-2 border-4u-black/20 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                  <img src="/antonio-neno.jpeg" alt="Antônio Dias" className="w-full h-full object-cover object-top" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-4u-black group-hover:text-4u-green transition-colors">Antônio Dias</h3>
-                  <p className="text-4u-black/60 font-semibold uppercase tracking-widest text-xs">Diretor Executivo</p>
-                </div>
-              </div>
-              <div className="space-y-6 text-muted-foreground relative z-10">
-                <p>
-                  Executivo com ampla experiência no atendimento a empresas do <strong className="text-4u-black">mercado financeiro</strong>, com atuação orientada à expansão, modernização empresarial e estruturação de soluções contábeis especializadas.
-                </p>
-                <p>
-                  Sua trajetória inclui assessoramento a companhias listadas no <strong className="text-4u-black">G20 da XP</strong> e no <strong className="text-4u-black">Best da BTG Pactual</strong>, com atuação em processos de <strong className="text-4u-black">M&A</strong>, estruturação societária e compliance rigoroso.
-                </p>
-                <div className="pt-4 border-t border-border/50">
-                  <p className="italic font-medium text-4u-black/80">
-                    "Transformando a contabilidade em um pilar estratégico de alta performance."
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Fernando Alves */}
-            <div className="p-10 rounded-none bg-background border-2 border-border/50 hover:shadow-2xl hover:shadow-4u-black/10 hover:border-4u-black/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden scroll-reveal opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: '200ms' }}>
-              <div className="absolute top-0 left-0 w-2 h-0 bg-4u-black group-hover:h-full transition-all duration-500" />
-              <div className="flex items-center gap-4 mb-8 relative z-10">
-                <div className="w-16 h-16 rounded-none overflow-hidden border-2 border-4u-black/20 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                  <img src="/antonio.jpg" alt="Fernando Alves" className="w-full h-full object-cover object-top" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-4u-black group-hover:text-4u-green transition-colors">Fernando Alves</h3>
-                  <p className="text-4u-black/60 font-semibold uppercase tracking-widest text-xs">Diretor de Operações</p>
-                </div>
-              </div>
-              <div className="space-y-6 text-muted-foreground relative z-10">
-                <p>
-                  Profissional com sólida experiência em <strong className="text-4u-black">outsourcing, compliance, governança e estruturação de operações</strong> para empresas de médio e grande porte, especialmente nos setores de Serviços e Indústria.
-                </p>
-                <p>
-                  Com formação em Consultoria de Grande Porte e atuação em multinacionais, é reconhecido pela visão estratégica orientada a resultados, modernização de processos, soluções digitais e <strong className="text-4u-black">otimização fiscal</strong>.
-                </p>
-                <div className="pt-4 border-t border-border/50">
-                  <p className="italic font-medium text-4u-black/80">
-                    "Elevando a contabilidade a um papel estratégico nos negócios."
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Missão e Visão */}
-      <section className="py-32 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-20">
-            <div className="p-12 bg-4u-black text-white scroll-reveal opacity-0 translate-x-[-2rem] transition-all duration-700 relative group overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-none -mr-16 -mt-16 rotate-45 group-hover:scale-150 transition-transform duration-700" />
-              <div className="inline-block px-4 py-1.5 bg-white/10 text-white text-xs font-bold uppercase tracking-widest mb-8 border-l-2 border-white">
-                Foco no Cliente
-              </div>
-              <Rocket className="w-12 h-12 mb-8 text-white/50 group-hover:scale-110 group-hover:rotate-12 transition-transform" />
-              <h3 className="text-3xl font-bold mb-6 tracking-tight">Missão</h3>
-              <p className="text-lg text-white/80 leading-relaxed">
-                Conectar empresas a <strong className="text-white">soluções contábeis digitais, inovadoras e acessíveis</strong>, promovendo eficiência, precisão e crescimento sustentável, com segurança e conformidade dos dados financeiros.
-              </p>
-            </div>
-            <div className="p-12 border-2 border-4u-black scroll-reveal opacity-0 translate-x-[2rem] transition-all duration-700 relative group overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-4u-black/5 rounded-none -mr-16 -mt-16 rotate-45 group-hover:scale-150 transition-transform duration-700" />
-              <div className="inline-block px-4 py-1.5 bg-4u-black/5 text-4u-black text-xs font-bold uppercase tracking-widest mb-8 border-l-2 border-4u-black">
-                Nossa Direção
-              </div>
-              <Eye className="w-12 h-12 mb-8 text-4u-black/30 group-hover:scale-110 transition-transform" />
-              <h3 className="text-3xl font-bold text-4u-black mb-6 tracking-tight">Visão</h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Ser referência em <strong className="text-4u-black">contabilidade estratégica e digital</strong>, conectando empresas a soluções inovadoras e seguras, que impulsionam o crescimento sustentável e simplificam a gestão financeira.
-              </p>
-            </div>
-          </div>
-
-          {/* Valores */}
-          <div className="text-center scroll-reveal opacity-0 translate-y-8 transition-all duration-700 mt-20">
-            <div className="inline-block px-4 py-1.5 bg-4u-black/5 text-4u-black text-xs font-bold uppercase tracking-widest mb-8 border-l-2 border-4u-black">
-              Nossa Cultura
-            </div>
-            <h3 className="text-xl md:text-3xl font-bold text-4u-black mb-10 tracking-tight">Valores Inegociáveis</h3>
-            <div className="grid grid-cols-2 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {[
-                { name: "Excelência", icon: Award },
-                { name: "Integridade", icon: ShieldCheck },
-                { name: "Inovação", icon: Zap },
-                { name: "Segurança", icon: Lock },
-                { name: "Crescimento contínuo", icon: TrendingUp },
-                { name: "Responsabilidade social", icon: Heart }
-              ].map((val, i) => (
-                <div key={i} className="flex flex-col items-center gap-4 px-6 py-8 bg-background border-2 border-border/50 text-4u-black font-bold hover:border-4u-black/30 hover:shadow-xl transition-all duration-300 group">
-                  <val.icon className="w-8 h-8 text-4u-black/70 group-hover:scale-110 group-hover:text-4u-black transition-all duration-300" />
-                  <span className="text-base md:text-lg">{val.name}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section id="servicos" className="py-32 bg-muted/30 border-y border-border/50 scroll-mt-20">
         <div className="container mx-auto px-4">

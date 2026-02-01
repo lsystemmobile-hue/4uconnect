@@ -265,22 +265,24 @@ const QuemSomos = () => {
 
                                     <div className="relative z-10">
                                         <span className="inline-block px-3 py-1 bg-4u-green/10 text-4u-green text-[10px] font-bold uppercase tracking-[0.2em] mb-4 border-l-2 border-4u-green">
-                                            Sócio-Diretor Estratégico
+                                            Sócio-Diretor
                                         </span>
                                         <h3 className="text-4xl lg:text-5xl font-bold text-4u-navy mb-6 tracking-tighter">
                                             Antônio <span className="text-4u-green">Dias</span>
                                         </h3>
 
-                                        <div className="space-y-6">
-                                            <div className="relative">
-                                                <div className="absolute top-0 left-0 w-1 h-full bg-4u-green/30" />
-                                                <p className="text-xl text-4u-navy/90 leading-relaxed pl-6 font-medium italic">
-                                                    Executivo com ampla experiência no <span className="text-foreground font-bold italic underline decoration-4u-green underline-offset-4">mercado financeiro</span>, focado em expansão e soluções contábeis estratégicas.
+                                        <div className="space-y-6 text-muted-foreground relative z-10">
+                                            <p className="text-lg leading-relaxed">
+                                                Executivo com ampla experiência no atendimento a empresas do <strong className="text-4u-black">mercado financeiro</strong>, com atuação orientada à expansão, modernização empresarial e estruturação de soluções contábeis especializadas.
+                                            </p>
+                                            <p className="text-lg leading-relaxed">
+                                                Sua trajetória inclui assessoramento a companhias listadas no <strong className="text-4u-black">G20 da XP</strong> e no <strong className="text-4u-black">Best da BTG Pactual</strong>, com atuação em processos de <strong className="text-4u-black">M&A</strong>, estruturação societária e compliance rigoroso.
+                                            </p>
+                                            <div className="pt-4 border-t border-border/50">
+                                                <p className="italic font-medium text-4u-black/80">
+                                                    "Transformando a contabilidade em um pilar estratégico de alta performance."
                                                 </p>
                                             </div>
-                                            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
-                                                Histórico de assessoramento a empresas do <span className="text-foreground font-semibold">G20 da XP</span> e <span className="text-foreground font-semibold">Best da BTG Pactual</span>. Especialista em M&A e compliance, transformando a contabilidade em pilar de alta performance.
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -297,22 +299,24 @@ const QuemSomos = () => {
 
                                     <div className="relative z-10">
                                         <span className="inline-block px-3 py-1 bg-4u-navy/10 text-4u-navy text-[10px] font-bold uppercase tracking-[0.2em] mb-4 lg:border-l-2 border-4u-navy border-r-2 lg:border-r-0">
-                                            Sócio-Diretor Operacional
+                                            Sócio-Diretor
                                         </span>
                                         <h3 className="text-4xl lg:text-5xl font-bold text-4u-navy mb-6 tracking-tighter">
                                             Fernando <span className="text-4u-green">Alves</span>
                                         </h3>
 
-                                        <div className="space-y-6">
-                                            <div className="relative">
-                                                <div className="absolute top-0 right-0 lg:right-auto lg:left-0 w-1 h-full bg-4u-green/30" />
-                                                <p className="text-xl text-4u-navy/90 leading-relaxed pr-6 lg:pr-0 lg:pl-6 font-medium italic">
-                                                    Sólida experiência em <span className="text-foreground font-bold italic underline decoration-4u-green underline-offset-4">outsourcing e governança</span> para empresas de médio e grande porte.
+                                        <div className="space-y-6 text-muted-foreground relative z-10 text-right lg:text-left">
+                                            <p className="text-lg leading-relaxed">
+                                                Profissional com sólida experiência em <strong className="text-4u-black">outsourcing, compliance, governança e estruturação de operações</strong> para empresas de médio e grande porte, especialmente nos setores de Serviços e Indústria.
+                                            </p>
+                                            <p className="text-lg leading-relaxed">
+                                                Com formação em Consultoria de Grande Porte e atuação em multinacionais, é reconhecido pela visão estratégica orientada a resultados, modernização de processos, soluções digitais e <strong className="text-4u-black">otimização fiscal</strong>.
+                                            </p>
+                                            <div className="pt-4 border-t border-border/50">
+                                                <p className="italic font-medium text-4u-black/80">
+                                                    "Elevando a contabilidade a um papel estratégico nos negócios."
                                                 </p>
                                             </div>
-                                            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl ml-auto lg:ml-0">
-                                                Atuação consolidada em <span className="text-foreground font-semibold">multinacionais e consultorias</span>, com foco em digitalização e eficiência operacional, elevando o papel estratégico da contabilidade.
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
