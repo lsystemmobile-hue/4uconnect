@@ -24,6 +24,12 @@ const PillarCircle = ({
     navy: "pillar-navy",
   };
 
+  const titleColors = {
+    green: "text-4u-green",
+    black: "text-white",
+    navy: "text-white",
+  };
+
   return (
     <Link
       to={to}
@@ -48,7 +54,7 @@ const PillarCircle = ({
       </div>
 
       <div className="text-center max-w-[250px] md:max-w-[250px]">
-        <h3 className="text-xl md:text-xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-4u-green tracking-tight">
+        <h3 className={`text-xl md:text-xl font-bold mb-2 transition-colors duration-300 tracking-tight ${titleColors[variant]}`}>
           {title}
         </h3>
         <p className="text-sm md:text-sm text-white/70 leading-relaxed font-medium">

@@ -119,8 +119,8 @@ const Contabilidade = () => {
             <div className="p-10 rounded-none bg-background border-2 border-border/50 hover:shadow-2xl hover:shadow-4u-black/10 hover:border-4u-black/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
               <div className="absolute top-0 left-0 w-2 h-0 bg-4u-black group-hover:h-full transition-all duration-500" />
               <div className="flex items-center gap-4 mb-8 relative z-10">
-                <div className="w-16 h-16 bg-4u-black text-white flex items-center justify-center rounded-none group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                  <User size={32} />
+                <div className="w-16 h-16 rounded-none overflow-hidden border-2 border-4u-black/20 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                  <img src="/antonio-neno.jpeg" alt="Antônio Dias" className="w-full h-full object-cover object-top" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-4u-black group-hover:text-4u-green transition-colors">Antônio Dias</h3>
@@ -146,8 +146,8 @@ const Contabilidade = () => {
             <div className="p-10 rounded-none bg-background border-2 border-border/50 hover:shadow-2xl hover:shadow-4u-black/10 hover:border-4u-black/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden scroll-reveal opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: '200ms' }}>
               <div className="absolute top-0 left-0 w-2 h-0 bg-4u-black group-hover:h-full transition-all duration-500" />
               <div className="flex items-center gap-4 mb-8 relative z-10">
-                <div className="w-16 h-16 bg-4u-black text-white flex items-center justify-center rounded-none group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                  <User size={32} />
+                <div className="w-16 h-16 rounded-none overflow-hidden border-2 border-4u-black/20 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                  <img src="/antonio.jpg" alt="Fernando Alves" className="w-full h-full object-cover object-top" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-4u-black group-hover:text-4u-green transition-colors">Fernando Alves</h3>
@@ -337,7 +337,7 @@ const Contabilidade = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-24 bg-4u-black text-white relative overflow-hidden group mb-12 border-y-2 border-white/5">
+      <section id="contato" className="py-24 bg-4u-black text-white relative overflow-hidden group mb-12 border-y-2 border-white/5">
         <div className="absolute top-0 right-0 w-96 h-96 bg-4u-green/10 rounded-none -mr-48 -mt-48 blur-3xl transition-all duration-700 group-hover:scale-150"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-4u-green/5 rounded-none -ml-48 -mb-48 blur-2xl transition-all duration-700 group-hover:scale-150"></div>
 

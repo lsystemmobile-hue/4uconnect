@@ -28,7 +28,7 @@ const FloatingButtons = () => {
     if (!isVisible) return null;
 
     return (
-        <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-6 sm:gap-8 pointer-events-none">
+        <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-center gap-4 pointer-events-none">
             {/* WhatsApp Button - Esconde quando o chat está aberto */}
             {!isChatOpen && (
                 <div className="pointer-events-auto">

@@ -107,10 +107,20 @@
   }
 
   body {
+    overflow-x: hidden;
+  }
+
+  body {
     @apply bg-background text-foreground font-poppins antialiased;
     overflow-x: hidden;
     width: 100%;
     position: relative;
+  }
+
+  /* Robust Smooth Scroll Offset - Apenas para seções de destino */
+  section#planos,
+  section#contato {
+    scroll-margin-top: 110px;
   }
 }
 

@@ -7,19 +7,10 @@ import {
     Send,
     CheckCircle2,
     Users,
+    Linkedin,
     Target,
     ShieldCheck,
-    Linkedin,
-    Search,
-    Settings,
-    Clock,
-    BarChart,
     Zap,
-    Smartphone,
-    Scale,
-    CreditCard,
-    Lightbulb,
-    FileText,
     Heart,
     Lock,
     Award,
@@ -214,8 +205,8 @@ const QuemSomos = () => {
                         <div className="inline-block px-4 py-1.5 bg-4u-navy/5 text-4u-navy text-xs font-bold uppercase tracking-widest mb-8 border-l-2 border-4u-navy">
                             Nossa Cultura
                         </div>
-                        <h3 className="text-2xl font-bold text-4u-navy mb-12 uppercase tracking-widest">Valores Inegociáveis</h3>
-                        <div className="grid grid-cols-2 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                        <h3 className="text-2xl font-bold text-4u-navy mb-12 tracking-widest">Valores Inegociáveis</h3>
+                        <div className="grid grid-cols-2 lg:grid-cols-6 gap-6 max-w-7xl mx-auto">
                             {[
                                 { name: "Excelência", icon: Award },
                                 { name: "Integridade", icon: ShieldCheck },
@@ -234,75 +225,7 @@ const QuemSomos = () => {
                 </div>
             </section>
 
-            {/* Differentials Section */}
-            <section className="py-24 bg-4u-navy text-white overflow-hidden relative">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-4u-green via-4u-navy to-4u-green"></div>
-                <div className="container mx-auto px-4 relative z-10">
-                    <div className="max-w-4xl mx-auto text-center mb-20 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
-                        <span className="inline-block px-4 py-1.5 bg-4u-green/5 text-4u-green text-xs font-bold uppercase tracking-widest mb-4 border-l-2 border-4u-green">
-                            POR QUE NÓS?
-                        </span>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
-                            Nossos <span className="text-4u-green">Diferenciais</span>
-                        </h2>
-                        <p className="text-lg text-white/70 leading-relaxed">
-                            O que nos torna o parceiro ideal para a transformação e segurança do seu negócio.
-                        </p>
-                    </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                        {[
-                            {
-                                title: "Atendimento Ágil",
-                                desc: "Suporte especializado e respostas rápidas via WhatsApp e canais exclusivos.",
-                                icon: Zap,
-                                gradient: "from-amber-500 to-orange-500"
-                            },
-                            {
-                                title: "App de Gestão",
-                                desc: "Todo o seu financeiro e contábil na palma da mão com nosso app exclusivo.",
-                                icon: Smartphone,
-                                gradient: "from-blue-500 to-cyan-500"
-                            },
-                            {
-                                title: "Emissão de Notas",
-                                desc: "Processo otimizado e seguro para emissão de notas fiscais de serviço e produtos.",
-                                icon: FileText,
-                                gradient: "from-green-500 to-emerald-500"
-                            },
-                            {
-                                title: "Estratégia Tributária",
-                                desc: "Planejamento constante para garantir o menor impacto fiscal dentro da lei.",
-                                icon: Scale,
-                                gradient: "from-4u-navy to-4u-navy-light"
-                            },
-                            {
-                                title: "Banking Digital",
-                                desc: "Integração direta com as principais contas PJ digitais do mercado.",
-                                icon: CreditCard,
-                                gradient: "from-slate-600 to-slate-800"
-                            },
-                            {
-                                title: "Visão Consultiva",
-                                desc: "Não apenas números, mas insights que geram valor para sua tomada de decisão.",
-                                icon: Lightbulb,
-                                gradient: "from-4u-green to-emerald-500"
-                            }
-                        ].map((diff, index) => (
-                            <div key={index} className="group p-8 rounded-none bg-white/5 border border-white/10 scroll-reveal opacity-0 translate-y-8 transition-all duration-700 hover:bg-white/10 hover:border-4u-green/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left" style={{ transitionDelay: `${index * 50}ms` }}>
-                                <div className="absolute top-0 left-0 w-1.5 h-0 bg-4u-green group-hover:h-full transition-all duration-500" />
-                                <div className="absolute inset-0 bg-gradient-to-br from-4u-green/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                                <div className={`w-14 h-14 bg-gradient-to-br ${diff.gradient} rounded-none flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg shadow-black/20 text-white`}>
-                                    <diff.icon size={28} />
-                                </div>
-                                <h3 className="text-xl font-bold mb-3 relative z-10">{diff.title}</h3>
-                                <p className="text-sm text-white/60 leading-relaxed relative z-10">{diff.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* Directorate Section */}
             <section className="py-20 bg-muted/30">
@@ -319,156 +242,101 @@ const QuemSomos = () => {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                        {/* Antônio Dias */}
-                        <div className="p-10 rounded-none bg-background border-2 border-border/50 scroll-reveal opacity-0 translate-y-8 transition-all duration-700 hover:shadow-2xl hover:shadow-4u-navy/10 hover:border-4u-navy/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-4u-navy/5 rounded-none -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-150 rotate-45 group-hover:rotate-90"></div>
+                    <div className="space-y-12 max-w-6xl mx-auto">
+                        {/* Antônio Dias - Editorial Card */}
+                        <div className="group relative bg-background border border-border/40 overflow-hidden hover:border-4u-green/30 transition-all duration-700 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+                            <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+                                {/* Portrait Container */}
+                                <div className="lg:col-span-4 relative aspect-[4/5] lg:aspect-auto min-h-[400px] overflow-hidden">
+                                    <div className="absolute inset-0 bg-4u-navy/10 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
+                                    <img
+                                        src="/antonio-neno.jpeg"
+                                        alt="Antônio Dias"
+                                        className="absolute inset-0 w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                                    />
+                                    {/* Geometric Accent */}
+                                    <div className="absolute bottom-0 left-0 w-full h-2 bg-4u-green transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 z-20"></div>
+                                </div>
 
-                            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 mb-8 relative z-10 text-center sm:text-left">
-                                <div className="w-24 h-24 rounded-none bg-4u-navy flex items-center justify-center text-white text-3xl font-bold shadow-xl shadow-4u-navy/20 group-hover:bg-4u-green transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
-                                    AD
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-3xl font-bold text-4u-navy mb-1">Antônio Dias</h3>
-                                    <p className="text-4u-green font-bold tracking-widest uppercase text-xs mb-3">Sócio-Diretor Estratégico</p>
-                                    <a href="#" className="inline-flex items-center gap-2 text-muted-foreground hover:text-4u-navy transition-colors text-sm font-semibold">
-                                        <Linkedin size={18} className="text-4u-navy" />
-                                        <span className="hover:underline">LinkedIn Profile</span>
-                                    </a>
-                                </div>
-                            </div>
+                                {/* Content Container */}
+                                <div className="lg:col-span-8 p-8 lg:p-12 flex flex-col justify-center relative bg-gradient-to-br from-white to-muted/20">
+                                    {/* Floating Index */}
+                                    <div className="absolute top-4 right-8 text-8xl font-black text-4u-navy/[0.03] select-none pointer-events-none">01</div>
 
-                            <div className="space-y-6 relative z-10">
-                                <div className="relative">
-                                    <div className="absolute top-0 left-0 w-1 h-full bg-4u-green group-hover:bg-4u-navy transition-colors duration-500" />
-                                    <p className="text-lg text-4u-navy/80 leading-relaxed pl-6 font-medium italic">
-                                        Executivo com ampla experiência no <span className="text-foreground font-bold italic underline decoration-4u-green underline-offset-4">mercado financeiro</span>, focado em expansão e soluções contábeis estratégicas.
-                                    </p>
+                                    <div className="relative z-10">
+                                        <span className="inline-block px-3 py-1 bg-4u-green/10 text-4u-green text-[10px] font-bold uppercase tracking-[0.2em] mb-4 border-l-2 border-4u-green">
+                                            Sócio-Diretor Estratégico
+                                        </span>
+                                        <h3 className="text-4xl lg:text-5xl font-bold text-4u-navy mb-6 tracking-tighter">
+                                            Antônio <span className="text-4u-green">Dias</span>
+                                        </h3>
+
+                                        <div className="space-y-6">
+                                            <div className="relative">
+                                                <div className="absolute top-0 left-0 w-1 h-full bg-4u-green/30" />
+                                                <p className="text-xl text-4u-navy/90 leading-relaxed pl-6 font-medium italic">
+                                                    Executivo com ampla experiência no <span className="text-foreground font-bold italic underline decoration-4u-green underline-offset-4">mercado financeiro</span>, focado em expansão e soluções contábeis estratégicas.
+                                                </p>
+                                            </div>
+                                            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+                                                Histórico de assessoramento a empresas do <span className="text-foreground font-semibold">G20 da XP</span> e <span className="text-foreground font-semibold">Best da BTG Pactual</span>. Especialista em M&A e compliance, transformando a contabilidade em pilar de alta performance.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p className="text-muted-foreground text-base leading-relaxed">
-                                    Histórico de assessoramento a empresas do <span className="text-foreground font-semibold">G20 da XP</span> e <span className="text-foreground font-semibold">Best da BTG Pactual</span>. Especialista em M&A e compliance, transformando a contabilidade em pilar de alta performance.
-                                </p>
                             </div>
                         </div>
 
-                        {/* Fernando Alves */}
-                        <div className="p-10 rounded-none bg-background border-2 border-border/50 scroll-reveal opacity-0 translate-y-8 transition-all duration-700 hover:shadow-2xl hover:shadow-4u-green/10 hover:border-4u-green/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden" style={{ transitionDelay: '200ms' }}>
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-4u-green/5 rounded-none -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-150 rotate-45 group-hover:rotate-90"></div>
+                        {/* Fernando Alves - Editorial Card (Reversed Layout) */}
+                        <div className="group relative bg-background border border-border/40 overflow-hidden hover:border-4u-navy/30 transition-all duration-700 scroll-reveal opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: '200ms' }}>
+                            <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+                                {/* Content Container - First on desktop */}
+                                <div className="lg:col-span-8 order-2 lg:order-1 p-8 lg:p-12 flex flex-col justify-center relative bg-gradient-to-bl from-white to-muted/20 text-right lg:text-left">
+                                    {/* Floating Index */}
+                                    <div className="absolute top-4 left-8 text-8xl font-black text-4u-navy/[0.03] select-none pointer-events-none">02</div>
 
-                            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 mb-8 relative z-10 text-center sm:text-left">
-                                <div className="w-24 h-24 rounded-none bg-4u-navy flex items-center justify-center text-white text-3xl font-bold shadow-xl shadow-4u-navy/20 group-hover:bg-4u-navy transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
-                                    FA
+                                    <div className="relative z-10">
+                                        <span className="inline-block px-3 py-1 bg-4u-navy/10 text-4u-navy text-[10px] font-bold uppercase tracking-[0.2em] mb-4 lg:border-l-2 border-4u-navy border-r-2 lg:border-r-0">
+                                            Sócio-Diretor Operacional
+                                        </span>
+                                        <h3 className="text-4xl lg:text-5xl font-bold text-4u-navy mb-6 tracking-tighter">
+                                            Fernando <span className="text-4u-green">Alves</span>
+                                        </h3>
+
+                                        <div className="space-y-6">
+                                            <div className="relative">
+                                                <div className="absolute top-0 right-0 lg:right-auto lg:left-0 w-1 h-full bg-4u-green/30" />
+                                                <p className="text-xl text-4u-navy/90 leading-relaxed pr-6 lg:pr-0 lg:pl-6 font-medium italic">
+                                                    Sólida experiência em <span className="text-foreground font-bold italic underline decoration-4u-green underline-offset-4">outsourcing e governança</span> para empresas de médio e grande porte.
+                                                </p>
+                                            </div>
+                                            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl ml-auto lg:ml-0">
+                                                Atuação consolidada em <span className="text-foreground font-semibold">multinacionais e consultorias</span>, com foco em digitalização e eficiência operacional, elevando o papel estratégico da contabilidade.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="flex-1">
-                                    <h3 className="text-3xl font-bold text-4u-navy mb-1">Fernando Alves</h3>
-                                    <p className="text-4u-green font-bold tracking-widest uppercase text-xs mb-3">Sócio-Diretor Operacional</p>
-                                    <a href="#" className="inline-flex items-center gap-2 text-muted-foreground hover:text-4u-navy transition-colors text-sm font-semibold">
-                                        <Linkedin size={18} className="text-4u-navy" />
-                                        <span className="hover:underline">LinkedIn Profile</span>
-                                    </a>
+
+                                {/* Portrait Container */}
+                                <div className="lg:col-span-4 order-1 lg:order-2 relative aspect-[4/5] lg:aspect-auto min-h-[400px] overflow-hidden">
+                                    <div className="absolute inset-0 bg-4u-navy/10 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
+                                    <img
+                                        src="/antonio.jpg"
+                                        alt="Fernando Alves"
+                                        className="absolute inset-0 w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                                    />
+                                    {/* Geometric Accent */}
+                                    <div className="absolute bottom-0 right-0 w-full h-2 bg-4u-navy transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-700 z-20"></div>
                                 </div>
                             </div>
-
-                            <div className="space-y-6 relative z-10">
-                                <div className="relative">
-                                    <div className="absolute top-0 left-0 w-1 h-full bg-4u-green group-hover:bg-4u-navy transition-colors duration-500" />
-                                    <p className="text-lg text-4u-navy/80 leading-relaxed pl-6 font-medium italic">
-                                        Sólida experiência em <span className="text-foreground font-bold italic underline decoration-4u-green underline-offset-4">outsourcing e governança</span> para empresas de médio e grande porte.
-                                    </p>
-                                </div>
-                                <p className="text-muted-foreground text-base leading-relaxed">
-                                    Atuação consolidada em <span className="text-foreground font-semibold">multinacionais e consultorias</span>, com foco em digitalização e eficiência operacional, elevando o papel estratégico da contabilidade.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Client Journey Section */}
-            <section className="py-24 bg-muted/10 overflow-hidden border-y border-border/50">
-                <div className="container mx-auto px-4">
-                    <div className="max-w-4xl mx-auto text-center mb-16 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
-                        <span className="inline-block px-4 py-1.5 bg-4u-green/5 text-4u-green text-xs font-bold uppercase tracking-widest mb-4 border-l-2 border-4u-green">
-                            FLUXO DE TRABALHO
-                        </span>
-                        <h2 className="text-3xl md:text-5xl font-bold text-4u-black mb-6 tracking-tight">
-                            Jornada do Cliente
-                        </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed">
-                            Um processo estruturado para garantir controle total e performance desde o primeiro dia.
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-6xl mx-auto relative group">
-                        {/* Connection Line */}
-                        <div className="hidden md:block absolute top-[40px] left-[10%] w-[80%] h-0.5 bg-4u-green/10 z-0"></div>
-
-                        {[
-                            {
-                                step: "01",
-                                title: "Diagnóstico Inicial",
-                                desc: "Mapeamento completo de processos e rotinas da sua empresa.",
-                                icon: Search
-                            },
-                            {
-                                step: "02",
-                                title: "Personalização",
-                                desc: "Configuração de sistemas, integrações e automações de acordo com sua necessidade.",
-                                icon: Settings
-                            },
-                            {
-                                step: "03",
-                                title: "Primeiros 30 dias",
-                                desc: "Conciliações, testes e validações para garantir precisão e confiança.",
-                                icon: Clock
-                            },
-                            {
-                                step: "04",
-                                title: "Operação Contínua",
-                                desc: "Financeiro previsível, performático e orientado por indicadores estratégicos.",
-                                icon: BarChart
-                            }
-                        ].map((item, index) => (
-                            <div key={index} className="relative z-10 p-8 rounded-none bg-background border-2 border-border/50 text-center shadow-sm scroll-reveal opacity-0 translate-y-8 transition-all duration-700 hover:shadow-2xl hover:shadow-4u-green/10 hover:border-4u-green/30 transition-all duration-500 group/item hover:-translate-y-2" style={{ transitionDelay: `${index * 100}ms` }}>
-                                <div className="w-20 h-20 bg-muted/50 text-4u-navy rounded-none flex items-center justify-center mx-auto mb-6 transition-all duration-500 transform group-hover/item:scale-110 group-hover/item:bg-4u-green group-hover/item:text-white group-hover/item:rotate-6 shadow-md shadow-black/5">
-                                    <item.icon size={32} />
-                                </div>
-                                <div className="text-4u-green font-bold text-xs uppercase tracking-widest mb-2">Passo {item.step}</div>
-                                <h3 className="font-bold text-4u-navy text-lg mb-3">{item.title}</h3>
-                                <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
-                                <div className="absolute bottom-0 left-0 w-full h-1 bg-4u-green transform scale-x-0 group-hover/item:scale-x-100 transition-transform duration-500" />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Trust & Partners */}
-            <section className="py-12 bg-background border-y border-border">
-                <div className="container mx-auto px-4">
-                    <div className="text-center mb-8">
-                        <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                            Parceiros & Ecossistema
-                        </p>
-                    </div>
-                    <div className="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                        {/* Using placeholders as I don't have actual partner assets yet */}
-                        <div className="h-8 md:h-10 flex items-center gap-2">
-                            <Globe size={24} />
-                            <span className="font-bold">Conta Azul</span>
-                        </div>
-                        <div className="h-8 md:h-10 flex items-center gap-2">
-                            <Globe size={24} />
-                            <span className="font-bold">Omie</span>
-                        </div>
-                        <div className="h-8 md:h-10 flex items-center gap-2">
-                            <Globe size={24} />
-                            <span className="font-bold">RD Station</span>
                         </div>
                     </div>
                 </div>
             </section>
+
+
+
+
 
             {/* Contact Section Integrated */}
             <section className="py-24 bg-background relative overflow-hidden" id="contato">

@@ -429,7 +429,7 @@ const InteligenciaFinanceira = () => {
                   delay={0}
                 />
                 <PricingCard
-                  name="PERFORMANCE"
+                  name="PREMIUM"
                   price="R$ 2.227,00"
                   featured={true}
                   features={[
@@ -448,7 +448,7 @@ const InteligenciaFinanceira = () => {
                   name="ESTRATÉGICO"
                   price="Sob Consulta"
                   features={[
-                    "Todos os serviços do Plano PERFORMANCE",
+                    "Todos os serviços do Plano PREMIUM",
                     "Volumes de recebimentos: sob consulta",
                     "Volumes de pagamentos: sob consulta",
                     "Conciliação bancária: sob consulta",
@@ -534,8 +534,8 @@ const InteligenciaFinanceira = () => {
                 {/* Antônio Dias */}
                 <div className="bg-white p-8 border-2 border-border/50 hover:border-4u-navy/30 transition-all duration-500 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-4u-navy text-white flex items-center justify-center rounded-none">
-                      <User size={32} />
+                    <div className="w-16 h-16 rounded-none overflow-hidden border-2 border-4u-navy/20 shadow-lg">
+                      <img src="/antonio-neno.jpeg" alt="Antônio Dias" className="w-full h-full object-cover object-top" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-4u-navy">Antônio Dias</h3>
@@ -558,8 +558,8 @@ const InteligenciaFinanceira = () => {
                 {/* Fernando Alves */}
                 <div className="bg-white p-8 border-2 border-border/50 hover:border-4u-navy/30 transition-all duration-500 scroll-reveal opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: '200ms' }}>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-4u-navy text-white flex items-center justify-center rounded-none">
-                      <User size={32} />
+                    <div className="w-16 h-16 rounded-none overflow-hidden border-2 border-4u-navy/20 shadow-lg">
+                      <img src="/antonio.jpg" alt="Fernando Alves" className="w-full h-full object-cover object-top" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-4u-navy">Fernando Alves</h3>

@@ -3,40 +3,44 @@ import { useState, useEffect } from "react";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 const StickyWhatsApp = () => {
-    const [tooltipStep, setTooltipStep] = useState(0);
+    const [showTooltip, setShowTooltip] = useState(false);
     const whatsappNumber = "5515998230619";
     const whatsappMessage = encodeURIComponent(
         "Olá! Vim pelo site e gostaria de saber mais sobre os serviços da 4U Connect."
     );
 
     useEffect(() => {
-        const timer1 = setTimeout(() => {
-            setTooltipStep(1);
-        }, 5000); // 5 segundos para a primeira mensagem
+        // Mostra o tooltip após 3 segundos
+        const showTimer = setTimeout(() => {
+            setShowTooltip(true);
+        }, 3000);
 
-        const timer2 = setTimeout(() => {
-            setTooltipStep(2);
-        }, 15000); // 15 segundos para sumir tudo
+        // Esconde o tooltip após 8 segundos (3s + 5s de exibição)
+        const hideTimer = setTimeout(() => {
+            setShowTooltip(false);
+        }, 8000);
 
         return () => {
-            clearTimeout(timer1);
-            clearTimeout(timer2);
+            clearTimeout(showTimer);
+            clearTimeout(hideTimer);
         };
     }, []);
 
     return (
-        <div className="flex flex-col items-end gap-3 group">
-            {/* Tooltip - Simples e Sutil */}
-            <div className="opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-500 pointer-events-none">
+        <div className="flex flex-col items-center gap-3 group">
+            {/* Tooltip - Centralizado */}
+            <div className={`transition-all duration-500 pointer-events-none ${showTooltip ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
+                }`}>
                 <div className="bg-white/95 backdrop-blur-md text-4u-navy px-4 py-2 border border-white/20 shadow-xl relative">
                     <p className="text-xs font-bold tracking-tight flex items-center gap-2 whitespace-nowrap">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-4u-green opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-4u-green"></span>
                         </span>
-                        Está Online
+                        Online
                     </p>
-                    <div className="absolute -bottom-1 right-6 w-2 h-2 bg-white border-r border-b border-white/20 transform rotate-45"></div>
+                    {/* Setinha centralizada */}
+                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white border-r border-b border-white/20 transform rotate-45"></div>
                 </div>
             </div>
 
@@ -47,10 +51,10 @@ const StickyWhatsApp = () => {
                 rel="noopener noreferrer"
                 className="relative"
             >
-                {/* Main Button - Mais sutil */}
+                {/* Main Button - Tamanho consistente 56px */}
                 <div className="relative w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-500 hover:shadow-xl active:scale-95 group overflow-hidden border border-white/20">
                     <div className="absolute inset-0 bg-gradient-to-br from-4u-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <WhatsAppIcon size={28} className="text-4u-green transition-transform duration-500 group-hover:scale-110" />
+                    <WhatsAppIcon size={32} className="text-4u-green transition-transform duration-500 group-hover:scale-110" />
                 </div>
 
                 {/* Online Badge - Sutil */}

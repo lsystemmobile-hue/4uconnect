@@ -33,47 +33,11 @@ import PricingCard from "@/components/PricingCard";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Link } from "react-router-dom";
+import ServiceDrawers from "@/components/ServiceDrawers";
+import PartnersSection from "@/components/PartnersSection";
 
 const ContabilidadeDigital = () => {
   useScrollReveal();
-  const services = [
-    {
-      icon: FileText,
-      title: "Integração de Notas Fiscais",
-      description:
-        "Integração automática de notas fiscais e pagamentos para maior agilidade e precisão.",
-    },
-    {
-      icon: BarChart3,
-      title: "Balancetes e DRE",
-      description:
-        "Balancetes, Balanço Patrimonial e Demonstração de Resultados sempre atualizados.",
-    },
-    {
-      icon: Calculator,
-      title: "Apuração de IRPJ e CSLL",
-      description:
-        "Cálculo preciso e entrega dentro dos prazos de todas as obrigações tributárias.",
-    },
-    {
-      icon: FileCheck,
-      title: "Entrega de ECD e ECF",
-      description:
-        "Escrituração Contábil Digital e Escrituração Contábil Fiscal em conformidade.",
-    },
-    {
-      icon: RefreshCw,
-      title: "Conciliações Contábeis",
-      description:
-        "Conciliações mensais para garantir a integridade dos dados contábeis.",
-    },
-    {
-      icon: Package,
-      title: "Controle de Ativo Imobilizado",
-      description:
-        "Gestão completa do patrimônio com depreciação e controle de ativos.",
-    },
-  ];
 
   return (
     <div className="min-h-screen">
@@ -94,13 +58,13 @@ const ContabilidadeDigital = () => {
         {/* Content */}
         <div className="container relative z-10 mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 opacity-0 animate-fade-in tracking-tight">
-            Contabilidade <span className="block mt-2 text-white/90">Digital</span>
+            Contabilidade Digital para <span className="block mt-2 text-white/90">Prestadores de serviço</span>
           </h1>
           <p
             className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto mb-12 opacity-0 animate-fade-in leading-relaxed"
             style={{ animationDelay: "200ms" }}
           >
-            Contabilidade digital pensada para prestadores de serviços e empresas que buscam praticidade, controle e conformidade fiscal por meio da tecnologia.
+            Contabilidade digital pensada para prestadores de serviços que buscam praticidade, controle e conformidade fiscal e atendimento humanizado.
           </p>
 
           {/* Botões CTA - Hierarquia Visual */}
@@ -317,17 +281,17 @@ const ContabilidadeDigital = () => {
                 </ul>
               </div>
 
-              {/* Mockup/Imagem Placeholder */}
+              {/* Imagem do App */}
               <div className="relative scroll-reveal opacity-0 translate-x-[2rem] transition-all duration-700">
-                <div className="aspect-square rounded-none bg-gradient-to-br from-4u-green/20 to-4u-green/5 border-2 border-4u-green/30 flex items-center justify-center p-8">
-                  <div className="text-center">
-                    <Package size={120} className="text-4u-green/40 mx-auto mb-4" />
-                    <p className="text-muted-foreground text-sm">
-                      Interface do App 4U Connect<br />
-                      <span className="text-xs">(Screenshot ou mockup aqui)</span>
-                    </p>
-                  </div>
+                <div className="relative z-10 animate-float">
+                  <img
+                    src="/app.png"
+                    alt="Aplicativo 4U Connect"
+                    className="w-full max-w-[400px] mx-auto drop-shadow-[0_35px_35px_rgba(34,197,94,0.15)]"
+                  />
                 </div>
+                {/* Decorative glow behind image */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-4u-green/20 rounded-full blur-[100px] z-0" />
               </div>
             </div>
           </div>
@@ -335,7 +299,7 @@ const ContabilidadeDigital = () => {
       </section >
 
       {/* Serviços Section */}
-      <section id="servicos" className="py-24 bg-background border-b border-border/50 scroll-mt-20">
+      <section id="servicos" className="py-24 bg-background border-b border-border/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
             <span className="inline-block px-4 py-1.5 bg-4u-navy/5 text-4u-navy text-xs font-bold uppercase tracking-widest mb-4 border-l-2 border-4u-navy">
@@ -344,27 +308,20 @@ const ContabilidadeDigital = () => {
             <h2 className="text-3xl md:text-5xl font-bold text-4u-black mb-6 tracking-tight">
               Nossos Serviços
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Tecnologia e expertise contábil para transformar sua gestão financeira
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg mb-12">
+              Soluções inteligentes e consultoria especializada para o sucesso do seu negócio
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-reveal opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: '100ms' }}>
-            {services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                delay={index * 100}
-                variant="green"
-              />
-            ))}
+          <div className="scroll-reveal opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: '100ms' }}>
+            <ServiceDrawers />
           </div>
         </div>
       </section >
 
-      <section id="planos" className="py-32 bg-muted/30 border-y border-border/50 scroll-mt-20">
+      <PartnersSection />
+
+      <section id="planos" className="py-32 bg-muted/30 border-y border-border/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
             <span className="inline-block px-4 py-1.5 bg-4u-green/5 text-4u-green text-xs font-bold uppercase tracking-widest mb-4 border-l-2 border-4u-green">
@@ -380,9 +337,6 @@ const ContabilidadeDigital = () => {
 
           {/* Benefícios Inclusos */}
           <div className="max-w-5xl mx-auto mb-20">
-            <h3 className="text-2xl font-bold text-4u-green text-center mb-8">
-              ✨ Benefícios Inclusos em Todos os Planos
-            </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
                 "Abertura gratuita da empresa",
@@ -434,7 +388,7 @@ const ContabilidadeDigital = () => {
               variant="green"
             />
             <PricingCard
-              name="PERFORMANCE"
+              name="PREMIUM"
               price="R$ 699,00"
               features={[
                 { text: "Tudo do Plano SMART", icon: CheckCircle2 },
@@ -453,7 +407,7 @@ const ContabilidadeDigital = () => {
       </section >
 
       {/* CTA Final */}
-      <section className="py-24 bg-4u-green text-white relative overflow-hidden group mb-12 border-y-2 border-white/10">
+      <section id="contato" className="py-24 bg-4u-green text-white relative overflow-hidden group mb-12 border-y-2 border-white/10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-4u-black/10 rounded-none -mr-48 -mt-48 blur-3xl transition-all duration-700 group-hover:scale-150"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-none -ml-48 -mb-48 blur-2xl transition-all duration-700 group-hover:scale-150"></div>
 

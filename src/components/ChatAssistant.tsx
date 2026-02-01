@@ -209,7 +209,7 @@ const ChatAssistant = ({ onOpenStateChange }: ChatAssistantProps) => {
             {!isOpen && (
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="w-16 h-16 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl bg-4u-green pointer-events-auto overflow-hidden relative"
+                    className="w-14 h-14 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl bg-4u-green pointer-events-auto overflow-hidden relative"
                     style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
                     aria-label="Abrir assistente"
                 >
