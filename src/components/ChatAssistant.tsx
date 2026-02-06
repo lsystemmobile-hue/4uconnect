@@ -1,5 +1,6 @@
 
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { MessageCircle, Send, X, Bot, User, Loader2 } from "lucide-react";
 import { sendMessageToGroq, Message } from "@/lib/groq";
 import { cn } from "@/lib/utils";
@@ -73,19 +74,20 @@ const ChatAssistant = ({ onOpenStateChange }: ChatAssistantProps) => {
     };
 
     return (
-        <div className="relative">
-            {/* Backdrop Overlay */}
-            {isOpen && (
+        <>
+            {/* Backdrop Overlay - Rendered in Portal */}
+            {isOpen && typeof document !== 'undefined' && createPortal(
                 <div
-                    className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[9998] animate-in fade-in duration-300"
+                    className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[10000] animate-in fade-in duration-300 pointer-events-auto"
                     onClick={() => setIsOpen(false)}
-                />
+                />,
+                document.body
             )}
 
-            {/* Chat Window - Modal centered */}
-            {isOpen && (
+            {/* Chat Window - Rendered in Portal */}
+            {isOpen && typeof document !== 'undefined' && createPortal(
                 <div
-                    className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 pointer-events-none"
+                    className="fixed inset-0 z-[10001] flex items-center justify-center p-4 sm:p-6 pointer-events-none"
                 >
                     <div
                         className="w-full sm:w-[450px] h-[600px] max-h-[85vh] bg-background/95 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-300 pointer-events-auto shadow-4u-navy/20"
@@ -206,10 +208,11 @@ const ChatAssistant = ({ onOpenStateChange }: ChatAssistantProps) => {
                             </form>
                         </div>
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
 
-            {/* Toggle Button - Only visible when chat is closed */}
+            {/* Toggle Button - Kept in normal flow (inside FloatingButtons) */}
             {!isOpen && (
                 <button
                     onClick={() => setIsOpen(true)}
@@ -246,7 +249,7 @@ const ChatAssistant = ({ onOpenStateChange }: ChatAssistantProps) => {
                     </div>
                 </button>
             )}
-        </div>
+        </>
     );
 };
 
