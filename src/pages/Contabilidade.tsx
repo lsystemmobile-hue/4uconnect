@@ -28,12 +28,15 @@ const Contabilidade = () => {
           <img
             src="/fundo.jpg"
             alt=""
-            className="w-full h-full object-cover scale-110 transition-transform duration-700 ease-out"
+            className="w-full h-full object-cover scale-105 brightness-[0.5] contrast-[1.3] grayscale-[0.2] transition-transform duration-1000 ease-out"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
           />
         </div>
 
         {/* Animated gradient overlay */}
-        <div className="absolute inset-0 z-1 bg-gradient-to-br from-black/90 via-black/75 to-black/95 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 z-1 bg-gradient-to-br from-black/95 via-4u-black/40 to-black/98 backdrop-blur-[3px]" />
 
         {/* Animated accent elements */}
         <div className="absolute top-20 right-20 w-72 h-72 bg-white/5 rounded-none rotate-12 blur-3xl animate-pulse-slow" />
@@ -220,7 +223,7 @@ const Contabilidade = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in" style={{ animationDelay: '400ms' }}>
             <a
-              href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20Contabilidade%20Especializada%20da%204U%20Connect."
+              href="https://wa.me/551530100009?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20Contabilidade%20Especializada%20da%204U%20Connect."
               target="_blank"
               rel="noopener noreferrer"
               className="group/btn inline-flex items-center justify-center gap-2 px-8 py-5 bg-white text-4u-black rounded-none font-bold transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95 w-full sm:w-72"
@@ -229,7 +232,7 @@ const Contabilidade = () => {
               Falar com Especialista
             </a>
             <a
-              href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20para%20falar%20sobre%20os%20servi%C3%A7os%20de%20Contabilidade%20Especializada%20da%204U%20Connect."
+              href="https://wa.me/551530100009?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20para%20falar%20sobre%20os%20servi%C3%A7os%20de%20Contabilidade%20Especializada%20da%204U%20Connect."
               target="_blank"
               rel="noopener noreferrer"
               className="group/btn inline-flex items-center justify-center gap-2 px-8 py-5 bg-white/10 text-white border-2 border-white/20 rounded-none font-bold transition-all duration-300 hover:bg-white/20 hover:border-white hover:-translate-y-1 hover:shadow-xl hover:shadow-white/10 active:scale-95 w-full sm:w-72"

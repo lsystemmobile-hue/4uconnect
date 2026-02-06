@@ -4,7 +4,7 @@ import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 const StickyWhatsApp = () => {
     const [showTooltip, setShowTooltip] = useState(false);
-    const whatsappNumber = "5515998230619";
+    const whatsappNumber = "551530100009";
     const whatsappMessage = encodeURIComponent(
         "Olá! Vim pelo site e gostaria de saber mais sobre os serviços da 4U Connect."
     );

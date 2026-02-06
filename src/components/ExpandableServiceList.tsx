@@ -134,7 +134,7 @@ const ExpandableServiceList = () => {
                                 )}
                                 <div className="mt-4 pt-4 border-t border-4u-green/20">
                                     <a
-                                        href="https://wa.me/5515998230619"
+                                        href="https://wa.me/551530100009"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 text-4u-green font-bold hover:gap-4 transition-all duration-300"

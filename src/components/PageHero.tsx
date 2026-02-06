@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 interface PageHeroProps {
   title: string;
@@ -10,10 +10,11 @@ interface PageHeroProps {
 const PageHero = ({ title, subtitle, variant = "navy", backgroundImage }: PageHeroProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Reset loading state when backgroundImage changes
-  useEffect(() => {
-    setIsLoaded(false);
-  }, [backgroundImage]);
+  const filterClasses = {
+    green: "brightness-[0.8] contrast-[1.1] saturate-[1.2] hue-rotate-[15deg]",
+    navy: "brightness-[0.7] contrast-[1.2] saturate-[0.8]",
+    black: "brightness-[0.5] contrast-[1.3] grayscale-[0.2]",
+  };
 
   const bgClasses = {
     green: "bg-4u-green",
@@ -31,16 +32,19 @@ const PageHero = ({ title, subtitle, variant = "navy", backgroundImage }: PageHe
     <section className={`relative overflow-hidden pt-32 pb-24 min-h-[400px] flex items-center ${bgClasses[variant]}`}>
       {backgroundImage && (
         <>
-          <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
+          <div className={`absolute inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
             <img
               src={backgroundImage}
               alt=""
-              className="w-full h-full object-cover"
+              className={`w-full h-full object-cover transition-all duration-1000 ${filterClasses[variant]}`}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
               onLoad={() => setIsLoaded(true)}
             />
           </div>
-          {/* Color-coded gradient overlay */}
-          <div className={`absolute inset-0 z-1 bg-gradient-to-br transition-all duration-700 ${overlayClasses[variant]} backdrop-blur-[1px]`} />
+          {/* Enhanced color-coded gradient overlay */}
+          <div className={`absolute inset-0 z-1 bg-gradient-to-br transition-all duration-700 ${overlayClasses[variant]} backdrop-blur-[2px]`} />
         </>
       )}
       <div className="container relative z-10 mx-auto px-4 text-center">

@@ -184,7 +184,7 @@ const ServiceDrawers = () => {
                             {/* Footer CTA */}
                             <div className="p-6 md:p-8 border-t border-border bg-muted/30">
                                 <a
-                                    href="https://wa.me/5515998230619"
+                                    href="https://wa.me/551530100009"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="group flex items-center justify-center gap-3 w-full py-4 px-6 bg-4u-green hover:bg-4u-green-dark text-white font-bold text-lg transition-all duration-300 hover:gap-5"

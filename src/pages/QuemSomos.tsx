@@ -59,7 +59,7 @@ const QuemSomos = () => {
         setIsSubmitting(false);
     };
 
-    const whatsappNumber = "5515998230619";
+    const whatsappNumber = "551530100009";
     const whatsappMessage = encodeURIComponent(
         "Olá! Gostaria de solicitar uma proposta personalizada da 4U Connect."
     );
@@ -73,12 +73,15 @@ const QuemSomos = () => {
                     <img
                         src="/fundo.jpg"
                         alt=""
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover brightness-[0.7] contrast-[1.2] saturate-[0.8]"
+                        fetchPriority="high"
+                        loading="eager"
+                        decoding="async"
                     />
                 </div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 z-1 bg-gradient-to-br from-4u-navy/85 via-black/60 to-black/90 backdrop-blur-[1px]" />
+                <div className="absolute inset-0 z-1 bg-gradient-to-br from-4u-navy/95 via-4u-navy/30 to-black/95 backdrop-blur-[2px]" />
 
                 {/* Content */}
                 <div className="container relative z-10 mx-auto px-4 text-center">

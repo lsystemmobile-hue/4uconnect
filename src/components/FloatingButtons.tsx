@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ChatAssistant from "./ChatAssistant";
 import StickyWhatsApp from "./StickyWhatsApp";
 import { useLocation } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
 const FloatingButtons = () => {
     const [isChatOpen, setIsChatOpen] = useState(false);
@@ -25,21 +26,21 @@ const FloatingButtons = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [location.pathname]); // Reinicia ou verifica ao mudar de rota
 
-    if (!isVisible) return null;
+    // Não exibe os botões na página Home
+    if (location.pathname === "/") return null;
 
     return (
-        <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-center gap-4 pointer-events-none">
+        <div className={cn(
+            "fixed bottom-6 right-6 z-[9999] flex flex-col items-center gap-4 transition-all duration-1000 ease-out",
+            isVisible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-10 pointer-events-none"
+        )}>
             {/* WhatsApp Button - Esconde quando o chat está aberto */}
             {!isChatOpen && (
-                <div className="pointer-events-auto">
-                    <StickyWhatsApp />
-                </div>
+                <StickyWhatsApp />
             )}
 
             {/* Chat Assistant */}
-            <div className="pointer-events-auto">
-                <ChatAssistant onOpenStateChange={setIsChatOpen} />
-            </div>
+            <ChatAssistant onOpenStateChange={setIsChatOpen} />
         </div>
     );
 };

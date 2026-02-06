@@ -159,7 +159,7 @@ const PricingCard = ({
           })}
         </ul>
         <a
-          href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20[NOME_DO_PLANO]."
+          href="https://wa.me/551530100009?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20[NOME_DO_PLANO]."
           target="_blank"
           rel="noopener noreferrer"
           className={cn(

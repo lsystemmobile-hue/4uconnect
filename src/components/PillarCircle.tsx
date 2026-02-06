@@ -25,7 +25,7 @@ const PillarCircle = ({
   };
 
   const titleColors = {
-    green: "text-4u-green",
+    green: "text-white",
     black: "text-white",
     navy: "text-white",
   };

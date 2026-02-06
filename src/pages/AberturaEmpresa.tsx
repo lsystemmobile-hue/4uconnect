@@ -69,12 +69,15 @@ const AberturaEmpresa = () => {
           <img
             src="/fundo.jpg"
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover brightness-[0.8] contrast-[1.1] saturate-[1.2] hue-rotate-[15deg]"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
           />
         </div>
 
         {/* Overlay */}
-        <div className="absolute inset-0 z-1 bg-gradient-to-br from-4u-green/85 via-black/60 to-black/90 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 z-1 bg-gradient-to-br from-4u-green/90 via-4u-green/20 to-black/95 backdrop-blur-[2px]" />
 
         {/* Content */}
         <div className="container relative z-10 mx-auto px-4 text-center">
@@ -95,7 +98,7 @@ const AberturaEmpresa = () => {
           >
             {/* Primary CTA */}
             <a
-              href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Quero%20abrir%20minha%20empresa%20gr%C3%A1tis%20com%20a%204U%20Connect!"
+              href="https://wa.me/551530100009?text=Ol%C3%A1!%20Quero%20abrir%20minha%20empresa%20gr%C3%A1tis%20com%20a%204U%20Connect!"
               target="_blank"
               rel="noopener noreferrer"
               className="group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 bg-white text-4u-green shadow-2xl shadow-white/30 border-2 border-white hover:shadow-white/50 hover:-translate-y-1 active:scale-95 relative overflow-hidden"
@@ -109,7 +112,7 @@ const AberturaEmpresa = () => {
 
             {/* Secondary CTA */}
             <a
-              href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20abertura%20de%20empresa%20gratuita%20da%204U%20Connect."
+              href="https://wa.me/551530100009?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20abertura%20de%20empresa%20gratuita%20da%204U%20Connect."
               target="_blank"
               rel="noopener noreferrer"
               className="group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:-translate-y-1 hover:shadow-xl hover:shadow-white/20 active:scale-95 backdrop-blur-sm relative overflow-hidden"
@@ -199,7 +202,7 @@ const AberturaEmpresa = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Quero%20abrir%20minha%20empresa%20gr%C3%A1tis%20com%20a%204U%20Connect!"
+              href="https://wa.me/551530100009?text=Ol%C3%A1!%20Quero%20abrir%20minha%20empresa%20gr%C3%A1tis%20com%20a%204U%20Connect!"
               target="_blank"
               rel="noopener noreferrer"
               className="group/btn inline-flex items-center gap-2 px-8 py-5 bg-white text-4u-green rounded-none font-bold transition-all duration-300 hover:shadow-2xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95"
@@ -208,7 +211,7 @@ const AberturaEmpresa = () => {
               Abrir Minha Empresa Grátis
             </a>
             <a
-              href="https://wa.me/5515998230619?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20abertura%20de%20empresa%20gratuita%20da%204U%20Connect."
+              href="https://wa.me/551530100009?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20abertura%20de%20empresa%20gratuita%20da%204U%20Connect."
               target="_blank"
               rel="noopener noreferrer"
               className="group/btn inline-flex items-center gap-2 px-8 py-5 bg-white/10 text-white border-2 border-white/20 rounded-none font-bold transition-all duration-300 hover:bg-white/20 hover:border-white hover:-translate-y-1 hover:shadow-xl hover:shadow-white/10 active:scale-95"
