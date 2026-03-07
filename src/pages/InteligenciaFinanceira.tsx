@@ -433,7 +433,7 @@ const InteligenciaFinanceira = () => {
                 />
                 <PricingCard
                   name="PREMIUM"
-                  price="R$ 2.227,00"
+                  price="R$ 2.597,00"
                   featured={true}
                   features={[
                     "Tudo do Plano ESSENCIAL",
