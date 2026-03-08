@@ -22,12 +22,12 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import emailjs from "@emailjs/browser";
 
 const QuemSomos = () => {
     useScrollReveal();
-    const { toast } = useToast();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
@@ -47,16 +47,33 @@ const QuemSomos = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        try {
+            const result = await emailjs.send(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    name: formData.name, // Adicionado para coincidir com {{name}} no corpo
+                    phone: formData.phone,
+                    company: formData.company,
+                    message: formData.message,
+                    title: `Novo contato de ${formData.name}`, // Adicionado para coincidir com {{title}} no assunto
+                    to_email: "comercial@4uconnect.com.br"
+                },
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            );
 
-        toast({
-            title: "Mensagem enviada!",
-            description: "Em breve entraremos em contato.",
-        });
-
-        setFormData({ name: "", email: "", phone: "", company: "", message: "" });
-        setIsSubmitting(false);
+            if (result.text === 'OK') {
+                toast.success("Mensagem enviada com sucesso! Em breve entraremos em contato.");
+                setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+            }
+        } catch (error) {
+            console.error("Erro ao enviar e-mail:", error);
+            toast.error("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const whatsappNumber = "551530100009";

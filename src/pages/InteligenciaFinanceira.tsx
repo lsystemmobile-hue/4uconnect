@@ -414,7 +414,7 @@ const InteligenciaFinanceira = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-center max-w-7xl mx-auto">
                 <PricingCard
                   name="ESSENCIAL"
-                  price="R$ 1.587,00"
+                  price="R$ 1.997,00"
                   features={[
                     "ERP: OMIE",
                     "Gestão de recebimentos (Faturamento com NF e Boleto): até 40",

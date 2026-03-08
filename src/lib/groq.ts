@@ -30,7 +30,7 @@ Fernando Alves: Especialista em outsourcing, governança e compliance, moderniza
 3. PREMIUM (R$ 699,00/mês): Até 20 NFs, pró-labore até 4 sócios, folha inclusa até 5 funcionários, faturamento até R$ 1.8M/ano.
 
 ## Planos – BPO Financeiro e Gestão
-1. ESSENCIAL (R$ 1.587,00/mês): ERP OMIE, até 40 recebimentos, até 80 pagamentos, conciliação de 2 contas.
+1. ESSENCIAL (R$ 1.997,00/mês): ERP OMIE, até 40 recebimentos, até 80 pagamentos, conciliação de 2 contas.
 2. PREMIUM (R$ 2.597,00/mês): BI Financeiro, até 80 recebimentos, até 160 pagamentos, conciliação de 3 contas.
 3. ESTRATÉGICO (Sob consulta): Plano estratégico personalizado.
 
