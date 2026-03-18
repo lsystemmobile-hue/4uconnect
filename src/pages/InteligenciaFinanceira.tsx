@@ -39,7 +39,15 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 const InteligenciaFinanceira = () => {
   // Tab state management
   const [activeTab, setActiveTab] = useState<'bpo' | 'contabilidade'>('bpo');
+  const [lightboxImg, setLightboxImg] = useState<{ src: string; label: string; desc: string } | null>(null);
   useScrollReveal([activeTab]);
+
+  const dashboardImages = [
+    { src: "/dashboard-3.jpeg", label: "Painel Gerencial", desc: "Visão macro: Receita, EBITDA, Lucro e fluxo de caixa." },
+    { src: "/dashboard-2.jpeg", label: "DRE – Resultado", desc: "Demonstrativo de resultado mensal detalhado." },
+    { src: "/dashboard-4.jpeg", label: "Resumo DRE", desc: "Faturamento, composição e maiores receitas." },
+    { src: "/dashboard-1.jpeg", label: "Previsto x Realizado", desc: "Controle orçamentário: receitas e despesas." },
+  ];
 
   const bpoProcesses = [
     { title: "Diagnóstico", desc: "Mapeamento completo do fluxo financeiro atual.", icon: Search },
@@ -399,6 +407,70 @@ const InteligenciaFinanceira = () => {
                 </div>
               </div>
             </div>
+          </section>
+
+          {/* Dashboard Interativo */}
+          <section className="py-24 bg-4u-navy/5 border-y border-border/50 overflow-hidden">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
+                <div className="inline-block px-4 py-1.5 bg-4u-navy/5 text-4u-navy text-xs font-bold uppercase tracking-widest mb-4 border-l-2 border-4u-navy">
+                  Dashboard
+                </div>
+                <h2 className="text-3xl md:text-5xl font-bold text-4u-navy mb-4 tracking-tight">
+                  Dashboard Interativo
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                  Indicadores financeiros em tempo real, organizados para decisões estratégicas.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+                {dashboardImages.map((img, i) => (
+                  <div
+                    key={i}
+                    className="scroll-reveal opacity-0 translate-y-8 transition-all duration-700 group relative overflow-hidden border-2 border-border/50 hover:border-4u-navy/40 hover:shadow-2xl transition-all duration-500 cursor-zoom-in"
+                    style={{ transitionDelay: `${i * 100}ms` }}
+                    onClick={() => setLightboxImg(img)}
+                  >
+                    <img
+                      src={img.src}
+                      alt={img.label}
+                      className="w-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-4u-navy/0 group-hover:bg-4u-navy/70 transition-all duration-500 flex items-end">
+                      <div className="translate-y-full group-hover:translate-y-0 transition-all duration-500 p-6 w-full">
+                        <h3 className="font-bold text-white text-lg mb-1">{img.label}</h3>
+                        <p className="text-sm text-white/80">{img.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Lightbox */}
+            {lightboxImg && (
+              <div
+                className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4"
+                onClick={() => setLightboxImg(null)}
+              >
+                <div className="relative max-w-6xl w-full" onClick={e => e.stopPropagation()}>
+                  <button
+                    className="absolute -top-10 right-0 text-white/70 hover:text-white text-sm font-bold uppercase tracking-widest transition-colors"
+                    onClick={() => setLightboxImg(null)}
+                  >
+                    ✕ Fechar
+                  </button>
+                  <img
+                    src={lightboxImg.src}
+                    alt={lightboxImg.label}
+                    className="w-full max-h-[85vh] object-contain shadow-2xl border border-white/10"
+                  />
+                  <p className="text-center text-white/70 text-sm mt-3 font-medium">{lightboxImg.label}</p>
+                </div>
+              </div>
+            )}
           </section>
 
           {/* Pricing Section */}
