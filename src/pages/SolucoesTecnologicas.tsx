@@ -406,6 +406,7 @@ const SolucoesTecnologicas = () => {
             <PricingCard
               name="Somente Site"
               price="R$1.497,00"
+              period="Pagamento Único"
               features={[
                 "Site moderno e responsivo (mobile + desktop)",
                 "Domínio .com e .com.br incluído",
@@ -420,6 +421,7 @@ const SolucoesTecnologicas = () => {
             <PricingCard
               name="Plano Completo"
               price="R$2.097,00"
+              period="Pagamento Único"
               featured={true}
               features={[
                 "Tudo do Plano Somente Site",
@@ -443,7 +445,7 @@ const SolucoesTecnologicas = () => {
                 "Conversa natural, linguagem humanizada",
                 "Qualificação e direcionamento de clientes",
                 "Funciona 24h por dia, 7 dias por semana",
-                "Manutenção mensal: R$ 150/mês",
+                "Manutenção mensal: R$ 150,00/mês",
               ]}
               variant="orange"
               delay={200}
