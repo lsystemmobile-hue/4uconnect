@@ -69,7 +69,7 @@ const PartnersSection = () => {
                             <div className="absolute inset-0 z-0">
                                 <img
                                     src={partner.bgImage}
-                                    alt=""
+                                    alt={`Parceria 4U Connect com ${partner.name}`}
                                     loading="lazy"
                                     className="w-full h-full object-cover opacity-20 transition-opacity duration-300 group-hover:opacity-30"
                                     style={{

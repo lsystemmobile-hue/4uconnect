@@ -3,6 +3,7 @@ import PillarCircle from "@/components/PillarCircle";
 const Index = () => {
   return (
     <main className="relative min-h-screen flex flex-col items-center lg:justify-center pt-20 sm:pt-24 lg:pt-28 pb-12 px-4 overflow-hidden bg-black text-white">
+      <h1 className="sr-only">4U Connect - Inteligência Financeira, Contabilidade Digital e Soluções Tecnológicas</h1>
       {/* Background Video */}
       <div className="absolute inset-0 z-0 bg-black">
         <video

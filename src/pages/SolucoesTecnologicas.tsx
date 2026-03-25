@@ -118,7 +118,7 @@ const SolucoesTecnologicas = () => {
         <div className="absolute inset-0 z-0">
           <img
             src="/solucoes-tecnologicas.jpg"
-            alt=""
+            alt="Soluções Tecnológicas e Assistente IA 4U Connect"
             className="w-full h-full object-cover brightness-[0.7] saturate-[1.3]"
             fetchPriority="high"
             loading="eager"

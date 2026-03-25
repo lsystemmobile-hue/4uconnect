@@ -64,7 +64,7 @@ const InteligenciaFinanceira = () => {
         <div className="absolute inset-0 z-0">
           <img
             src="/inteligencia-financeira.jpg"
-            alt="Inteligência Financeira Banner"
+            alt="Inteligência Financeira e BPO 4U Connect"
             className="w-full h-full object-cover scale-105 brightness-[0.7] contrast-[1.2] transition-transform duration-1000 ease-out"
             fetchPriority="high"
             loading="eager"

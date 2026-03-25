@@ -89,7 +89,7 @@ const QuemSomos = () => {
                 <div className="absolute inset-0 z-0">
                     <img
                         src="/quem-somos.jpg"
-                        alt="Quem Somos Banner"
+                        alt="Equipe 4U Connect - Consultoria e Contabilidade"
                         className="w-full h-full object-cover brightness-[0.7] contrast-[1.2] saturate-[0.8]"
                         fetchPriority="high"
                         loading="eager"

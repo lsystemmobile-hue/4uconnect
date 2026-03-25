@@ -68,7 +68,7 @@ const AberturaEmpresa = () => {
         <div className="absolute inset-0 z-0">
           <img
             src="/fundo.jpg"
-            alt=""
+            alt="Abertura de Empresa Grátis - 4U Connect Inteligência Financeira"
             className="w-full h-full object-cover brightness-[0.8] contrast-[1.1] saturate-[1.2] hue-rotate-[15deg]"
             fetchPriority="high"
             loading="eager"

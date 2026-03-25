@@ -5,9 +5,10 @@ interface PageHeroProps {
   subtitle: string;
   variant?: "green" | "navy" | "black";
   backgroundImage?: string;
+  titleAlt?: string;
 }
 
-const PageHero = ({ title, subtitle, variant = "navy", backgroundImage }: PageHeroProps) => {
+const PageHero = ({ title, subtitle, variant = "navy", backgroundImage, titleAlt }: PageHeroProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const filterClasses = {
@@ -35,7 +36,7 @@ const PageHero = ({ title, subtitle, variant = "navy", backgroundImage }: PageHe
           <div className={`absolute inset-0 z-0 transition-opacity duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
             <img
               src={backgroundImage}
-              alt=""
+              alt={titleAlt || title}
               className={`w-full h-full object-cover transition-all duration-1000 ${filterClasses[variant]}`}
               fetchPriority="high"
               loading="eager"

@@ -50,7 +50,7 @@ const PillarCircle = ({
         )}
         <img
           src="/logo-branca.png"
-          alt=""
+          alt="Logo 4U Connect"
           className="relative z-10 w-full h-auto object-contain transition-opacity duration-500 group-hover:opacity-0"
         />
       </div>

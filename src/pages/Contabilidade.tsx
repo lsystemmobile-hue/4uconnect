@@ -27,7 +27,7 @@ const Contabilidade = () => {
         <div className="absolute inset-0 z-0">
           <img
             src="/contabilidade.jpg"
-            alt="Contabilidade Especializada Banner"
+            alt="Contabilidade Especializada e Consultiva 4U Connect"
             className="w-full h-full object-cover scale-105 brightness-[0.5] contrast-[1.3] grayscale-[0.2] transition-transform duration-1000 ease-out"
             fetchPriority="high"
             loading="eager"
@@ -213,10 +213,17 @@ const Contabilidade = () => {
         <div className="absolute top-0 right-0 w-96 h-96 bg-4u-green/10 rounded-none -mr-48 -mt-48 blur-3xl transition-all duration-700 group-hover:scale-150"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-4u-green/5 rounded-none -ml-48 -mb-48 blur-2xl transition-all duration-700 group-hover:scale-150"></div>
 
+        <div className="absolute inset-0 bg-4u-black/60 backdrop-blur-[2px]"></div>
+        <img
+          src="/contabilidade.jpg"
+          alt="Serviços de Contabilidade 4U Connect"
+          className="absolute inset-0 w-full h-full object-cover -z-10"
+        />
+
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-          <h2 className="text-3xl md:text-5xl font-bold mb-8 opacity-0 animate-fade-in tracking-tight">
+          <h1 className="text-4xl md:text-7xl font-bold mb-6 animate-fade-in tracking-tight">
             Contabilidade que Conecta ao Futuro
-          </h2>
+          </h1>
           <p className="text-lg text-white/90 mb-12 leading-relaxed opacity-0 animate-fade-in" style={{ animationDelay: '200ms' }}>
             Unimos expertise técnica, inteligência de dados e tecnologia avançada para apoiar sua tomada de decisão. Entre em
             contato e descubra como elevar sua contabilidade a um ativo estratégico.

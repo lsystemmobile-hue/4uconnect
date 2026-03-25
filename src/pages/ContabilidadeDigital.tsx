@@ -45,13 +45,11 @@ const ContabilidadeDigital = () => {
       <section className="relative overflow-hidden min-h-screen flex items-center bg-4u-green">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-4u-navy/60 backdrop-blur-[2px]"></div>
           <img
             src="/contabilidade-digital.jpg"
-            alt="Contabilidade Digital Banner"
-            className="w-full h-full object-cover brightness-[0.8] contrast-[1.1] saturate-[1.2] hue-rotate-[15deg]"
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
+            alt="Contabilidade Digital 4U Connect"
+            className="absolute inset-0 w-full h-full object-cover -z-10"
           />
         </div>
 
