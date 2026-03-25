@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Home, Cpu, Calculator, TrendingUp, Users } from "lucide-react";
+import { Menu, X, Home, Cpu, Calculator, TrendingUp, Users, Zap } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +11,7 @@ const Header = () => {
     { name: "Contabilidade Digital", path: "/contabilidade-digital", icon: Cpu },
     { name: "Contabilidade", path: "/contabilidade", icon: Calculator },
     { name: "Inteligência Financeira", path: "/inteligencia-financeira", icon: TrendingUp },
+    { name: "Soluções Tecnológicas", path: "/solucoes-tecnologicas", icon: Zap },
     { name: "Quem somos", path: "/quem-somos", icon: Users },
   ];
 
@@ -26,6 +27,8 @@ const Header = () => {
         return "bg-4u-navy/90";
       case "/abertura-empresa":
         return "bg-4u-green/90";
+      case "/solucoes-tecnologicas":
+        return "bg-[hsl(var(--4u-orange))]/90";
       case "/quem-somos":
         return "bg-4u-navy/90";
       default:

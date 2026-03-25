@@ -15,6 +15,8 @@
     --4u-navy: 222 57% 21%;
     --4u-navy-rgb: 23, 42, 85;
     --4u-navy-light: 222 57% 31%;
+    --4u-orange: 24 95% 53%;
+    --4u-orange-rgb: 249, 115, 22;
     --4u-gray: 210 10% 96%;
     --4u-gray-dark: 210 10% 40%;
 
@@ -61,6 +63,7 @@
     --shadow-green: 0 8px 30px -6px hsla(86, 58%, 48%, 0.4);
     --shadow-navy: 0 8px 30px -6px hsla(212, 32%, 25%, 0.4);
     --shadow-black: 0 8px 30px -6px hsla(0, 0%, 0%, 0.5);
+    --shadow-orange: 0 8px 30px -6px hsla(24, 95%, 53%, 0.4);
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
@@ -156,6 +159,16 @@
 
   .pillar-navy:hover {
     box-shadow: 0 12px 40px -6px hsla(212, 32%, 25%, 0.6);
+  }
+
+  .pillar-orange {
+    background-color: hsl(var(--4u-orange));
+    @apply text-white;
+    box-shadow: var(--shadow-orange);
+  }
+
+  .pillar-orange:hover {
+    box-shadow: 0 12px 40px -6px hsla(24, 95%, 53%, 0.6);
   }
 
   /* WhatsApp Button */

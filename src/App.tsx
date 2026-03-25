@@ -12,6 +12,7 @@ import Contabilidade from "./pages/Contabilidade";
 import InteligenciaFinanceira from "./pages/InteligenciaFinanceira";
 import AberturaEmpresa from "./pages/AberturaEmpresa";
 import QuemSomos from "./pages/QuemSomos";
+import SolucoesTecnologicas from "./pages/SolucoesTecnologicas";
 import NotFound from "./pages/NotFound";
 
 import { useSmoothScroll } from "./hooks/use-smooth-scroll";
@@ -36,6 +37,7 @@ const App = () => {
                 <Route path="/contabilidade" element={<Contabilidade />} />
                 <Route path="/inteligencia-financeira" element={<InteligenciaFinanceira />} />
                 <Route path="/abertura-empresa" element={<AberturaEmpresa />} />
+                <Route path="/solucoes-tecnologicas" element={<SolucoesTecnologicas />} />
                 <Route path="/quem-somos" element={<QuemSomos />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>

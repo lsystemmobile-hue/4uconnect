@@ -26,8 +26,8 @@ const Contabilidade = () => {
         {/* Background Image with parallax */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/fundo.jpg"
-            alt=""
+            src="/contabilidade.jpg"
+            alt="Contabilidade Especializada Banner"
             className="w-full h-full object-cover scale-105 brightness-[0.5] contrast-[1.3] grayscale-[0.2] transition-transform duration-1000 ease-out"
             fetchPriority="high"
             loading="eager"

@@ -22,6 +22,7 @@ export default {
         "4u-black": "hsl(var(--4u-black))",
         "4u-navy": "hsl(var(--4u-navy))",
         "4u-navy-light": "hsl(var(--4u-navy-light))",
+        "4u-orange": "hsl(var(--4u-orange))",
         "4u-gray": "hsl(var(--4u-gray))",
         "4u-gray-dark": "hsl(var(--4u-gray-dark))",
         border: "hsl(var(--border))",

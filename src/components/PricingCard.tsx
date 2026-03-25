@@ -14,7 +14,7 @@ interface PricingCardProps {
   features: (string | PricingFeature)[];
   featured?: boolean;
   delay?: number;
-  variant?: "green" | "black" | "navy";
+  variant?: "green" | "black" | "navy" | "orange";
 }
 
 const PricingCard = ({
@@ -34,8 +34,10 @@ const PricingCard = ({
           button: featured
             ? "bg-white text-4u-navy hover:shadow-xl"
             : "bg-4u-navy text-white hover:shadow-xl",
+          buttonStyle: {},
           price: featured ? "text-white" : "text-4u-navy",
           featuredBg: "bg-4u-navy text-white",
+          featuredBgStyle: {},
           hoverBorder: "hover:border-4u-navy/50"
         };
       case "black":
@@ -44,9 +46,25 @@ const PricingCard = ({
           button: featured
             ? "bg-white text-4u-black hover:shadow-xl"
             : "bg-4u-black text-white hover:shadow-xl",
+          buttonStyle: {},
           price: featured ? "text-white" : "text-4u-black",
           featuredBg: "bg-4u-black text-white",
+          featuredBgStyle: {},
           hoverBorder: "hover:border-4u-black/50"
+        };
+      case "orange":
+        return {
+          icon: "text-[hsl(var(--4u-orange))]",
+          button: featured
+            ? "bg-white hover:shadow-xl"
+            : "text-white hover:shadow-xl",
+          buttonStyle: featured
+            ? { color: "hsl(var(--4u-orange))" }
+            : { backgroundColor: "hsl(var(--4u-orange))" },
+          price: featured ? "text-white" : "text-[hsl(var(--4u-orange))]",
+          featuredBg: "text-white",
+          featuredBgStyle: { backgroundColor: "hsl(var(--4u-orange))" },
+          hoverBorder: "hover:border-[hsl(var(--4u-orange))]/50"
         };
       default: // green
         return {
@@ -54,8 +72,10 @@ const PricingCard = ({
           button: featured
             ? "bg-white text-4u-green hover:shadow-xl"
             : "bg-4u-green text-white hover:shadow-xl",
+          buttonStyle: {},
           price: featured ? "text-white" : "text-4u-green",
           featuredBg: "bg-4u-green text-white",
+          featuredBgStyle: {},
           hoverBorder: "hover:border-4u-green/50"
         };
     }
@@ -67,9 +87,21 @@ const PricingCard = ({
         return "bg-gradient-to-br from-4u-navy to-4u-navy-light shadow-navy hover:shadow-4u-navy/40";
       case "black":
         return "bg-gradient-to-br from-4u-black to-4u-navy shadow-black hover:shadow-4u-black/40";
+      case "orange":
+        return "shadow-2xl";
       default: // green
         return "bg-gradient-to-br from-4u-green to-4u-green-light shadow-green hover:shadow-4u-green/40";
     }
+  };
+
+  const getFeaturedCardStyle = () => {
+    if (variant === 'orange' && featured) {
+      return {
+        animationDelay: `${delay}ms`,
+        background: "linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(24 95% 40%) 100%)",
+      };
+    }
+    return { animationDelay: `${delay}ms` };
   };
 
   const styles = getVariantStyles();
@@ -83,7 +115,7 @@ const PricingCard = ({
           ? cn(featuredBgClass, "pricing-card-featured text-white shadow-2xl border-4 border-transparent z-10")
           : cn("pricing-card bg-card border-2 border-border", styles.hoverBorder)
       )}
-      style={{ animationDelay: `${delay}ms` }}
+      style={getFeaturedCardStyle()}
     >
       {/* Accent Bar - sempre presente */}
       <div className={cn(
@@ -91,7 +123,7 @@ const PricingCard = ({
         featured
           ? "h-full opacity-100"
           : "h-0 group-hover:h-full opacity-100",
-        variant === 'green' ? 'bg-4u-green' : variant === 'navy' ? 'bg-4u-navy' : 'bg-4u-black'
+        variant === 'green' ? 'bg-4u-green' : variant === 'navy' ? 'bg-4u-navy' : variant === 'orange' ? 'bg-[hsl(var(--4u-orange))]' : 'bg-4u-black'
       )} />
 
       {/* Gradient Overlay on Hover */}
@@ -99,11 +131,7 @@ const PricingCard = ({
         <div className="absolute inset-0 bg-gradient-to-br from-4u-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       )}
 
-      {featured && (
-        <div className={`absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold px-6 py-2 rounded-none uppercase tracking-wider z-20 shadow-lg ${styles.featuredBg}`}>
-          ⭐ Mais Popular
-        </div>
-      )}
+
 
       {/* Content */}
       <div className="relative z-10">
@@ -113,9 +141,9 @@ const PricingCard = ({
         >
           {name}
         </h3>
-        <div className="flex items-baseline gap-1 mb-8">
+        <div className="flex items-baseline flex-wrap gap-x-1 mb-8">
           <span
-            className={`text-5xl font-bold transition-all duration-300 ${styles.price}`}
+            className={`text-3xl lg:text-4xl font-bold whitespace-nowrap transition-all duration-300 ${styles.price}`}
           >
             {price}
           </span>
@@ -166,6 +194,7 @@ const PricingCard = ({
             "block w-full py-5 rounded-none text-center font-bold text-base transition-all duration-500 transform group-hover:scale-105 group-hover:shadow-xl mt-auto",
             styles.button
           )}
+          style={styles.buttonStyle}
           onClick={(e) => {
             (e.currentTarget as HTMLAnchorElement).href = (e.currentTarget as HTMLAnchorElement).href.replace("[NOME_DO_PLANO]", encodeURIComponent(name));
           }}

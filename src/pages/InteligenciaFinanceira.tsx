@@ -63,8 +63,8 @@ const InteligenciaFinanceira = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/fundo.jpg"
-            alt=""
+            src="/inteligencia-financeira.jpg"
+            alt="Inteligência Financeira Banner"
             className="w-full h-full object-cover scale-105 brightness-[0.7] contrast-[1.2] transition-transform duration-1000 ease-out"
             fetchPriority="high"
             loading="eager"

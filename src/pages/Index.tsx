@@ -2,7 +2,7 @@ import PillarCircle from "@/components/PillarCircle";
 
 const Index = () => {
   return (
-    <main className="relative min-h-screen flex flex-col items-center lg:justify-center pt-28 pb-12 px-4 overflow-hidden bg-black text-white">
+    <main className="relative min-h-screen flex flex-col items-center lg:justify-center pt-20 sm:pt-24 lg:pt-28 pb-12 px-4 overflow-hidden bg-black text-white">
       {/* Background Video */}
       <div className="absolute inset-0 z-0 bg-black">
         <video
@@ -19,7 +19,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-black/70" />
       </div>
 
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-4 lg:gap-6">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-row items-start justify-center gap-x-4 gap-y-12 sm:gap-x-12 sm:gap-y-16 lg:gap-6 mt-8 md:mt-0">
         <PillarCircle
           title="Contabilidade Digital"
           subtitle="Modernize sua contabilidade com agilidade e autonomia"
@@ -43,6 +43,14 @@ const Index = () => {
           to="/inteligencia-financeira"
           hoverImage="/3.png"
           delay={800}
+        />
+        <PillarCircle
+          title="Soluções Tecnológicas"
+          subtitle="Sites profissionais e atendimento inteligente para o seu negócio"
+          variant="orange"
+          to="/solucoes-tecnologicas"
+          hoverImage="/4.png"
+          delay={1000}
         />
       </div>
     </main>

@@ -4,7 +4,7 @@ import { LucideIcon } from "lucide-react";
 interface PillarCircleProps {
   title: string;
   subtitle: string;
-  variant: "green" | "black" | "navy";
+  variant: "green" | "black" | "navy" | "orange";
   to: string;
   hoverImage?: string;
   delay?: number;
@@ -22,12 +22,14 @@ const PillarCircle = ({
     green: "pillar-green",
     black: "pillar-black",
     navy: "pillar-navy",
+    orange: "pillar-orange",
   };
 
   const titleColors = {
     green: "text-white",
     black: "text-white",
     navy: "text-white",
+    orange: "text-white",
   };
 
   return (

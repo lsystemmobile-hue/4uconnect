@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Instagram, MapPin, Globe } from "lucide-react";
 
 interface FooterProps {
-  variant?: "green" | "navy" | "black";
+  variant?: "green" | "navy" | "black" | "orange";
 }
 
 const Footer = ({ variant = "black" }: FooterProps) => {
@@ -10,6 +10,7 @@ const Footer = ({ variant = "black" }: FooterProps) => {
     green: "bg-4u-green",
     navy: "bg-4u-navy",
     black: "bg-4u-black",
+    orange: "bg-[hsl(var(--4u-orange))]",
   };
 
   const iconColor = "text-white";
@@ -63,6 +64,14 @@ const Footer = ({ variant = "black" }: FooterProps) => {
                   className="text-white/70 transition-colors text-sm"
                 >
                   Abertura de Empresa
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/solucoes-tecnologicas"
+                  className="text-white/70 transition-colors text-sm"
+                >
+                  Soluções Tecnológicas
                 </Link>
               </li>
             </ul>

@@ -88,8 +88,8 @@ const QuemSomos = () => {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/fundo.jpg"
-                        alt=""
+                        src="/quem-somos.jpg"
+                        alt="Quem Somos Banner"
                         className="w-full h-full object-cover brightness-[0.7] contrast-[1.2] saturate-[0.8]"
                         fetchPriority="high"
                         loading="eager"
@@ -172,9 +172,9 @@ const QuemSomos = () => {
                         <div className="relative scroll-reveal opacity-0 translate-x-[2rem] transition-all duration-700">
                             <div className="aspect-square rounded-none overflow-hidden shadow-2xl relative z-10 border-2 border-border/50">
                                 <img
-                                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
-                                    alt="4U Connect Team"
-                                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                                    src="/reuniao.jpg"
+                                    alt="4U Connect Team Meeting"
+                                    className="w-full h-full object-cover hover:scale-105 transition-all duration-1000"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-4u-navy/80 to-transparent"></div>
                                 <div className="absolute bottom-8 left-8 right-8">
