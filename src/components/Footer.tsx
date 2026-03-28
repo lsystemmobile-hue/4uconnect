@@ -58,14 +58,7 @@ const Footer = ({ variant = "black" }: FooterProps) => {
                   Inteligência Financeira
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/abertura-empresa"
-                  className="text-white/70 transition-colors text-sm"
-                >
-                  Abertura de Empresa
-                </Link>
-              </li>
+
               <li>
                 <Link
                   to="/solucoes-tecnologicas"

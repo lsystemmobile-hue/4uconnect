@@ -10,7 +10,7 @@ import Index from "./pages/Index";
 import ContabilidadeDigital from "./pages/ContabilidadeDigital";
 import Contabilidade from "./pages/Contabilidade";
 import InteligenciaFinanceira from "./pages/InteligenciaFinanceira";
-import AberturaEmpresa from "./pages/AberturaEmpresa";
+
 import QuemSomos from "./pages/QuemSomos";
 import SolucoesTecnologicas from "./pages/SolucoesTecnologicas";
 import NotFound from "./pages/NotFound";
@@ -36,7 +36,7 @@ const App = () => {
                 <Route path="/contabilidade-digital" element={<ContabilidadeDigital />} />
                 <Route path="/contabilidade" element={<Contabilidade />} />
                 <Route path="/inteligencia-financeira" element={<InteligenciaFinanceira />} />
-                <Route path="/abertura-empresa" element={<AberturaEmpresa />} />
+
                 <Route path="/solucoes-tecnologicas" element={<SolucoesTecnologicas />} />
                 <Route path="/quem-somos" element={<QuemSomos />} />
                 <Route path="*" element={<NotFound />} />

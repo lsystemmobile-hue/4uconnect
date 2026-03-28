@@ -25,8 +25,7 @@ const Header = () => {
         return "bg-black/90";
       case "/inteligencia-financeira":
         return "bg-4u-navy/90";
-      case "/abertura-empresa":
-        return "bg-4u-green/90";
+
       case "/solucoes-tecnologicas":
         return "bg-[hsl(var(--4u-orange))]/90";
       case "/quem-somos":
