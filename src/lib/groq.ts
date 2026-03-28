@@ -189,6 +189,53 @@ Use sempre informações já mencionadas pelo usuário.
 Levar o usuário até: Interesse claro, Recomendação de plano, Fechamento via WhatsApp. Nunca finalize sem avançar a conversa.
 `;
 
+const PAGE_CONTEXT: Record<string, string> = {
+  '/solucoes-tecnologicas': `O usuário está na página de SOLUÇÕES TECNOLÓGICAS.
+Você é um consultor especializado em tecnologia e transformação digital.
+Seu foco principal são os serviços de criação de sites profissionais e assistentes de IA para WhatsApp.
+Priorize os planos:
+- Somente Site: R$1.497 (pagamento único) + manutenção R$149/mês
+- Plano Completo Site + IA: R$2.097 (pagamento único) + manutenção R$199/mês
+- Somente Assistente IA: sob consulta + manutenção R$150/mês
+NÃO se apresente como consultor de contabilidade. Apresente-se como consultor de tecnologia da 4U Connect.`,
+
+  '/contabilidade-digital': `O usuário está na página de CONTABILIDADE DIGITAL.
+Você é um consultor especializado em contabilidade digital e consultiva.
+Priorize os planos de contabilidade:
+- SMALL: R$259/mês (até 5 NFs, até R$250 mil/ano)
+- SMART: R$389/mês (até 10 NFs, até R$720 mil/ano)
+- PREMIUM: R$699/mês (até 20 NFs, até R$1.8M/ano)
+Foque nos benefícios da contabilidade digital: integração automática, relatórios em tempo real, suporte consultivo.`,
+
+  '/contabilidade': `O usuário está na página de CONTABILIDADE.
+Você é um consultor especializado em serviços contábeis.
+Foque nos serviços de BPO Contábil, BPO Fiscal e BPO Folha.
+Destaque: integração de notas, classificação contábil, apuração de impostos, folha de pagamento e eSocial.
+Se o usuário demonstrar interesse, direcione para os planos de contabilidade digital.`,
+
+  '/inteligencia-financeira': `O usuário está na página de INTELIGÊNCIA FINANCEIRA.
+Você é um consultor especializado em gestão financeira e BPO Financeiro.
+Priorize os planos de BPO Financeiro:
+- ESSENCIAL: R$1.997/mês (ERP OMIE, até 40 recebimentos, até 80 pagamentos, 2 contas)
+- PREMIUM: R$2.597/mês (BI financeiro, até 80 recebimentos, até 160 pagamentos, 3 contas)
+- ESTRATÉGICO: sob consulta
+Foque em controle financeiro, fluxo de caixa, conciliação diária e BI financeiro em tempo real.`,
+
+  '/abertura-empresa': `O usuário está na página de ABERTURA DE EMPRESA.
+Você é um consultor especializado em abertura e legalização de empresas.
+Foque em: escolha do tipo societário, regime tributário ideal, registro e legalização, alvará e licenças.
+Conduza o diagnóstico perguntando sobre o tipo de atividade, expectativa de faturamento e se terá sócios.`,
+
+  '/quem-somos': `O usuário está na página QUEM SOMOS.
+Apresente a 4U Connect de forma institucional: empresa de contabilidade digital, consultiva e inteligência financeira.
+Mencione os diretores Antônio Dias e Fernando Alves quando pertinente.
+Se o usuário demonstrar interesse em algum serviço, direcione para a área adequada.`,
+};
+
+const getPageContext = (pathname: string): string => {
+  return PAGE_CONTEXT[pathname] || '';
+};
+
 const API_URL = "https://api.groq.com/openai/v1/chat/completions";
 
 export interface Message {
@@ -196,17 +243,22 @@ export interface Message {
     content: string;
 }
 
-export const sendMessageToGroq = async (messages: Message[]) => {
+export const sendMessageToGroq = async (messages: Message[], currentPage?: string) => {
     const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 
     if (!GROQ_API_KEY) {
         throw new Error("VITE_GROQ_API_KEY não configurada.");
     }
 
+    const pageContext = currentPage ? getPageContext(currentPage) : '';
+    const systemContent = pageContext
+      ? `${COMPANY_KNOWLEDGE}\n\n---\n\n## CONTEXTO DA PÁGINA ATUAL\n${pageContext}`
+      : COMPANY_KNOWLEDGE;
+
     const payload = {
         model: "llama-3.3-70b-versatile",
         messages: [
-            { role: "system", content: COMPANY_KNOWLEDGE },
+            { role: "system", content: systemContent },
             ...messages
         ],
         temperature: 0.1,
