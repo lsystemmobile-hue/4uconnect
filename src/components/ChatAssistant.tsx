@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { MessageCircle, Send, X, Bot, User, Loader2 } from "lucide-react";
 import { useLocation } from "react-router-dom";
-import { sendMessageToGroq, Message } from "@/lib/groq";
+import { sendMessageToAssistant, Message } from "@/lib/groq";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -63,7 +63,7 @@ const ChatAssistant = ({ onOpenStateChange }: ChatAssistantProps) => {
 
         try {
             const chatHistory = [...messages, userMessage];
-            const response = await sendMessageToGroq(chatHistory, location.pathname);
+            const response = await sendMessageToAssistant(chatHistory, location.pathname);
 
             const assistantMessage: Message = { role: "assistant", content: response };
             setMessages((prev) => [...prev, assistantMessage]);

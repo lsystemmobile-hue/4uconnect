@@ -1,361 +1,694 @@
-4U CONNECT — BASE DE CONHECIMENTO DO AGENTE IA
-Versão: Março 2026
-===================================================
+﻿4U CONNECT - BASE DE CONHECIMENTO DO ASSISTENTE
+Atualizado a partir do site local em 30/03/2026
+Fonte principal: pÃ¡ginas React em src/pages e componentes compartilhados
 
-SOBRE A EMPRESA
-===============
-A 4U Connect é uma empresa onde a Contabilidade e a Tecnologia convergem para modernizar a gestão contábil e financeira de empresas prestadoras de serviço.
+==================================================
+1. VISÃƒO GERAL DA EMPRESA
+==================================================
 
-Atuamos de forma integrada nas áreas contábil, fiscal, trabalhista e financeira, conectando processos e dados para apoiar a tomada de decisões estratégicas.
+A 4U Connect Ã© uma empresa onde Contabilidade e Tecnologia convergem para modernizar a gestÃ£o contÃ¡bil e financeira.
 
-Somos um ecossistema financeiro completo, focado em alta performance, controle e previsibilidade para impulsionar o crescimento sustentável do seu negócio.
+Posicionamento institucional:
+- Mais do que uma contabilidade.
+- InteligÃªncia financeira e tecnologia para o crescimento do cliente.
+- Ecossistema financeiro completo.
+- AtuaÃ§Ã£o integrada nas Ã¡reas contÃ¡bil, fiscal, trabalhista e financeira.
+- Foco em alta performance, controle, previsibilidade e crescimento sustentÃ¡vel.
 
----
+Mensagem central recorrente no site:
+- A 4U Connect conecta empresas a soluÃ§Ãµes contÃ¡beis, financeiras e tecnolÃ³gicas.
+- O objetivo Ã© simplificar a gestÃ£o, aumentar a seguranÃ§a e apoiar decisÃµes estratÃ©gicas.
 
-MISSÃO, VISÃO E VALORES
-========================
+==================================================
+2. ROTAS E PÃGINAS DO SITE
+==================================================
 
-Missão:
-Conectar empresas a soluções contábeis e financeiras digitais, inovadoras e acessíveis, promovendo eficiência, precisão, segurança e crescimento sustentável.
+Rotas principais publicadas:
+- / -> Home
+- /contabilidade-digital -> Contabilidade Digital
+- /contabilidade -> Contabilidade Especializada
+- /inteligencia-financeira -> InteligÃªncia Financeira & Contabilidade
+- /solucoes-tecnologicas -> SoluÃ§Ãµes TecnolÃ³gicas
+- /quem-somos -> Quem Somos
 
-Visão:
-Ser referência em contabilidade estratégica e inteligência financeira, simplificando a gestão e impulsionando empresas por meio de soluções seguras e tecnológicas.
+Rota de erro:
+- * -> pÃ¡gina 404 "Oops! Page not found"
 
-Valores:
-- Excelência
-- Inovação
+==================================================
+3. MENU, RODAPÃ‰ E CONTATOS GLOBAIS
+==================================================
+
+Itens do menu principal:
+- Home
+- Contabilidade Digital
+- Contabilidade
+- InteligÃªncia Financeira
+- SoluÃ§Ãµes TecnolÃ³gicas
+- Quem somos
+
+Mensagem fixa do rodapÃ©:
+- "Mais do que uma contabilidade. Somos inteligÃªncia financeira e tecnologia para o seu crescimento."
+
+Website:
+- https://4uconnect.com.br
+
+Instagram:
+- https://instagram.com/4u.connect
+- @4u.connect
+
+WhatsApp oficial:
+- (15) 3010-0009
+- https://wa.me/551530100009
+
+E-mail comercial exibido no site:
+- comercial@4uconnect.com.br
+
+EndereÃ§os:
+- Unidade Barueri: Al. MamorÃ©, 687, 3Âº Andar, Sala 304, Alphaville, EdifÃ­cio AmazÃ´nia
+- Unidade Sorocaba: Rua Fernando Silva, 190, 3Âº Andar, Sala 308, Jardim Astro
+
+==================================================
+4. HOME (/)
+==================================================
+
+TÃ­tulo principal de SEO/legibilidade:
+- 4U Connect - InteligÃªncia Financeira, Contabilidade Digital e SoluÃ§Ãµes TecnolÃ³gicas
+
+Os 4 pilares apresentados na home:
+- Contabilidade Digital: "Modernize sua contabilidade com agilidade e autonomia"
+- Contabilidade: "BPO completo para empresas em crescimento"
+- InteligÃªncia Financeira: "Mais do que um BPO. Ecossistema financeiro completo"
+- SoluÃ§Ãµes TecnolÃ³gicas: "Sites profissionais e atendimento inteligente para o seu negÃ³cio"
+
+==================================================
+5. QUEM SOMOS (/quem-somos)
+==================================================
+
+Headline:
+- ConheÃ§a a 4U Connect: inteligÃªncia, tecnologia e compromisso com o seu crescimento.
+
+EssÃªncia da empresa:
+- Mais do que uma contabilidade, um parceiro estratÃ©gico.
+- Contabilidade e Tecnologia convergem para modernizar a gestÃ£o contÃ¡bil e financeira de empresas prestadoras de serviÃ§o.
+- AtuaÃ§Ã£o integrada nas Ã¡reas contÃ¡bil, fiscal, trabalhista e financeira.
+- Conecta processos e dados para apoiar a tomada de decisÃµes estratÃ©gicas.
+- Ecossistema financeiro completo com foco em alta performance, controle e previsibilidade.
+
+MissÃ£o:
+- Conectar empresas a soluÃ§Ãµes contÃ¡beis e financeiras digitais, inovadoras e acessÃ­veis, promovendo eficiÃªncia, precisÃ£o, seguranÃ§a e crescimento sustentÃ¡vel.
+
+VisÃ£o:
+- Ser referÃªncia em contabilidade estratÃ©gica e inteligÃªncia financeira, simplificando a gestÃ£o e impulsionando empresas por meio de soluÃ§Ãµes seguras e tecnolÃ³gicas.
+
+Valores inegociÃ¡veis:
+- ExcelÃªncia
 - Integridade
-- Segurança
-- Crescimento Contínuo
-- Responsabilidade Social
+- InovaÃ§Ã£o
+- SeguranÃ§a
+- Crescimento contÃ­nuo
+- Responsabilidade social
 
----
+Diretoria:
 
-DIRETORIA
-==========
+AntÃ´nio Dias - SÃ³cio-Diretor / Diretor Executivo
+- Ampla experiÃªncia no atendimento a empresas do mercado financeiro.
+- AtuaÃ§Ã£o orientada Ã  expansÃ£o, modernizaÃ§Ã£o empresarial e estruturaÃ§Ã£o de soluÃ§Ãµes contÃ¡beis especializadas.
+- TrajetÃ³ria com companhias listadas no G20 da XP e no Best da BTG Pactual.
+- AtuaÃ§Ã£o em M&A, estruturaÃ§Ã£o societÃ¡ria e compliance rigoroso.
+- Frase institucional: "Transformando a contabilidade em um pilar estratÃ©gico de alta performance."
 
-Antônio Dias — Sócio-Diretor (CEO)
-"Transformando a contabilidade em um pilar estratégico de alta performance."
-Executivo com ampla experiência no atendimento a empresas do mercado financeiro, com atuação orientada à expansão, modernização empresarial e estruturação de soluções contábeis especializadas. Sua trajetória inclui assessoramento a companhias listadas no G20 da XP e no Best da BTG Pactual, com atuação em processos de M&A, estruturação societária e compliance rigoroso.
+Fernando Alves - SÃ³cio-Diretor / Diretor de OperaÃ§Ãµes
+- SÃ³lida experiÃªncia em outsourcing, compliance, governanÃ§a e estruturaÃ§Ã£o de operaÃ§Ãµes.
+- AtuaÃ§Ã£o para empresas de mÃ©dio e grande porte, especialmente nos setores de ServiÃ§os e IndÃºstria.
+- FormaÃ§Ã£o em consultoria de grande porte e atuaÃ§Ã£o em multinacionais.
+- Reconhecido por visÃ£o estratÃ©gica orientada a resultados, modernizaÃ§Ã£o de processos, soluÃ§Ãµes digitais e otimizaÃ§Ã£o fiscal.
+- Frase institucional: "Elevando a contabilidade a um papel estratÃ©gico nos negÃ³cios."
 
-Fernando Alves — Sócio-Diretor (COO)
-"Elevando a contabilidade a um papel estratégico nos negócios."
-Profissional com sólida experiência em outsourcing, compliance, governança e estruturação de operações para empresas de médio e grande porte, especialmente nos setores de Serviços e Indústria. Com formação em Consultoria de Grande Porte e atuação em multinacionais, é reconhecido pela visão estratégica orientada a resultados, modernização de processos e otimização fiscal.
+CaptaÃ§Ã£o de lead na pÃ¡gina:
+- FormulÃ¡rio com campos: nome, e-mail corporativo, telefone/WhatsApp, empresa e mensagem.
+- Destino do formulÃ¡rio: comercial@4uconnect.com.br via EmailJS.
+- CTA recorrente: solicitar proposta personalizada.
 
----
+==================================================
+6. CONTABILIDADE DIGITAL (/contabilidade-digital)
+==================================================
 
-PILAR 1 — CONTABILIDADE DIGITAL
-=================================
-Para prestadores de serviço que buscam praticidade, controle, conformidade fiscal e atendimento humanizado.
+PÃºblico-alvo:
+- Prestadores de serviÃ§o.
+
+Promessa principal:
+- Contabilidade digital pensada para prestadores de serviÃ§os que buscam praticidade, controle, conformidade fiscal e atendimento humanizado.
 
 Diferenciais:
 - Rapidez no atendimento
-- Aplicativo de gestão empresarial (App 4U Connect)
-- Emissão de notas fiscais
-- Orientação sobre impostos
-- Análise mensal do faturamento
-- Supervisão de certidões
-- Análise do pró-labore dos sócios
+- Aplicativo de gestÃ£o empresarial
+- EmissÃ£o de notas fiscais
+- OrientaÃ§Ã£o sobre impostos
+- AnÃ¡lise mensal do faturamento
+- SupervisÃ£o de certidÃµes
+- AnÃ¡lise do prÃ³-labore dos sÃ³cios
 - Suporte especializado
-- Otimização tributária
+- OtimizaÃ§Ã£o tributÃ¡ria
 - Conta PJ digital
 
+Jornada do cliente:
+1. DefiniÃ§Ã£o do negÃ³cio
+- DefiniÃ§Ã£o do modelo de negÃ³cio
+- Consultoria inicial
+2. DocumentaÃ§Ã£o
+- CriaÃ§Ã£o e anÃ¡lise de documentos
+- Assinatura digital
+- Envio para Junta Comercial
+3. AprovaÃ§Ã£o
+- Empresa aprovada
+- CNPJ ativo
+4. Empresa pronta
+- Conta digital gratuita
+- Certificado digital gratuito
+- EmissÃ£o de NF e boletos
+- GestÃ£o pÃ³s-abertura
+
 Aplicativo 4U Connect:
-A 4U Connect oferece um aplicativo exclusivo onde o cliente tem o controle da empresa na palma da mão — tornando a contabilidade mais fácil, mais rápida e mais eficiente.
+- Aplicativo exclusivo.
+- Controle da empresa na palma da mÃ£o.
+- Torna a contabilidade mais fÃ¡cil, mais rÃ¡pida e mais eficiente.
 
-Jornada do Cliente (4 Etapas):
-1. Definição do Negócio — Definição do modelo de negócio + consultoria inicial
-2. Documentação — Criação e análise de documentos, assinatura digital, envio para Junta Comercial
-3. Aprovação — Empresa aprovada + CNPJ ativo
-4. Empresa Pronta! — Conta digital gratuita, certificado digital gratuito, emissão de NF e boletos, gestão pós-abertura
+ServiÃ§os exibidos no componente "Nossos ServiÃ§os":
 
-Benefícios inclusos em todos os planos de Contabilidade Digital:
+Abertura de empresa grÃ¡tis
+- Resumo: transformar a ideia em realidade sem custos de abertura.
+- Inclui apoio para definir tributaÃ§Ã£o, escolher atividade e tirar dÃºvidas.
+- ObservaÃ§Ã£o exibida no drawer: abertura grÃ¡tis mediante contrataÃ§Ã£o de 12 meses de serviÃ§os de contabilidade.
+
+Trocar de contador
+- Processo apresentado como simples.
+- A 4U Connect oferece suporte completo na transiÃ§Ã£o.
+- Inclui pesquisa detalhada para identificar possÃ­veis problemas.
+
+Contabilidade completa
+- Cobertura contÃ¡bil, fiscal e trabalhista.
+- Foco em conformidade e tranquilidade para o cliente crescer com seguranÃ§a.
+
+Migrar de MEI para ME
+- Equipe tÃ©cnica especialista em processos legais e administrativos.
+- Acompanhamento completo junto Ã  Receita Federal, Junta Comercial e Prefeitura.
+
+Certificado digital
+- SoluÃ§Ãµes completas em certificados digitais.
+- Foco em seguranÃ§a, autenticidade de documentos e agilidade.
+
+BenefÃ­cios incluÃ­dos em todos os planos de Contabilidade Digital:
 - Abertura gratuita da empresa
 - App 4U Connect
-- Regularização para emissão de NF
+- RegularizaÃ§Ã£o para emissÃ£o de NF
 - Certificado digital gratuito
 - Conta em banco digital em 24h
-- Relatórios contábeis anuais
-- Gestão de documentos
-- Atendimento via chat/email/WhatsApp
-- Consultoria e planejamento tributário
+- RelatÃ³rios contÃ¡beis anuais
+- GestÃ£o de documentos
+- Atendimento via chat, e-mail e WhatsApp
+- Consultoria e planejamento tributÃ¡rio
 
-PLANOS — CONTABILIDADE DIGITAL:
+Planos oficiais:
 
-Plano SMALL — R$ 259,00/mês
-- Notas fiscais/mês: Até 5
-- Pró-labore sócios: Até 2
-- Faturamento máximo/ano: R$ 250.000
-- Relatórios contábeis: Anuais
-- Entrega de CNDs: Não incluso
-- Pesquisa situação fiscal: Não incluso
-- Folha de pagamento: Serviço à parte
+Plano SMALL
+- PreÃ§o: R$ 259,00
+- AtÃ© 5 notas fiscais por mÃªs
+- PrÃ³-labore atÃ© 2 sÃ³cios
+- Faturamento atÃ© R$ 250 mil por ano
+- Folha de pagamento Ã  parte
+- Todos os benefÃ­cios inclusos
 
-Plano SMART (Mais Popular) — R$ 389,00/mês
-- Notas fiscais/mês: Até 10
-- Pró-labore sócios: Até 3
-- Faturamento máximo/ano: R$ 720.000
-- Relatórios contábeis: Trimestrais
-- Entrega de CNDs: Incluso
-- Pesquisa situação fiscal: Não incluso
-- Folha de pagamento: Serviço à parte
+Plano SMART
+- PreÃ§o: R$ 389,00
+- Plano em destaque
+- Tudo do plano SMALL
+- AtÃ© 10 notas fiscais por mÃªs
+- PrÃ³-labore atÃ© 3 sÃ³cios
+- RelatÃ³rios contÃ¡beis trimestrais
+- Entrega de CNDs
+- Faturamento atÃ© R$ 720 mil por ano
+- Folha de pagamento Ã  parte
 
-Plano PREMIUM — R$ 699,00/mês
-- Notas fiscais/mês: Até 20
-- Pró-labore sócios: Até 4
-- Faturamento máximo/ano: R$ 1.800.000
-- Relatórios contábeis: Mensais
-- Entrega de CNDs: Incluso
-- Pesquisa situação fiscal: Incluso
-- Folha de pagamento: Até 5 funcionários inclusos
+Plano PREMIUM
+- PreÃ§o: R$ 699,00
+- Tudo do plano SMART
+- AtÃ© 20 notas fiscais por mÃªs
+- PrÃ³-labore atÃ© 4 sÃ³cios
+- RelatÃ³rios contÃ¡beis mensais
+- Pesquisa de situaÃ§Ã£o fiscal
+- Folha atÃ© 5 funcionÃ¡rios
+- Faturamento atÃ© R$ 1,8 milhÃ£o por ano
 
----
+CTAs da pÃ¡gina:
+- Ver planos
+- Ver serviÃ§os
+- Falar com especialista
+- Agendar reuniÃ£o
 
-PILAR 2 — CONTABILIDADE ESPECIALIZADA
-=======================================
-Serviço contábil completo, preciso e estratégico para empresas de médio porte e grupos de alta complexidade do mercado financeiro.
+Parceiros estratÃ©gicos exibidos nesta pÃ¡gina:
 
-A 4U Connect é especializada no atendimento a empresas de médio porte e grupos empresariais de alta complexidade, especialmente do mercado financeiro, unindo expertise técnica, inteligência de dados e tecnologia avançada.
+SEBRAE
+- DescriÃ§Ã£o: apoio especialista e educaÃ§Ã£o empreendedora.
+- BenefÃ­cio: cliente 4U Connect tem 20% de desconto nos cursos da Faculdade Sebrae.
+- CondiÃ§Ã£o adicional exibida: +5% em pagamentos parcelados e +10% Ã  vista.
 
-Segmentos Atendidos:
+CORA
+- DescriÃ§Ã£o: banco digital PJ focado em simplificar a gestÃ£o financeira.
+- BenefÃ­cio: conta digital PJ sem taxas e integraÃ§Ã£o com a plataforma da 4U Connect.
 
-AAI – Agente Autônomo de Investimentos
-- Regulação: CVM / Ancord
-- Escopo: Gestão de comissões, NF, conformidade
-- Diferenciais 4U: Receita variável, rastreabilidade, suporte M&A
+COMPANY HERO
+- DescriÃ§Ã£o: endereÃ§o fiscal e escritÃ³rios virtuais.
+- BenefÃ­cio: descontos exclusivos para escritÃ³rios virtuais.
+
+==================================================
+7. CONTABILIDADE ESPECIALIZADA (/contabilidade)
+==================================================
+
+Proposta:
+- ServiÃ§o contÃ¡bil completo, preciso e estratÃ©gico para empresas de mÃ©dio porte e grupos de alta complexidade do mercado financeiro.
+
+Quem somos nesta pÃ¡gina:
+- Empresa de Contabilidade e Tecnologia especializada em empresas de mÃ©dio porte e grupos empresariais de alta complexidade.
+- Especialmente voltada ao mercado financeiro.
+- Une expertise tÃ©cnica, inteligÃªncia de dados e tecnologia avanÃ§ada.
+- ServiÃ§o alinhado Ã s exigÃªncias regulatÃ³rias e Ã s melhores prÃ¡ticas de governanÃ§a.
+
+ServiÃ§os por segmento:
+
+AAI - Agente AutÃ´nomo
+- Conformidade CVM e Ancord
+- Escopo: gestÃ£o contÃ¡bil de comissÃµes, emissÃ£o de notas fiscais, conformidade CVM/Ancord
+- Diferenciais: estruturaÃ§Ã£o de receita variÃ¡vel, rastreabilidade de pagamentos, suporte em M&A
 
 Corretoras de Valores
-- Regulação: CVM / BACEN
-- Escopo: Demonstrações auditadas, relatórios regulatórios
-- Diferenciais 4U: Escrituração IFRS/CPCs, conformidade COSIF
+- CVM / BACEN
+- Escopo: demonstraÃ§Ãµes auditadas, relatÃ³rios regulatÃ³rios, suporte ao Banco Central
+- Diferenciais: gestÃ£o de indicadores regulatÃ³rios, escrituraÃ§Ã£o IFRS/CPCs, conformidade COSIF
 
-Gestoras de Recursos (Asset Management)
-- Escopo: Controle de receitas, performance, fiscal dos sócios
-- Diferenciais 4U: Planejamento tributário, registro CVM
+Gestoras de Recursos
+- Asset Management
+- Escopo: controle de receitas, gestÃ£o de performance, estruturaÃ§Ã£o fiscal dos sÃ³cios
+- Diferenciais: fluxo vinculado Ã  performance, planejamento tributÃ¡rio eficiente, registro CVM
 
 Administradoras de Fundos
-- Escopo: Escrituração de fundos, auditoria de ativos
-- Diferenciais 4U: Integração Controlador/Adm, zero falhas
+- EscrituraÃ§Ã£o e auditoria
+- Escopo: escrituraÃ§Ã£o de fundos, auditoria de ativos, envio CVM
+- Diferenciais: integraÃ§Ã£o Controlador/Adm, consistÃªncia nos reportes, zero falhas de comunicaÃ§Ã£o
 
-Bancos Múltiplos
-- Regulação: Plano COSIF
-- Escopo: Contabilidade COSIF, obrigações BACEN
-- Diferenciais 4U: Provisões IFRS 9, índices de Basileia
+Bancos MÃºltiplos
+- Plano COSIF
+- Escopo: contabilidade COSIF, obrigaÃ§Ãµes BACEN, suporte a auditorias
+- Diferenciais: governanÃ§a bancÃ¡ria, provisÃµes IFRS 9, Ã­ndices de Basileia
 
 Corretoras de Seguros
-- Regulação: SUSEP
-- Escopo: Contabilidade SUSEP, governança interna
-- Diferenciais 4U: Provisões técnicas, processos automatizados
+- Reguladas pela SUSEP
+- Escopo: contabilidade SUSEP, governanÃ§a interna, precisÃ£o de dados
+- Diferenciais: especializaÃ§Ã£o em seguros, provisÃµes tÃ©cnicas, processos automatizados
 
----
+CTAs da pÃ¡gina:
+- Ver serviÃ§os
+- Falar com especialista
+- Agendar reuniÃ£o
 
-PILAR 3 — INTELIGÊNCIA FINANCEIRA & BPO FINANCEIRO
-====================================================
-Soluções completas em gestão financeira e contabilidade para empresas de alta complexidade.
+==================================================
+8. INTELIGÃŠNCIA FINANCEIRA & CONTABILIDADE (/inteligencia-financeira)
+==================================================
 
-Problemas que resolvemos:
-- Falta de transparência nas entradas e saídas
+A pÃ¡gina possui 2 visÃµes internas:
+- Aba 1: BPO Financeiro & InteligÃªncia
+- Aba 2: Contabilidade & Tecnologia
+
+----------------------------------------
+8.1 ABA 1 - BPO FINANCEIRO & INTELIGÃŠNCIA
+----------------------------------------
+
+Headline:
+- SoluÃ§Ãµes completas em gestÃ£o financeira e contabilidade para empresas de alta complexidade.
+
+Ecossistema de InteligÃªncia Financeira:
+- InteligÃªncia Financeira: anÃ¡lise profunda para decisÃµes estratÃ©gicas
+- Tecnologia: automaÃ§Ãµes e integraÃ§Ãµes de Ãºltima geraÃ§Ã£o
+- SeguranÃ§a: conformidade e proteÃ§Ã£o total dos dados
+- Frase institucional: "Foco em controle, previsibilidade e crescimento sustentÃ¡vel."
+
+Problemas financeiros mais comuns:
+- Falta de transparÃªncia nas entradas e saÃ­das de dinheiro
+- EmpresÃ¡rios focados na operaÃ§Ã£o, nÃ£o na estratÃ©gia
 - Pagamentos atrasados ou duplicados
-- Processos manuais e burocráticos
+- Processos manuais e burocrÃ¡ticos
 - Falta de previsibilidade financeira mensal
-- Surpresas financeiras evitáveis
+- Falta de instruÃ§Ãµes claras e diretrizes
+- Surpresas financeiras evitÃ¡veis
 
-O Ecossistema de Inteligência Financeira:
-- Inteligência Financeira — Análise profunda para decisões estratégicas
-- Tecnologia — Automações e integrações de última geração
-- Segurança — Conformidade e proteção total dos dados
+Perdas causadas por um financeiro travado:
+- Oportunidades de crescimento
+- Tempo do dono e da equipe
+- Dinheiro para investir
+- SeguranÃ§a financeira
+- Credibilidade com fornecedores
+- Metas e projeÃ§Ãµes
+- Controles financeiros
+- Poder de negociaÃ§Ã£o
 
-BPO Financeiro Completo (Ponta a Ponta):
-- Contas a Pagar: Gestão completa de obrigações
-- Contas a Receber: Controle de faturamentos e recebíveis
-- Conciliação Bancária: Conformidade bancária diária
-- Fluxo de Caixa: Gestão e análise detalhada
-- Dashboard BI: Indicadores em tempo real (4U Digital)
-- Comunicação: Atendimento centralizado e ágil
-- Personalização: Atendimento consultivo e próximo
-- Automação: Rotinas financeiras automatizadas
-- Relatórios: Projeções e análises mensais
-- Integração ERP: Conexão total com o sistema do cliente
+Mensagem de alerta:
+- A falta de controle financeiro sai caro e Ã© difÃ­cil reverter.
 
-Diferenciais BPO:
-- Automações financeiras inteligentes
-- Integrações contábeis nativas
-- BI financeiro próprio (4U Digital)
+BPO Financeiro Completo - serviÃ§os essenciais ponta a ponta:
+- Contas a pagar
+- Contas a receber
+- ConciliaÃ§Ã£o bancÃ¡ria
+- Fluxo de caixa
+- Dashboard BI
+- ComunicaÃ§Ã£o
+- PersonalizaÃ§Ã£o
+- AutomaÃ§Ã£o
+- RelatÃ³rios
+- IntegraÃ§Ã£o ERP
+
+Mensagem de posicionamento:
+- NÃ£o somos apenas um BPO.
+- Somos um ecossistema financeiro que proporciona liberdade para o cliente focar no que importa.
+
+Diferenciais do BPO:
+- AutomaÃ§Ãµes financeiras inteligentes
+- IntegraÃ§Ãµes contÃ¡beis nativas
+- BI financeiro prÃ³prio (4U Digital)
 - Processos padronizados e certificados
-- Segurança e compliance rigorosos
-- Atendimento consultivo (não apenas operacional)
+- SeguranÃ§a e compliance rigorosos
+- SoluÃ§Ãµes integradas ao ERP
+- Atendimento consultivo, nÃ£o apenas operacional
 
-Dashboard Interativo (4U Digital):
-- Painel Gerencial: Visão macro — Receita, EBITDA, Lucro e Fluxo de Caixa
-- DRE – Resultado: Demonstrativo de resultado mensal detalhado
-- Resumo DRE: Faturamento, composição e maiores receitas
-- Previsto x Realizado: Controle orçamentário de receitas e despesas
+Outros diferenciais apresentados:
+- Impulso de crescimento
+- Zero preocupaÃ§Ã£o
+- Suporte ativo
+- IntegraÃ§Ã£o total
+- Alta tecnologia
 
-Processo de Implantação (4 Etapas):
-1. Diagnóstico Inicial — Mapeamento de processos, contas e rotinas atuais
-2. Organização — Configuração de sistemas, integrações e implantação
-3. Primeiros 30 Dias — Conciliação, testes, ajustes e validação de relatórios
-4. Operação Contínua — Financeiro com previsibilidade, performance e indicadores
+Processo de implantaÃ§Ã£o:
+1. DiagnÃ³stico Inicial
+- Mapeamento de processos, contas e rotinas atuais
+2. OrganizaÃ§Ã£o
+- ConfiguraÃ§Ã£o de sistemas, integraÃ§Ãµes e implantaÃ§Ã£o
+3. Primeiros 30 Dias
+- ConciliaÃ§Ã£o, testes, ajustes e validaÃ§Ã£o de relatÃ³rios
+4. OperaÃ§Ã£o ContÃ­nua
+- Financeiro com previsibilidade, performance e indicadores
 
-Serviços Modulares Adicionais:
-- BPO Contábil: Escrituração, balancetes, DRE, IRPJ/CSLL, ECD/ECF
-- BPO Fiscal: ICMS, ISS, PIS, COFINS, SPED Fiscal, EFD, DCTF, DIRF
-- BPO Folha de Pagamentos: Gestão completa de RH e compliance trabalhista
+TransformaÃ§Ã£o do financeiro:
 
-PLANOS — BPO FINANCEIRO:
+Antes:
+- Planilhas manuais e confusas
+- Fluxo de caixa imprevisÃ­vel
+- Falta de controle financeiro real
+- Dificuldade na tomada de decisÃµes
+- AcÃºmulo de tarefas operacionais
 
-Plano ESSENCIAL — R$ 1.997,00/mês
-- Gestão de recebimentos: Até 40
-- Gestão de pagamentos: Até 80
-- Conciliação bancária: Até 2 contas
-- BI Financeiro 4U Digital: Incluso
-- Relatório mensal de desempenho: Incluso
-- Atendimento WhatsApp: Incluso
-- Vídeo mensal de resultados: Incluso
-- Conciliação de cartão: 1
-- Reunião mensal online 1h: Não incluso
-- Indicadores de performance: Não incluso
-- Plano estratégico personalizado: Não incluso
+Depois:
+- Financeiro organizado e profissional
+- Indicadores claros em tempo real
+- Previsibilidade total de caixa
+- Rotinas 100% automatizadas
+- Mais tempo para focar no crescimento
 
-Plano PREMIUM (Mais Popular) — R$ 2.597,00/mês
-- Gestão de recebimentos: Até 80
-- Gestão de pagamentos: Até 160
-- Conciliação bancária: Até 3 contas
-- BI Financeiro 4U Digital: Incluso
-- Relatório mensal de desempenho: Incluso
-- Atendimento WhatsApp: Incluso
-- Vídeo mensal de resultados: Incluso
-- Conciliação de cartão: Inclusa
-- Reunião mensal online 1h: Incluso
-- Indicadores de performance: Incluso
-- Plano estratégico personalizado: Não incluso
+Dashboard 4U Digital:
+- Painel Gerencial: visÃ£o macro de receita, EBITDA, lucro e fluxo de caixa
+- DRE - Resultado: demonstrativo de resultado mensal detalhado
+- Resumo DRE: faturamento, composiÃ§Ã£o e maiores receitas
+- Previsto x Realizado: controle orÃ§amentÃ¡rio de receitas e despesas
 
-Plano ESTRATÉGICO — Sob Consulta
-- Todos os itens do Premium
-- Plano estratégico personalizado incluso
-- Volumes sob consulta
+Planos BPO Financeiro:
 
----
+Plano ESSENCIAL
+- PreÃ§o: R$ 1.997,00
+- ERP: OMIE
+- GestÃ£o de recebimentos com NF e boleto: atÃ© 40
+- GestÃ£o de pagamentos com NF e boleto: atÃ© 80
+- ConciliaÃ§Ã£o bancÃ¡ria: atÃ© 2 contas
+- BI Financeiro - 4U Digital
+- RelatÃ³rio de desempenho financeiro mensal
+- Atendimento via WhatsApp
+- VÃ­deo mensal com apresentaÃ§Ã£o dos resultados
+- ConciliaÃ§Ã£o e classificaÃ§Ã£o da fatura do cartÃ£o de crÃ©dito: 1
+- Envio de documentos Ã  contabilidade
+- Report de volumetria
 
-PILAR 4 — SOLUÇÕES TECNOLÓGICAS
-==================================
-Sites profissionais e atendimento inteligente para o negócio crescer.
+Plano PREMIUM
+- PreÃ§o: R$ 2.597,00
+- Plano em destaque
+- Tudo do plano ESSENCIAL
+- GestÃ£o de recebimentos: atÃ© 80
+- GestÃ£o de pagamentos com recebimento de faturas e agendamento bancÃ¡rio: atÃ© 160
+- ConciliaÃ§Ã£o bancÃ¡ria: atÃ© 3 contas
+- ReuniÃ£o mensal online de 1 hora
+- Report de volumetria
+- Indicadores de performance
 
-Especialistas em sites modernos e agentes inteligentes para atender, qualificar e vender pelo WhatsApp — 24h por dia.
+Plano ESTRATÃ‰GICO
+- PreÃ§o: Sob Consulta
+- Todos os serviÃ§os do plano PREMIUM
+- Volumes de recebimentos: sob consulta
+- Volumes de pagamentos: sob consulta
+- ConciliaÃ§Ã£o bancÃ¡ria: sob consulta
+- ConciliaÃ§Ã£o de cartÃ£o de crÃ©dito: sob consulta
+- Plano estratÃ©gico personalizado
 
-Criação de Sites Profissionais:
-- Sites modernos e responsivos (funciona em celular e computador)
-- Domínio .com e .com.br incluído no plano
-- Botão de WhatsApp (CTA) para converter visitantes em contatos
-- Assistente no site 24h respondendo automaticamente
-- Entrega em até 7 dias úteis
+CTAs da aba BPO:
+- Falar com especialista
+- Agendar reuniÃ£o
 
-Atendimento Inteligente para WhatsApp:
-Não é um chatbot simples — é um assistente treinado com o negócio do cliente, que atende, qualifica e vende.
-- Responde automaticamente em tempo real
-- Conversa de forma natural, parece humano
-- Treinado com produtos, serviços e preços do negócio
-- Qualifica leads e direciona para o responsável humano quando necessário
-- Funciona 24h por dia, 7 dias por semana
-- Atendimento imediato, zero espera
+----------------------------------------
+8.2 ABA 2 - CONTABILIDADE & TECNOLOGIA
+----------------------------------------
 
-PLANOS — SOLUÇÕES TECNOLÓGICAS:
+Resumo institucional desta aba:
+- Empresa de Contabilidade e Tecnologia especializada em prestadoras de serviÃ§os e empresas em crescimento.
+- AtuaÃ§Ã£o integrada nas Ã¡reas contÃ¡bil, fiscal, trabalhista e financeira.
+- Une processos, tecnologia e visÃ£o estratÃ©gica para apoiar decisÃ£o e expansÃ£o sustentÃ¡vel.
 
-Plano SOMENTE SITE — R$ 1.497,00 (pagamento único)
-- Manutenção mensal: R$ 149,00/mês
-- Site moderno e responsivo
-- Domínio .com e .com.br
-- Botão de WhatsApp integrado
+Diretoria apresentada nesta aba:
+- AntÃ´nio Dias
+- Fernando Alves
+- Os perfis seguem a mesma linha institucional da pÃ¡gina Quem Somos.
+
+MissÃ£o desta aba:
+- Conectar empresas a soluÃ§Ãµes contÃ¡beis digitais, inovadoras e acessÃ­veis, promovendo eficiÃªncia, precisÃ£o e crescimento sustentÃ¡vel, garantindo conformidade e seguranÃ§a dos dados financeiros.
+
+VisÃ£o desta aba:
+- Ser referÃªncia em contabilidade digital e estratÃ©gica, conectando empresas a soluÃ§Ãµes inovadoras e seguras, que impulsionam o crescimento sustentÃ¡vel e simplificam a gestÃ£o financeira.
+
+Valores:
+- ExcelÃªncia
+- Integridade
+- InovaÃ§Ã£o
+- SeguranÃ§a
+- Crescimento contÃ­nuo
+- Responsabilidade social
+
+ServiÃ§os modulares:
+
+BPO ContÃ¡bil
+- IntegraÃ§Ã£o de notas fiscais, pagamentos e recebimentos ao sistema contÃ¡bil
+- ClassificaÃ§Ã£o contÃ¡bil e fiscal das operaÃ§Ãµes
+- ConciliaÃ§Ãµes contÃ¡beis mensais com anÃ¡lise de saldos
+- Controle do ativo imobilizado
+- ElaboraÃ§Ã£o de balancetes, balanÃ§o patrimonial e DRE
+- ApuraÃ§Ã£o de IRPJ e CSLL
+- Entrega de ECD e ECF
+- Diferencial: contabilidade orientada Ã  gestÃ£o, com visÃ£o analÃ­tica, relatÃ³rios claros e suporte contÃ­nuo a auditorias e decisÃµes estratÃ©gicas
+
+BPO Fiscal
+- ConferÃªncia de notas fiscais de entradas, saÃ­das e serviÃ§os tomados
+- EscrituraÃ§Ã£o dos livros fiscais
+- ApuraÃ§Ã£o de ICMS, ISS, PIS e COFINS com emissÃ£o de guias
+- ApuraÃ§Ã£o de retenÃ§Ãµes: IRRF, CSRF, INSS e ISS
+- Entrega de SPED Fiscal, EFD ContribuiÃ§Ãµes, GIA, DCTF e DIRF
+- Diferencial: atuaÃ§Ã£o preventiva e estruturada, com conformidade fiscal, reduÃ§Ã£o de riscos e suporte tÃ©cnico em fiscalizaÃ§Ãµes e auditorias
+
+BPO Folha de Pagamentos
+- AdmissÃ£o, demissÃ£o, fÃ©rias e controle de experiÃªncia
+- Processamento da folha: salÃ¡rios, 13Âº, bÃ´nus, PLR e benefÃ­cios
+- Encargos trabalhistas e previdenciÃ¡rios
+- EmissÃ£o de SEFIP, eSocial, CAGED, DIRF e informes de rendimentos
+- AtualizaÃ§Ã£o de CTPS e registros de funcionÃ¡rios
+- RelatÃ³rios de provisÃµes de fÃ©rias e 13Âº salÃ¡rio
+- Diferencial: gestÃ£o trabalhista segura e atualizada, com foco em conformidade legal, reduÃ§Ã£o de passivos e suporte tÃ©cnico em fiscalizaÃ§Ãµes
+
+BPO Financeiro
+- GestÃ£o de contas a pagar e a receber
+- ConciliaÃ§Ã£o bancÃ¡ria diÃ¡ria
+- GestÃ£o e anÃ¡lise do fluxo de caixa
+- RelatÃ³rios financeiros e projeÃ§Ãµes
+- Dashboards financeiros com BI em tempo real
+- Diferencial: estrutura de ponta a ponta, processos automatizados, integraÃ§Ã£o ao ERP e suporte direto Ã  gestÃ£o estratÃ©gica
+
+ServiÃ§os especializados por segmento:
+
+AAI - Agente AutÃ´nomo de Investimentos
+- Escopo: gestÃ£o contÃ¡bil de comissÃµes, emissÃ£o de notas fiscais, conformidade com CVM e Ancord
+- Necessidades: notas de comissÃ£o, controle por produto e cliente, gestÃ£o societÃ¡ria e tributÃ¡ria, ECD/ECF/DCTF, preparo para fiscalizaÃ§Ãµes
+- Diferenciais: modelos de receita variÃ¡vel, centros de custo por assessor, rastreabilidade, compliance, suporte em M&A, correta tributaÃ§Ã£o de rebates e comissÃµes
+
+Corretoras de Valores - CVM / BACEN
+- Escopo: demonstraÃ§Ãµes contÃ¡beis auditadas, relatÃ³rios regulatÃ³rios, suporte ao Banco Central e CVM
+- Necessidades: escrituraÃ§Ã£o IFRS/CPCs, plano COSIF, DEROP, DIMOF, controle de comissÃµes e taxas
+- Diferenciais: controles internos, indicadores regulatÃ³rios, seguranÃ§a e compliance
+
+Bancos MÃºltiplos
+- Escopo: contabilidade COSIF, obrigaÃ§Ãµes ao Banco Central, suporte a auditorias
+- Necessidades: escrituraÃ§Ã£o COSIF, SCR, DFP, DEROP, EAC, RAS, provisÃµes IFRS 9 e Ã­ndices prudenciais de Basileia
+- Diferenciais: governanÃ§a, compliance bancÃ¡rio, precisÃ£o nas provisÃµes, integridade nos reportes e confiabilidade junto ao Bacen
+
+Corretoras de Seguros
+- Escopo: contabilidade regulada SUSEP, foco em governanÃ§a e precisÃ£o contÃ¡bil
+- Necessidades: escrituraÃ§Ã£o conforme legislaÃ§Ã£o, obrigaÃ§Ãµes SUSEP e Receita Federal, demonstraÃ§Ãµes auditadas, provisÃµes tÃ©cnicas
+- Diferenciais: especializaÃ§Ã£o em seguros, governanÃ§a e controles internos, processos automatizados, soluÃ§Ãµes personalizadas
+
+CTA final desta aba:
+- Falar com especialista
+- Ver serviÃ§os
+
+==================================================
+9. SOLUÃ‡Ã•ES TECNOLÃ“GICAS (/solucoes-tecnologicas)
+==================================================
+
+Proposta:
+- SoluÃ§Ãµes tecnolÃ³gicas para o negÃ³cio crescer.
+- Especialistas em sites modernos e agentes inteligentes para atender, qualificar e vender pelo WhatsApp 24h por dia.
+
+CriaÃ§Ã£o de sites profissionais:
+- Sites modernos e responsivos
+- Funciona no celular e no computador
+- DomÃ­nio .com e .com.br incluÃ­do
+- BotÃ£o de WhatsApp para converter visitantes em contatos
 - Assistente no site 24h
-- Entrega em até 7 dias úteis
-- NÃO inclui: Assistente inteligente para WhatsApp
+- Entrega em atÃ© 7 dias Ãºteis
 
-Plano COMPLETO (Mais Popular) — R$ 2.097,00 (pagamento único)
-- Manutenção mensal: R$ 199,00/mês
+BenefÃ­cios do site profissional:
+- Mais credibilidade para a empresa
+- Mais contatos e oportunidades
+- NegÃ³cio funcionando 24h
+
+Atendimento inteligente para WhatsApp:
+- Responde automaticamente
+- Conversa de forma natural
+- Treinado com o negÃ³cio, produtos, serviÃ§os e preÃ§os
+- Qualifica e direciona
+- Funciona 24h por dia
+- Atendimento imediato
+
+TransformaÃ§Ãµes prometidas pelo assistente:
+- Antes: clientes perdidos por demora no atendimento
+- Depois: nunca mais perder cliente por tempo de resposta
+- Antes: fila de mensagens acumulando
+- Depois: atendimento imediato sem espera
+- Antes: horas gastas com perguntas repetidas
+- Depois: menos trabalho manual e mais foco no que importa
+- Antes: oportunidades de venda escapando por falta de resposta
+- Depois: mais chances reais de fechar vendas todos os dias
+
+Planos oficiais:
+
+Somente Site
+- PreÃ§o: R$1.497,00
+- CondiÃ§Ã£o: pagamento Ãºnico
 - Site moderno e responsivo
-- Domínio .com e .com.br
-- Botão de WhatsApp integrado
+- DomÃ­nio .com e .com.br incluÃ­do
+- BotÃ£o de WhatsApp integrado
 - Assistente no site 24h
-- Entrega em até 7 dias úteis
+- Entrega em atÃ© 7 dias Ãºteis
+- ManutenÃ§Ã£o mensal: R$ 149,00 por mÃªs
+
+Plano Completo
+- PreÃ§o: R$2.097,00
+- CondiÃ§Ã£o: pagamento Ãºnico
+- Plano em destaque
+- Tudo do plano Somente Site
+- Assistente inteligente avanÃ§ado para WhatsApp
+- Treinado com produtos e serviÃ§os
+- Conversa natural com linguagem humanizada
+- QualificaÃ§Ã£o e direcionamento de leads
+- Atendimento 24h sem intervenÃ§Ã£o manual
+- ManutenÃ§Ã£o mensal: R$ 199,00 por mÃªs
+
+Somente Assistente IA
+- PreÃ§o: Sob Consulta
 - Assistente inteligente para WhatsApp
-- Conversa natural humanizada
-- Qualificação e direcionamento de leads
-- Atendimento 24h sem intervenção
+- Treinado com produtos e serviÃ§os
+- Conversa natural
+- QualificaÃ§Ã£o e direcionamento de clientes
+- Funciona 24h por dia, 7 dias por semana
+- ManutenÃ§Ã£o mensal: R$ 150,00 por mÃªs
 
-Plano SOMENTE ASSISTENTE IA — Sob Consulta
-- Manutenção mensal: R$ 150,00/mês
-- Apenas o assistente inteligente para WhatsApp
-- Sem site incluído
+Mensagem final da pÃ¡gina:
+- Site moderno + atendimento inteligente = negÃ³cio operando 24h, gerando contatos e vendas enquanto o cliente foca no que importa.
 
----
+CTAs da pÃ¡gina:
+- Quero um Site Profissional
+- Atendimento Inteligente
+- Quero SoluÃ§Ãµes TecnolÃ³gicas
+- Falar com Especialista
 
-ABERTURA DE EMPRESA (100% GRATUITA)
-=====================================
-Abra sua empresa 100% grátis com a 4U Connect. Rápido, simples e sem burocracia.
+==================================================
+10. RESUMO GERAL DE PREÃ‡OS
+==================================================
 
-O que está incluso sem custo:
-- Abertura completa da empresa (todo o processo de constituição)
-- Certificado digital (para assinaturas e obrigações fiscais)
-- Conta PJ digital (conta bancária empresarial para começar a operar)
-- Gestão via App 4U Connect
+Contabilidade Digital
+- SMALL: R$ 259,00
+- SMART: R$ 389,00
+- PREMIUM: R$ 699,00
 
-Jornada de Abertura:
-1. Definição do Modelo — Analisamos o negócio e definimos a melhor estrutura
-2. Registro na Junta — Cuidamos de toda a documentação e registro comercial
-3. Liberação Fiscal — Obtemos as licenças para emissão de notas fiscais
-4. Gestão via App — Empresa pronta para gerenciar pelo aplicativo
+BPO Financeiro
+- ESSENCIAL: R$ 1.997,00
+- PREMIUM: R$ 2.597,00
+- ESTRATÃ‰GICO: Sob Consulta
 
----
+SoluÃ§Ãµes TecnolÃ³gicas
+- Somente Site: R$1.497,00 pagamento Ãºnico
+- Plano Completo: R$2.097,00 pagamento Ãºnico
+- Somente Assistente IA: Sob Consulta
 
-ENDEREÇOS E CONTATO
-====================
+ManutenÃ§Ãµes mensais
+- Site: R$ 149,00 por mÃªs
+- Plano Completo tecnologia: R$ 199,00 por mÃªs
+- Assistente IA: R$ 150,00 por mÃªs
 
-Unidade Barueri:
-Al. Mamoré, 687 – 3º Andar, Sala 304, Alphaville
-Edifício Amazônia
+==================================================
+11. INTENÃ‡Ã•ES DE CONTATO CAPTADAS NO SITE
+==================================================
 
-Unidade Sorocaba:
-Rua Fernando Silva, 190 – 3º Andar, Sala 308
-Jardim Astro
+Principais intenÃ§Ãµes usadas nos links e CTAs:
+- Saber mais sobre contabilidade digital
+- Agendar reuniÃ£o sobre contabilidade digital
+- Saber mais sobre contabilidade especializada
+- Agendar reuniÃ£o sobre contabilidade especializada
+- Saber mais sobre inteligÃªncia financeira
+- Agendar reuniÃ£o sobre inteligÃªncia financeira
+- Criar um site profissional
+- Saber mais sobre atendimento inteligente para WhatsApp
+- Solicitar proposta personalizada
 
-Canais de Atendimento:
-- WhatsApp: (15) 3010-0009 | https://wa.me/551530100009
-- E-mail comercial: comercial@4uconnect.com.br
-- Website: https://4uconnect.com.br
-- Instagram: @4u.connect
+==================================================
+12. REGRAS SUGERIDAS PARA O ASSISTENTE
+==================================================
 
----
+Use estas diretrizes ao responder:
+- Apresente a 4U Connect como empresa que une Contabilidade, InteligÃªncia Financeira e Tecnologia.
+- Use apenas os preÃ§os listados nesta base.
+- Quando o cliente demonstrar interesse comercial, direcione para o WhatsApp oficial: (15) 3010-0009.
+- Para propostas personalizadas, BPO EstratÃ©gico, casos regulados complexos ou mercado financeiro, priorize encaminhamento para especialista humano.
+- Reforce benefÃ­cios como controle, previsibilidade, conformidade, automaÃ§Ã£o e crescimento sustentÃ¡vel.
+- Quando o assunto for abertura de empresa, mencionar que a abertura Ã© apresentada como gratuita no site atual.
 
-RESUMO DE PREÇOS (REFERÊNCIA RÁPIDA PARA O AGENTE)
-====================================================
-IMPORTANTE: Estes são os preços oficiais. Nunca cite valores diferentes.
+==================================================
+13. OBSERVAÃ‡Ã•ES IMPORTANTES DE CONSISTÃŠNCIA
+==================================================
 
-| Produto                | Plano              | Preço                  |
-|------------------------|--------------------|------------------------|
-| Contabilidade Digital  | SMALL              | R$ 259,00/mês          |
-| Contabilidade Digital  | SMART (popular)    | R$ 389,00/mês          |
-| Contabilidade Digital  | PREMIUM            | R$ 699,00/mês          |
-| BPO Financeiro         | ESSENCIAL          | R$ 1.997,00/mês        |
-| BPO Financeiro         | PREMIUM (popular)  | R$ 2.597,00/mês        |
-| BPO Financeiro         | ESTRATÉGICO        | Sob Consulta           |
-| Soluções Tecnológicas  | Somente Site       | R$ 1.497,00 único      |
-| Soluções Tecnológicas  | Completo (popular) | R$ 2.097,00 único      |
-| Soluções Tecnológicas  | Somente Assist. IA | Sob Consulta           |
-| Manutenção – Só Site   | —                  | R$ 149,00/mês          |
-| Manutenção – Completo  | —                  | R$ 199,00/mês          |
-| Manutenção – Assist.IA | —                  | R$ 150,00/mês          |
-| Abertura de Empresa    | —                  | 100% GRATUITO          |
+Ponto de atenÃ§Ã£o no site atual:
+- Em Contabilidade Digital, os planos dizem incluir "abertura gratuita da empresa".
+- No drawer de serviÃ§o "Abertura de empresa grÃ¡tis", aparece a observaÃ§Ã£o de que a abertura grÃ¡tis Ã© mediante contrataÃ§Ã£o de 12 meses de serviÃ§os de contabilidade.
+- Para o assistente comercial, o ideal Ã© validar essa regra com o time antes de automatizar respostas definitivas sobre elegibilidade.
 
----
-
-INSTRUÇÕES PARA O AGENTE IA
-=============================
-1. Sempre apresente a 4U Connect como especialista em Contabilidade + Tecnologia + Inteligência Financeira.
-2. Use os preços exatos acima. Nunca invente ou estime valores.
-3. Para dúvidas sobre contabilidade especializada (mercado financeiro) ou BPO Estratégico, redirecione para contato humano.
-4. Abertura de empresa é SEMPRE 100% gratuita — enfatize isso.
-5. O App 4U Connect está incluso em todos os planos de Contabilidade Digital.
-6. Contato preferencial: WhatsApp (15) 3010-0009 ou comercial@4uconnect.com.br.
-
-===================================================
-4U Connect — Seu parceiro estratégico em Contabilidade, Tecnologia e Inteligência Financeira.
+ObservaÃ§Ã£o sobre esta base:
+- Esta base prioriza o conteÃºdo que estÃ¡ efetivamente publicado nas pÃ¡ginas e componentes atuais do site local.
+- Onde havia diferenÃ§as entre a base antiga e o cÃ³digo atual, foi priorizado o que aparece no cÃ³digo do site.
