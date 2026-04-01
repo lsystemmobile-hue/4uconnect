@@ -168,21 +168,24 @@ const SolucoesTecnologicas = () => {
               href={WHATSAPP_SITE}
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-[320px] sm:w-[360px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 bg-white shadow-2xl border-2 border-white hover:shadow-white/50 hover:-translate-y-1 active:scale-95 relative overflow-hidden"
-              style={{ color: "hsl(var(--4u-orange))" }}
+              className="group w-[320px] sm:w-[360px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 bg-[hsl(var(--4u-orange))] text-white shadow-2xl border-2 border-[hsl(var(--4u-orange))] hover:shadow-white/50 hover:-translate-y-1 active:scale-95 relative overflow-hidden"
             >
-              <Globe className="w-5 h-5 transition-transform group-hover:rotate-12" />
-              <span className="relative z-10">Quero um Site Profissional</span>
+              <WhatsAppIcon size={20} className="transition-transform group-hover:rotate-12 text-white" />
+              <span className="relative z-10">
+                Quero um Site Profissional
+                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              </span>
             </a>
 
             <a
-              href={WHATSAPP_AI}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group w-[320px] sm:w-[360px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:-translate-y-1 hover:shadow-xl active:scale-95 backdrop-blur-sm"
+              href="#planos-tecnologia"
+              className="group w-[320px] sm:w-[360px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white hover:-translate-y-1 hover:shadow-xl hover:shadow-white/20 active:scale-95 backdrop-blur-sm relative overflow-hidden"
             >
-              <WhatsAppIcon size={20} className="transition-transform group-hover:rotate-12" />
-              <span className="relative z-10">Atendimento Inteligente</span>
+              <Globe size={20} className="transition-transform group-hover:rotate-12" />
+              <span className="relative z-10">
+                Ver Planos
+                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              </span>
             </a>
           </div>
         </div>
@@ -445,7 +448,7 @@ const SolucoesTecnologicas = () => {
                 "Conversa natural, linguagem humanizada",
                 "Qualificação e direcionamento de clientes",
                 "Funciona 24h por dia, 7 dias por semana",
-                "Manutenção mensal: R$ 150,00/mês",
+                "Manutenção mensal: Sob Consulta",
               ]}
               variant="orange"
               delay={200}
