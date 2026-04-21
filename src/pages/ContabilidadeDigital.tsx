@@ -237,8 +237,8 @@ const ContabilidadeDigital = () => {
                 <div className="relative z-10">
                   <h3 className="text-2xl font-bold text-4u-green mb-4">Empresa Pronta!</h3>
                   <ul className="space-y-2 text-4u-black font-medium">
-                    <li>• Conta digital gratuita</li>
-                    <li>• Certificado digital gratuito</li>
+                    <li>• Conta digital</li>
+                    <li>• Certificado digital</li>
                     <li>• Emissão de NF e boletos</li>
                     <li>• Gestão pós-abertura</li>
                   </ul>
@@ -332,7 +332,7 @@ const ContabilidadeDigital = () => {
               Escolha seu plano
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
-              Todos os planos incluem abertura gratuita e acesso total ao App 4U Connect.
+              Todos os planos incluem abertura de empresa com planejamento estratégico e acesso total ao App 4U Connect.
             </p>
           </div>
 
@@ -340,10 +340,10 @@ const ContabilidadeDigital = () => {
           <div className="max-w-5xl mx-auto mb-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                "Abertura gratuita da empresa",
+                "Abertura de empresa com planejamento estratégico",
                 "App 4U Connect",
                 "Regularização para emissão de NF",
-                "Certificado digital gratuito",
+                "Certificado digital",
                 "Conta em banco digital em 24h",
                 "Relatórios contábeis anuais",
                 "Gestão de documentos",
