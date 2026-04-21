@@ -8,6 +8,7 @@ import {
   ClipboardCheck,
   Building2,
   Zap,
+  BarChart2,
   CalendarDays,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
@@ -67,6 +68,20 @@ const Contabilidade = () => {
               <span className="relative z-10">
                 Ver Serviços
                 <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-4u-navy scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              </span>
+            </a>
+
+            {/* Mercado Financeiro CTA */}
+            <a
+              href="/BPO 4u Contabilidade Final.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group w-[320px] sm:w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 bg-transparent text-white border-2 border-white/70 hover:bg-white/10 hover:border-white hover:shadow-white/20 hover:shadow-xl hover:-translate-y-1 active:scale-95 relative overflow-hidden"
+            >
+              <BarChart2 className="w-5 h-5 transition-transform group-hover:scale-110" />
+              <span className="relative z-10">
+                Mercado Financeiro
+                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
               </span>
             </a>
           </div>
