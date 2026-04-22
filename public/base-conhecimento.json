@@ -1,0 +1,295 @@
+{
+  "empresa": {
+    "nome": "4U Connect",
+    "descricao": "Empresa onde a Contabilidade e a Tecnologia convergem para modernizar a gestão contábil e financeira de empresas prestadoras de serviço.",
+    "missao": "Conectar empresas a soluções contábeis e financeiras digitais, inovadoras e acessíveis, promovendo eficiência, precisão, segurança e crescimento sustentável.",
+    "visao": "Ser referência em contabilidade estratégica e inteligência financeira, simplificando a gestão e impulsionando empresas por meio de soluções seguras e tecnológicas.",
+    "valores": [
+      "Excelência",
+      "Integridade",
+      "Inovação",
+      "Segurança",
+      "Crescimento contínuo",
+      "Responsabilidade social"
+    ],
+    "diretoria": [
+      {
+        "nome": "Antônio Dias",
+        "cargo": "Sócio-Diretor / Diretor Executivo",
+        "experiencia": [
+          "Ampla experiência no atendimento a empresas do mercado financeiro",
+          "Atuação em processos de M&A, estruturação societária e compliance rigoroso",
+          "Experiência com companhias do G20 da XP e Best da BTG Pactual"
+        ],
+        "frase": "Transformando a contabilidade em um pilar estratégico de alta performance."
+      },
+      {
+        "nome": "Fernando Alves",
+        "cargo": "Sócio-Diretor / Diretor de Operações",
+        "experiencia": [
+          "Sólida experiência em outsourcing, compliance, governança e estruturação de operações",
+          "Especialista nos setores de Serviços e Indústria",
+          "Foco em visão estratégica, modernização de processos e otimização fiscal"
+        ],
+        "frase": "Elevando a contabilidade a um papel estratégico nos negócios."
+      }
+    ]
+  },
+  "contabilidade_digital": {
+    "descricao": "Serviço de contabilidade digital para prestadores de serviço com praticidade, controle, conformidade fiscal e atendimento humanizado.",
+    "diferenciais": [
+      "Rapidez no atendimento",
+      "Aplicativo exclusivo para gestão na palma da mão",
+      "Emissão de notas fiscais simplificada",
+      "Orientação tributária e análise mensal de faturamento",
+      "Supervisão de certidões e pró-labore",
+      "Suporte especializado e otimização de impostos",
+      "Conta PJ Digital e Certificado Digital gratuito"
+    ],
+    "jornada_cliente": [
+      { "etapa": 1, "titulo": "Definição do Negócio", "descricao": "Modelo de negócio e consultoria inicial." },
+      { "etapa": 2, "titulo": "Documentação", "descricao": "Análise, assinatura digital e envio para órgãos competentes." },
+      { "etapa": 3, "titulo": "Aprovação", "descricao": "CNPJ ativo." },
+      { "etapa": 4, "titulo": "Empresa Pronta", "descricao": "Conta digital, certificado, emissão de NF e gestão disponível." }
+    ],
+    "planos": [
+      {
+        "nome": "SMALL",
+        "preco": "R$ 259,00/mês",
+        "itens": [
+          "Até 5 notas fiscais/mês",
+          "Pró-labore até 2 sócios",
+          "Faturamento até R$ 250k/ano",
+          "Folha de pagamento à parte"
+        ]
+      },
+      {
+        "nome": "SMART",
+        "destaque": true,
+        "preco": "R$ 389,00/mês",
+        "itens": [
+          "Tudo do Small",
+          "Até 10 notas fiscais/mês",
+          "Pró-labore até 3 sócios",
+          "Relatórios contábeis trimestrais",
+          "Entrega de CNDs",
+          "Faturamento até R$ 720k/ano"
+        ]
+      },
+      {
+        "nome": "PREMIUM",
+        "preco": "R$ 699,00/mês",
+        "itens": [
+          "Tudo do Smart",
+          "Até 20 notas fiscais/mês",
+          "Pró-labore até 4 sócios",
+          "Relatórios contábeis mensais",
+          "Pesquisa de situação fiscal",
+          "Folha até 5 funcionários",
+          "Faturamento até R$ 1.8M/ano"
+        ]
+      }
+    ],
+    "beneficios_todos_planos": [
+      "Abertura gratuita da empresa (Mediante fidelidade de 12 meses)",
+      "App 4U Connect",
+      "Regularização para NF",
+      "Certificado digital gratuito",
+      "Conta PJ Digital em 24h",
+      "Relatórios anuais e gestão de documentos",
+      "Atendimento via WhatsApp, Email e Chat"
+    ]
+  },
+  "inteligencia_financeira": {
+    "descricao": "Ecossistema financeiro para controle, previsibilidade e crescimento sustentável.",
+    "servicos_bpo": [
+      "Contas a pagar e receber",
+      "Conciliação bancária diária",
+      "Gestão de Fluxo de Caixa",
+      "Dashboard BI (4U Digital) em tempo real",
+      "Automação de rotinas e integração com ERP (Omie)",
+      "Atendimento consultivo e relatórios de desempenho"
+    ],
+    "planos": [
+      {
+        "nome": "ESSENCIAL",
+        "preco": "R$ 1.997,00/mês",
+        "itens": [
+          "ERP Omie incluso",
+          "Até 40 recebimentos e 80 pagamentos (NF/Boleto)",
+          "Até 2 contas bancárias",
+          "BI Financeiro (4U Digital)",
+          "Vídeo mensal de resultados"
+        ]
+      },
+      {
+        "nome": "PREMIUM",
+        "destaque": true,
+        "preco": "R$ 2.597,00/mês",
+        "itens": [
+          "Tudo do Essencial",
+          "Até 80 recebimentos e 160 pagamentos",
+          "Até 3 contas bancárias",
+          "Reunião mensal online (1h)",
+          "Indicadores de performance"
+        ]
+      },
+      {
+        "nome": "ESTRATÉGICO",
+        "preco": "Sob Consulta",
+        "itens": [
+          "Personalizado para grandes volumes e necessidades complexas"
+        ]
+      }
+    ],
+    "dashboard_4u_digital": [
+      "Painel Gerencial: Receita, EBITDA, Lucro, Fluxo de Caixa",
+      "DRE Detalhado e Resumo DRE",
+      "Previsto x Realizado"
+    ]
+  },
+  "contabilidade_especializada": {
+    "descricao": "Contabilidade especializada para o mercado financeiro e corporativo.",
+    "segmentos": [
+      {
+        "nome": "AAI – Agente Autônomo de Investimentos",
+        "servicos": [
+          "Conformidade CVM/Ancord",
+          "Gestão de rebates e comissões",
+          "Suporte em M&A"
+        ]
+      },
+      {
+        "nome": "Corretoras de Valores",
+        "servicos": [
+          "Demonstrações auditadas",
+          "COSIF",
+          "Suporte CVM/BACEN",
+          "Indicadores regulatórios"
+        ]
+      },
+      {
+        "nome": "Gestoras de Recursos (Asset Management)",
+        "servicos": [
+          "Gestão de performance",
+          "Estruturação fiscal dos sócios",
+          "Registro CVM"
+        ]
+      },
+      {
+        "nome": "Administradoras de Fundos",
+        "servicos": [
+          "Escrituração de fundos",
+          "Auditoria de ativos",
+          "Envio CVM",
+          "Integração Controlador/Adm",
+          "Consistência nos reportes"
+        ]
+      },
+      {
+        "nome": "Bancos Múltiplos",
+        "servicos": [
+          "Plano COSIF",
+          "Obrigações BACEN",
+          "IFRS 9",
+          "Basileia",
+          "Governança bancária"
+        ]
+      },
+      {
+        "nome": "Corretoras de Seguros",
+        "servicos": [
+          "Contabilidade SUSEP",
+          "Provisões técnicas",
+          "Processos automatizados"
+        ]
+      }
+    ],
+    "modulos_bpo_corporativo": [
+      {
+        "modulo": "BPO Contábil",
+        "itens": ["Balancetes", "Balanços", "DRE", "IRPJ/CSLL", "ECD/ECF"]
+      },
+      {
+        "modulo": "BPO Fiscal",
+        "itens": ["Escrituração", "Apuração de impostos (ICMS, ISS, PIS, COFINS)", "SPED"]
+      },
+      {
+        "modulo": "BPO Folha de Pagamento",
+        "itens": ["Admissões", "Rescisões", "eSocial", "Benefícios", "Encargos"]
+      }
+    ]
+  },
+  "solucoes_tecnologicas": {
+    "criacao_sites": {
+      "descricao": "Criação de sites profissionais modernos e responsivos.",
+      "caracteristicas": [
+        "Design moderno, responsivo (mobile + desktop)",
+        "Domínio .com e .com.br incluso",
+        "Botão de WhatsApp estratégico integrado",
+        "Entrega rápida (até 7 dias úteis)"
+      ]
+    },
+    "assistente_ia": {
+      "descricao": "Agente de IA treinado com os dados do seu negócio para atendimento 24h no WhatsApp.",
+      "caracteristicas": [
+        "Atende, qualifica e vende 24h por dia no WhatsApp",
+        "Linguagem humanizada e natural",
+        "Filtra leads e aciona o time humano apenas quando necessário"
+      ]
+    },
+    "planos": [
+      {
+        "nome": "Somente Site",
+        "preco_unico": "R$ 1.497,00",
+        "manutencao": "R$ 149,00/mês"
+      },
+      {
+        "nome": "Plano Completo (Site + IA WhatsApp)",
+        "preco_unico": "R$ 2.097,00",
+        "manutencao": "R$ 199,00/mês"
+      },
+      {
+        "nome": "Somente Assistente IA",
+        "preco_unico": "Sob Consulta",
+        "manutencao": "R$ 150,00/mês (sugerido)"
+      }
+    ]
+  },
+  "contato": {
+    "whatsapp": "(15) 3010-0009",
+    "email": "comercial@4uconnect.com.br",
+    "site": "https://4uconnect.com.br",
+    "instagram": "@4u.connect",
+    "unidades": [
+      {
+        "cidade": "Barueri",
+        "endereco": "Al. Mamoré, 687 – 3º Andar, Sala 304, Alphaville",
+        "complemento": "Edifício Amazônia, Barueri/SP"
+      },
+      {
+        "cidade": "Sorocaba",
+        "endereco": "Rua Fernando Silva, 190 – 3º Andar, Sala 308",
+        "complemento": "Jardim Astro, Sorocaba/SP"
+      }
+    ]
+  },
+  "parceiros": [
+    {
+      "nome": "SEBRAE",
+      "beneficio": "20% de desconto em cursos da Faculdade Sebrae para clientes 4U Connect"
+    },
+    {
+      "nome": "CORA",
+      "beneficio": "Banco digital oficial com integração nativa e sem taxas"
+    },
+    {
+      "nome": "COMPANY HERO",
+      "beneficio": "Descontos em endereços fiscais e escritórios virtuais"
+    }
+  ],
+  "observacoes": [
+    "A abertura de empresa só é gratuita mediante contrato de fidelidade de 12 meses nos serviços contábeis.",
+    "O assistente deve sempre conduzir o cliente para o agendamento de uma reunião ou contato humano para fechamento."
+  ]
+}
