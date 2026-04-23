@@ -16,6 +16,7 @@ import PageHero from "@/components/PageHero";
 import InlineCTA from "@/components/InlineCTA";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { Helmet } from "react-helmet-async";
 
 const BPO_SERVICES = [
   {
@@ -87,6 +88,13 @@ const Contabilidade = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Contabilidade Especializada para Mercado Financeiro | 4U Connect</title>
+        <meta name="description" content="BPO Contábil, Fiscal, Folha e Financeiro para empresas de médio porte e grupos do mercado financeiro." />
+        <meta property="og:title" content="Contabilidade Especializada para Mercado Financeiro | 4U Connect" />
+        <meta property="og:description" content="BPO Contábil, Fiscal, Folha e Financeiro para empresas de médio porte e grupos do mercado financeiro." />
+        <meta property="og:url" content="https://4uconnect.com.br/contabilidade" />
+      </Helmet>
       {/* Hero Fullscreen - Enhanced with parallax layers */}
       <section className="relative overflow-hidden min-h-screen flex items-center bg-4u-black">
         {/* Background Image with parallax */}

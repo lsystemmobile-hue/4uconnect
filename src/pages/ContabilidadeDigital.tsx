@@ -33,6 +33,7 @@ import PricingCard from "@/components/PricingCard";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import ServiceDrawers from "@/components/ServiceDrawers";
 import PartnersSection from "@/components/PartnersSection";
@@ -42,6 +43,13 @@ const ContabilidadeDigital = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Contabilidade Digital para Prestadores de Serviço | 4U Connect</title>
+        <meta name="description" content="Abertura de empresa, emissão de NF, certificado digital e suporte multicanal. Planos a partir de R$ 259/mês." />
+        <meta property="og:title" content="Contabilidade Digital para Prestadores de Serviço | 4U Connect" />
+        <meta property="og:description" content="Abertura de empresa, emissão de NF, certificado digital e suporte multicanal. Planos a partir de R$ 259/mês." />
+        <meta property="og:url" content="https://4uconnect.com.br/contabilidade-digital" />
+      </Helmet>
       {/* Hero Fullscreen */}
       <section className="relative overflow-hidden min-h-screen flex items-center bg-4u-green">
         {/* Background Image */}

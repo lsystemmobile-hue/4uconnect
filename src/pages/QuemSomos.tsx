@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import {
     MapPin,
     Globe,
@@ -83,6 +84,13 @@ const QuemSomos = () => {
 
     return (
         <div className="min-h-screen">
+            <Helmet>
+              <title>Quem Somos | 4U Connect – Contabilidade e Tecnologia</title>
+              <meta name="description" content="Conheça a equipe e a história da 4U Connect, especialistas em contabilidade estratégica e inteligência financeira." />
+              <meta property="og:title" content="Quem Somos | 4U Connect – Contabilidade e Tecnologia" />
+              <meta property="og:description" content="Conheça a equipe e a história da 4U Connect, especialistas em contabilidade estratégica e inteligência financeira." />
+              <meta property="og:url" content="https://4uconnect.com.br/quem-somos" />
+            </Helmet>
             {/* Hero Fullscreen */}
             <section className="relative overflow-hidden min-h-screen flex items-center bg-4u-navy">
                 {/* Background Image */}

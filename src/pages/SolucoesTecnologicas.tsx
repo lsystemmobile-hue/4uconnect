@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import {
   Globe,
   Smartphone,
@@ -109,6 +110,13 @@ const SolucoesTecnologicas = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Soluções Tecnológicas para Gestão Empresarial | 4U Connect</title>
+        <meta name="description" content="Automação, integração de sistemas e ferramentas digitais para otimizar a gestão do seu negócio." />
+        <meta property="og:title" content="Soluções Tecnológicas para Gestão Empresarial | 4U Connect" />
+        <meta property="og:description" content="Automação, integração de sistemas e ferramentas digitais para otimizar a gestão do seu negócio." />
+        <meta property="og:url" content="https://4uconnect.com.br/solucoes-tecnologicas" />
+      </Helmet>
       {/* ── HERO ───────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden min-h-screen flex items-center"

@@ -1,8 +1,16 @@
+import { Helmet } from "react-helmet-async";
 import PillarCircle from "@/components/PillarCircle";
 
 const Index = () => {
   return (
     <main className="relative min-h-screen flex flex-col items-center lg:justify-center pt-20 sm:pt-24 lg:pt-28 pb-12 px-4 overflow-hidden bg-black text-white">
+      <Helmet>
+        <title>4U Connect – Contabilidade Digital e Inteligência Financeira</title>
+        <meta name="description" content="Contabilidade digital, BPO financeiro e soluções tecnológicas para empresas em Barueri e Sorocaba." />
+        <meta property="og:title" content="4U Connect – Contabilidade Digital e Inteligência Financeira" />
+        <meta property="og:description" content="Contabilidade digital, BPO financeiro e soluções tecnológicas para empresas em Barueri e Sorocaba." />
+        <meta property="og:url" content="https://4uconnect.com.br/" />
+      </Helmet>
       <h1 className="sr-only">4U Connect - Inteligência Financeira, Contabilidade Digital e Soluções Tecnológicas</h1>
       {/* Background Video */}
       <div className="absolute inset-0 z-0 bg-black">

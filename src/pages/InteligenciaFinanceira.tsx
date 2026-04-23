@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import {
   TrendingUp,
@@ -58,6 +59,13 @@ const InteligenciaFinanceira = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Inteligência Financeira e BPO | 4U Connect</title>
+        <meta name="description" content="Gestão financeira estratégica, fluxo de caixa, dashboards BI e planejamento para empresas em crescimento." />
+        <meta property="og:title" content="Inteligência Financeira e BPO | 4U Connect" />
+        <meta property="og:description" content="Gestão financeira estratégica, fluxo de caixa, dashboards BI e planejamento para empresas em crescimento." />
+        <meta property="og:url" content="https://4uconnect.com.br/inteligencia-financeira" />
+      </Helmet>
       {/* Hero Fullscreen - Enhanced */}
       <section className="relative overflow-hidden min-h-screen flex items-center bg-4u-navy">
         {/* Background Image */}
