@@ -218,6 +218,20 @@ const QuemSomos = () => {
                             </p>
                         </div>
 
+                        {/* Valores */}
+                        <div className="group p-8 rounded-none bg-background border-2 border-border/50 scroll-reveal opacity-0 translate-y-8 transition-all duration-700 hover:shadow-2xl hover:shadow-4u-green/20 hover:border-4u-green/30 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden" style={{ transitionDelay: '300ms' }}>
+                            <div className="absolute top-0 left-0 w-2 h-0 bg-4u-green group-hover:h-full transition-all duration-500" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-4u-green/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                            <div className="w-16 h-16 bg-gradient-to-br from-4u-green to-emerald-600 rounded-none flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg shadow-black/10">
+                                <Heart className="text-white" size={32} />
+                            </div>
+                            <h3 className="text-xl font-bold mb-4 text-4u-navy">Valores</h3>
+                            <p className="text-muted-foreground text-sm leading-relaxed relative z-10">
+                                Atuar com <span className="text-foreground font-semibold">integridade, transparência e excelência</span>, cultivando relações de confiança e entregando soluções que geram valor real para clientes, colaboradores e parceiros.
+                            </p>
+                        </div>
+
                     </div>
 
                     {/* Valores Inegociáveis */}

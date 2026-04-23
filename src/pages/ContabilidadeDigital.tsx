@@ -32,6 +32,7 @@ import ServiceCard from "@/components/ServiceCard";
 import PricingCard from "@/components/PricingCard";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Link } from "react-router-dom";
 import ServiceDrawers from "@/components/ServiceDrawers";
 import PartnersSection from "@/components/PartnersSection";
@@ -338,24 +339,37 @@ const ContabilidadeDigital = () => {
 
           {/* Benefícios Inclusos */}
           <div className="max-w-5xl mx-auto mb-20">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {[
-                "Abertura de empresa com planejamento estratégico",
-                "App 4U Connect",
-                "Regularização para emissão de NF",
-                "Certificado digital",
-                "Conta em banco digital em 24h",
-                "Relatórios contábeis anuais",
-                "Gestão de documentos",
-                "Atendimento via chat/email/WhatsApp",
-                "Consultoria e planejamento tributário"
-              ].map((beneficio, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 rounded-none bg-background border border-border/50">
-                  <CheckCircle2 className="text-4u-green flex-shrink-0" size={20} />
-                  <span className="text-sm text-muted-foreground">{beneficio}</span>
-                </div>
-              ))}
-            </div>
+            <TooltipProvider delayDuration={0}>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[
+                  { label: "Especialistas em prestadores de serviços PJ", tooltip: "Entendemos a sua realidade e estruturamos seu negócio para crescer com segurança." },
+                  { label: "App 4U Connect com controle total da sua empresa", tooltip: "Tenha acesso a informações, documentos e solicitações em um só lugar, de forma simples e rápida." },
+                  { label: "Empresa pronta para faturar com rapidez", tooltip: "Regularizamos tudo para que você possa emitir notas e operar sem atrasos." },
+                  { label: "Certificado digital incluso e sem complicação", tooltip: "Garantimos sua certificação para operar com segurança e agilidade." },
+                  { label: "Conta PJ digital integrada em até 24h", tooltip: "Facilitamos a abertura da sua conta para você começar a movimentar seu negócio imediatamente." },
+                  { label: "Relatórios contábeis para tomada de decisão", tooltip: "Informações claras e organizadas para você acompanhar e evoluir seu negócio." },
+                  { label: "Gestão inteligente de documentos", tooltip: "Centralizamos e organizamos tudo para você não perder tempo com burocracia." },
+                  { label: "Atendimento ágil e multicanal", tooltip: "Suporte via chat, e-mail e WhatsApp com rapidez e eficiência." },
+                  { label: "Planejamento tributário contínuo", tooltip: "Estratégias para você pagar menos impostos dentro da lei e aumentar sua lucratividade." },
+                  { label: "Abertura de empresa com planejamento estratégico", tooltip: "Estruturamos seu negócio corretamente desde o início, com enquadramento ideal e segurança tributária." },
+                ].map(({ label, tooltip }) => (
+                  <Tooltip key={label}>
+                    <TooltipTrigger asChild>
+                      <div className="flex items-center gap-3 p-4 rounded-none bg-background border border-border/50 cursor-default w-full">
+                        <CheckCircle2 className="text-4u-green flex-shrink-0" size={20} />
+                        <span className="text-sm text-muted-foreground">{label}</span>
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent
+                      className="max-w-xs bg-4u-black text-white border-4u-green/30 px-5 py-3 text-base font-medium shadow-2xl shadow-black/40 leading-snug"
+                      sideOffset={8}
+                    >
+                      {tooltip}
+                    </TooltipContent>
+                  </Tooltip>
+                ))}
+              </div>
+            </TooltipProvider>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch justify-center max-w-7xl mx-auto scroll-reveal opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: '100ms' }}>
