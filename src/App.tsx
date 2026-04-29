@@ -14,6 +14,7 @@ import InteligenciaFinanceira from "./pages/InteligenciaFinanceira";
 import QuemSomos from "./pages/QuemSomos";
 import SolucoesTecnologicas from "./pages/SolucoesTecnologicas";
 import Stories from "./pages/Stories";
+import Stories2 from "./pages/Stories2";
 import NotFound from "./pages/NotFound";
 
 import { useSmoothScroll } from "./hooks/use-smooth-scroll";
@@ -30,6 +31,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/stories" element={<Stories />} />
+            <Route path="/stories2" element={<Stories2 />} />
             <Route path="*" element={
               <div className="relative overflow-x-hidden min-h-screen">
                 <ScrollToTop />
