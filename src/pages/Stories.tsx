@@ -602,13 +602,13 @@ function QS2() {
             {
               img: "/antonio-neno.jpeg",
               name: "Antônio Dias",
-              role: "Diretor Executivo",
+              role: "Sócio-Diretor",
               desc: "Especialista em M&A, compliance e estruturação societária para o mercado financeiro.",
             },
             {
               img: "/antonio.jpg",
               name: "Fernando Alves",
-              role: "Diretor de Operações",
+              role: "Sócio-Diretor",
               desc: "Expertise em outsourcing, governança e otimização fiscal para empresas em crescimento.",
             },
           ].map((p) => (

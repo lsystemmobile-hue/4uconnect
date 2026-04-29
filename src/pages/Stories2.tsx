@@ -1044,7 +1044,7 @@ function QS2_2() {
           <img src="/antonio-neno.jpeg" alt="Antônio Dias" className="rounded-2xl object-cover flex-shrink-0" style={{ width: 90, height: 110, border: "2px solid rgba(255,255,255,0.2)" }} />
           <div>
             <p className="text-white font-bold" style={{ fontSize: 15 }}>Antônio Dias</p>
-            <p className="text-[11px] tracking-wide uppercase mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>Sócio-Diretor / Diretor Executivo</p>
+            <p className="text-[11px] tracking-wide uppercase mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>Sócio-Diretor</p>
             <p className="leading-snug" style={{ fontSize: 12, color: "rgba(255,255,255,0.72)" }}>
               Ampla experiência no atendimento a empresas do mercado financeiro, com atuação em processos de M&A, estruturação societária e compliance rigoroso.
             </p>
@@ -1076,7 +1076,7 @@ function QS2_3() {
           <img src="/antonio.jpg" alt="Fernando Alves" className="rounded-2xl object-cover flex-shrink-0" style={{ width: 90, height: 110, border: "2px solid rgba(255,255,255,0.2)" }} />
           <div>
             <p className="text-white font-bold" style={{ fontSize: 15 }}>Fernando Alves</p>
-            <p className="text-[11px] tracking-wide uppercase mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>Sócio-Diretor / Diretor de Operações</p>
+            <p className="text-[11px] tracking-wide uppercase mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>Sócio-Diretor</p>
             <p className="leading-snug" style={{ fontSize: 12, color: "rgba(255,255,255,0.72)" }}>
               Sólida experiência em outsourcing, compliance, governança e estruturação de operações. Especialista nos setores de Serviços e Indústria.
             </p>
