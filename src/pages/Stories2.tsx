@@ -239,11 +239,11 @@ function CD2_5() {
         <p className="font-semibold text-white mb-2" style={{ fontSize: 11, letterSpacing: 2 }}>INCLUSO EM TODOS OS PLANOS:</p>
         <div className="flex flex-col gap-1.5">
           {[
-            "Abertura gratuita (12 meses de fidelidade)",
-            "App 4U Connect",
-            "Certificado Digital gratuito",
-            "Conta PJ Digital em 24h",
-            "Atendimento via WhatsApp, E-mail e Chat",
+            "Abertura de empresa com planejamento estratégico",
+            "App 4U Connect com controle total da sua empresa",
+            "Certificado digital incluso e sem complicação",
+            "Conta PJ digital integrada em até 24h",
+            "Atendimento ágil e multicanal",
           ].map(t => <CheckItem key={t} text={t} color="rgba(255,255,255,0.5)" />)}
         </div>
       </div>
@@ -315,15 +315,16 @@ function CD2_7() {
 
 function CD2_8() {
   const benefits = [
+    "Especialistas em prestadores de serviços PJ",
+    "App 4U Connect com controle total da sua empresa",
+    "Empresa pronta para faturar com rapidez",
+    "Certificado digital incluso e sem complicação",
+    "Conta PJ digital integrada em até 24h",
+    "Relatórios contábeis para tomada de decisão",
+    "Gestão inteligente de documentos",
+    "Atendimento ágil e multicanal",
+    "Planejamento tributário contínuo",
     "Abertura de empresa com planejamento estratégico",
-    "App 4U Connect",
-    "Regularização para emissão de NF",
-    "Certificado digital gratuito",
-    "Conta em banco digital em 24h",
-    "Relatórios contábeis anuais",
-    "Gestão de documentos",
-    "Atendimento via chat, e-mail e WhatsApp",
-    "Consultoria e planejamento tributário",
   ];
   return (
     <StoryCard id="s2-cd-8">
