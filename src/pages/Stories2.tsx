@@ -636,6 +636,369 @@ function IF2_8() {
   );
 }
 
+// ─── BPO CONTABILIDADE ───────────────────────────────────────────────────────
+
+function BPO2_1() {
+  return (
+    <StoryCard id="s2-bpo-1">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(145deg,#000,#111)" }} />
+      <BgImage src="/contabilidade.jpg" opacity={0.18} />
+      <Overlay gradient="linear-gradient(145deg,rgba(0,0,0,0.9),rgba(15,47,6,0.75))" />
+      <Logo />
+      <Footer />
+      <div className="relative z-20 flex flex-col justify-end h-full px-7 pb-16 pt-28">
+        <Tag>BPO Contabilidade</Tag>
+        <h1 className="text-white font-bold mt-2 leading-tight" style={{ fontSize: 30 }}>
+          Serviços Contábeis Completos e Modulares
+        </h1>
+        <p className="mt-3 leading-snug" style={{ fontSize: 13, color: "rgba(255,255,255,0.75)" }}>
+          Soluções modulares, integradas e adaptadas à realidade de cada empresa.
+        </p>
+        <div className="mt-5 flex flex-col gap-2">
+          {["BPO Contábil", "BPO Fiscal", "BPO Folha de Pagamentos", "BPO Financeiro"].map(t => (
+            <div key={t} className="flex items-center gap-2">
+              <div className="rounded px-2 py-0.5 font-bold text-white flex-shrink-0" style={{ background: "#4a9429", fontSize: 9 }}>BPO</div>
+              <span className="text-white font-semibold" style={{ fontSize: 13 }}>{t.replace("BPO ", "")}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </StoryCard>
+  );
+}
+
+function BPO2_2() {
+  return (
+    <StoryCard id="s2-bpo-2">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(155deg,#000,#0d0d0d)" }} />
+      <Logo />
+      <Footer />
+      <div className="relative z-20 flex flex-col justify-center h-full px-7 pt-20 pb-14">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="rounded px-2 py-1 font-bold text-white" style={{ background: "#4a9429", fontSize: 11 }}>BPO</span>
+          <span className="text-white font-extrabold" style={{ fontSize: 22 }}>Contábil</span>
+        </div>
+        <p className="mb-5 text-[11px] uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>Escopo</p>
+        <div className="flex flex-col gap-2.5 mb-5">
+          {[
+            "Integração de NF, pagamentos e recebimentos ao sistema contábil",
+            "Classificação contábil e fiscal das operações",
+            "Conciliações contábeis mensais com análise de saldos",
+            "Controle contábil do ativo imobilizado",
+            "Elaboração de balancetes, balanço patrimonial e DRE",
+            "Apuração de IRPJ e CSLL",
+            "Entrega das obrigações ECD e ECF",
+          ].map(t => <CheckItem key={t} text={t} color="#4a9429" />)}
+        </div>
+        <div className="rounded-xl px-4 py-3" style={{ background: "rgba(74,148,41,0.1)", border: "1px solid rgba(74,148,41,0.25)" }}>
+          <p className="text-[11px] leading-snug" style={{ color: "rgba(255,255,255,0.65)" }}>
+            Contabilidade orientada à gestão, com visão analítica, relatórios claros e suporte contínuo a auditorias externas.
+          </p>
+        </div>
+      </div>
+    </StoryCard>
+  );
+}
+
+function BPO2_3() {
+  return (
+    <StoryCard id="s2-bpo-3">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(155deg,#050505,#111)" }} />
+      <Logo />
+      <Footer />
+      <div className="relative z-20 flex flex-col justify-center h-full px-7 pt-20 pb-14">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="rounded px-2 py-1 font-bold text-white" style={{ background: "#4a9429", fontSize: 11 }}>BPO</span>
+          <span className="text-white font-extrabold" style={{ fontSize: 22 }}>Fiscal</span>
+        </div>
+        <p className="mb-5 text-[11px] uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>Escopo</p>
+        <div className="flex flex-col gap-2.5 mb-5">
+          {[
+            "Conferência de notas fiscais de entradas, saídas e serviços",
+            "Escrituração dos livros fiscais (Entradas, Saídas e Serviços)",
+            "Apuração de ICMS, ISS, PIS e COFINS com emissão de guias",
+            "Apuração de retenções: IRRF, CSRF, INSS e ISS",
+            "SPED Fiscal, EFD Contribuições, GIA, DCTF e DIRF",
+          ].map(t => <CheckItem key={t} text={t} color="#4a9429" />)}
+        </div>
+        <div className="rounded-xl px-4 py-3" style={{ background: "rgba(74,148,41,0.1)", border: "1px solid rgba(74,148,41,0.25)" }}>
+          <p className="text-[11px] leading-snug" style={{ color: "rgba(255,255,255,0.65)" }}>
+            Atuação preventiva e estruturada, garantindo conformidade fiscal e suporte técnico em fiscalizações.
+          </p>
+        </div>
+      </div>
+    </StoryCard>
+  );
+}
+
+function BPO2_4() {
+  return (
+    <StoryCard id="s2-bpo-4">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(155deg,#000,#0a0a0a)" }} />
+      <Logo />
+      <Footer />
+      <div className="relative z-20 flex flex-col justify-center h-full px-7 pt-20 pb-14">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="rounded px-2 py-1 font-bold text-white" style={{ background: "#4a9429", fontSize: 11 }}>BPO</span>
+          <span className="text-white font-extrabold" style={{ fontSize: 20 }}>Folha de Pagamentos</span>
+        </div>
+        <p className="mb-5 text-[11px] uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>Escopo</p>
+        <div className="flex flex-col gap-2.5 mb-5">
+          {[
+            "Processos de admissão, demissão, férias e controle de experiência",
+            "Processamento da folha (salários, 13°, bônus, PLR e benefícios)",
+            "Encargos trabalhistas e previdenciários",
+            "Emissão de SEFIP, eSocial, CAGED, DIRF e informes",
+            "Atualização de CTPS e registros de funcionários",
+            "Relatórios de provisões de férias e 13° salário",
+          ].map(t => <CheckItem key={t} text={t} color="#4a9429" />)}
+        </div>
+        <div className="rounded-xl px-4 py-3" style={{ background: "rgba(74,148,41,0.1)", border: "1px solid rgba(74,148,41,0.25)" }}>
+          <p className="text-[11px] leading-snug" style={{ color: "rgba(255,255,255,0.65)" }}>
+            Gestão trabalhista segura e atualizada, com foco em conformidade legal e redução de passivos.
+          </p>
+        </div>
+      </div>
+    </StoryCard>
+  );
+}
+
+function BPO2_5() {
+  return (
+    <StoryCard id="s2-bpo-5">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(155deg,#050505,#0d0d0d)" }} />
+      <Logo />
+      <Footer />
+      <div className="relative z-20 flex flex-col justify-center h-full px-7 pt-20 pb-14">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="rounded px-2 py-1 font-bold text-white" style={{ background: "#4a9429", fontSize: 11 }}>BPO</span>
+          <span className="text-white font-extrabold" style={{ fontSize: 22 }}>Financeiro</span>
+        </div>
+        <p className="mb-5 text-[11px] uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>Escopo</p>
+        <div className="flex flex-col gap-2.5 mb-5">
+          {[
+            "Gestão de contas a pagar e a receber",
+            "Conciliação bancária diária",
+            "Gestão e análise do fluxo de caixa",
+            "Relatórios financeiros e projeções",
+            "Dashboards financeiros (BI) com indicadores em tempo real",
+          ].map(t => <CheckItem key={t} text={t} color="#4a9429" />)}
+        </div>
+        <div className="rounded-xl px-4 py-3" style={{ background: "rgba(74,148,41,0.1)", border: "1px solid rgba(74,148,41,0.25)" }}>
+          <p className="text-[11px] leading-snug" style={{ color: "rgba(255,255,255,0.65)" }}>
+            Estrutura financeira de ponta a ponta, com automação, integração ao ERP e suporte à gestão estratégica.
+          </p>
+        </div>
+      </div>
+    </StoryCard>
+  );
+}
+
+// ─── MERCADO FINANCEIRO (por segmento) ────────────────────────────────────────
+
+function MF2_1() {
+  return (
+    <StoryCard id="s2-mf-1">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(145deg,#000,#111)" }} />
+      <BgImage src="/contabilidade.jpg" opacity={0.15} />
+      <Overlay gradient="linear-gradient(145deg,rgba(0,0,0,0.9),rgba(0,0,0,0.82))" />
+      <Logo />
+      <Footer />
+      <div className="relative z-20 flex flex-col justify-end h-full px-7 pb-16 pt-28">
+        <Tag>Mercado Financeiro</Tag>
+        <h1 className="text-white font-bold mt-2 leading-tight" style={{ fontSize: 30 }}>
+          Serviços por Segmento
+        </h1>
+        <p className="mt-3 leading-snug" style={{ fontSize: 13, color: "rgba(255,255,255,0.72)" }}>
+          Atendimento personalizado com conformidade absoluta para cada tipo de instituição financeira.
+        </p>
+        <div className="mt-5 flex flex-col gap-2">
+          {["AAI – Agente Autônomo", "Corretoras de Valores", "Gestoras de Recursos", "Administradoras de Fundos", "Bancos Múltiplos", "Corretoras de Seguros"].map(t => (
+            <div key={t} className="flex items-center gap-2">
+              <CheckCircle2 size={12} color="rgba(255,255,255,0.4)" />
+              <span className="text-white/70" style={{ fontSize: 12 }}>{t}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </StoryCard>
+  );
+}
+
+function MF2_2() {
+  return (
+    <StoryCard id="s2-mf-2">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(155deg,#000,#0d0d0d)" }} />
+      <Logo />
+      <Footer />
+      <div className="relative z-20 flex flex-col justify-center h-full px-7 pt-20 pb-14">
+        <div className="flex items-center gap-3 mb-1">
+          <TrendingUp size={22} color="#fff" />
+          <span className="text-white font-extrabold" style={{ fontSize: 20 }}>AAI – Agente Autônomo</span>
+        </div>
+        <p className="text-[11px] uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.4)" }}>Conformidade CVM e Ancord</p>
+        <div className="mb-5">
+          <p className="text-white/50 text-[10px] uppercase tracking-wider mb-2">Escopo Principal</p>
+          <div className="flex flex-col gap-2">
+            {["Gestão contábil de comissões", "Emissão de notas fiscais", "Conformidade CVM/Ancord"].map(t => <CheckItem key={t} text={t} color="rgba(255,255,255,0.5)" />)}
+          </div>
+        </div>
+        <div>
+          <p className="text-[10px] uppercase tracking-wider mb-2" style={{ color: "#4a9429" }}>Diferenciais 4U</p>
+          <div className="flex flex-col gap-2">
+            {["Estruturação de receita variável", "Rastreabilidade de pagamentos", "Suporte em M&A"].map(t => <CheckItem key={t} text={t} color="#4a9429" />)}
+          </div>
+        </div>
+      </div>
+    </StoryCard>
+  );
+}
+
+function MF2_3() {
+  return (
+    <StoryCard id="s2-mf-3">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(155deg,#050505,#111)" }} />
+      <Logo />
+      <Footer />
+      <div className="relative z-20 flex flex-col justify-center h-full px-7 pt-20 pb-14">
+        <div className="flex items-center gap-3 mb-1">
+          <Building2 size={22} color="#fff" />
+          <span className="text-white font-extrabold" style={{ fontSize: 20 }}>Corretoras de Valores</span>
+        </div>
+        <p className="text-[11px] uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.4)" }}>CVM / BACEN</p>
+        <div className="mb-5">
+          <p className="text-white/50 text-[10px] uppercase tracking-wider mb-2">Escopo Principal</p>
+          <div className="flex flex-col gap-2">
+            {["Demonstrações auditadas", "Relatórios regulatórios", "Suporte ao Banco Central"].map(t => <CheckItem key={t} text={t} color="rgba(255,255,255,0.5)" />)}
+          </div>
+        </div>
+        <div>
+          <p className="text-[10px] uppercase tracking-wider mb-2" style={{ color: "#4a9429" }}>Diferenciais 4U</p>
+          <div className="flex flex-col gap-2">
+            {["Gestão de indicadores regulatórios", "Escrituração IFRS / CPCs", "Conformidade COSIF"].map(t => <CheckItem key={t} text={t} color="#4a9429" />)}
+          </div>
+        </div>
+      </div>
+    </StoryCard>
+  );
+}
+
+function MF2_4() {
+  return (
+    <StoryCard id="s2-mf-4">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(155deg,#000,#0a0a0a)" }} />
+      <Logo />
+      <Footer />
+      <div className="relative z-20 flex flex-col justify-center h-full px-7 pt-20 pb-14">
+        <div className="flex items-center gap-3 mb-1">
+          <PieChart size={22} color="#fff" />
+          <span className="text-white font-extrabold" style={{ fontSize: 20 }}>Gestoras de Recursos</span>
+        </div>
+        <p className="text-[11px] uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.4)" }}>Asset Management</p>
+        <div className="mb-5">
+          <p className="text-white/50 text-[10px] uppercase tracking-wider mb-2">Escopo Principal</p>
+          <div className="flex flex-col gap-2">
+            {["Controle de receitas", "Gestão de performance", "Estruturação fiscal dos sócios"].map(t => <CheckItem key={t} text={t} color="rgba(255,255,255,0.5)" />)}
+          </div>
+        </div>
+        <div>
+          <p className="text-[10px] uppercase tracking-wider mb-2" style={{ color: "#4a9429" }}>Diferenciais 4U</p>
+          <div className="flex flex-col gap-2">
+            {["Fluxo vinculado à performance", "Planejamento tributário eficiente", "Registro CVM"].map(t => <CheckItem key={t} text={t} color="#4a9429" />)}
+          </div>
+        </div>
+      </div>
+    </StoryCard>
+  );
+}
+
+function MF2_5() {
+  return (
+    <StoryCard id="s2-mf-5">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(155deg,#050505,#0d0d0d)" }} />
+      <Logo />
+      <Footer />
+      <div className="relative z-20 flex flex-col justify-center h-full px-7 pt-20 pb-14">
+        <div className="flex items-center gap-3 mb-1">
+          <ClipboardCheck size={22} color="#fff" />
+          <span className="text-white font-extrabold" style={{ fontSize: 18 }}>Administradoras de Fundos</span>
+        </div>
+        <p className="text-[11px] uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.4)" }}>Escrituração e Auditoria</p>
+        <div className="mb-5">
+          <p className="text-white/50 text-[10px] uppercase tracking-wider mb-2">Escopo Principal</p>
+          <div className="flex flex-col gap-2">
+            {["Escrituração de fundos", "Auditoria de ativos", "Envio CVM"].map(t => <CheckItem key={t} text={t} color="rgba(255,255,255,0.5)" />)}
+          </div>
+        </div>
+        <div>
+          <p className="text-[10px] uppercase tracking-wider mb-2" style={{ color: "#4a9429" }}>Diferenciais 4U</p>
+          <div className="flex flex-col gap-2">
+            {["Integração Controlador/Adm", "Consistência nos reportes", "Zero falhas de comunicação"].map(t => <CheckItem key={t} text={t} color="#4a9429" />)}
+          </div>
+        </div>
+      </div>
+    </StoryCard>
+  );
+}
+
+function MF2_6() {
+  return (
+    <StoryCard id="s2-mf-6">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(155deg,#000,#111)" }} />
+      <Logo />
+      <Footer />
+      <div className="relative z-20 flex flex-col justify-center h-full px-7 pt-20 pb-14">
+        <div className="flex items-center gap-3 mb-1">
+          <Landmark size={22} color="#fff" />
+          <span className="text-white font-extrabold" style={{ fontSize: 20 }}>Bancos Múltiplos</span>
+        </div>
+        <p className="text-[11px] uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.4)" }}>Plano COSIF</p>
+        <div className="mb-5">
+          <p className="text-white/50 text-[10px] uppercase tracking-wider mb-2">Escopo Principal</p>
+          <div className="flex flex-col gap-2">
+            {["Contabilidade COSIF", "Obrigações BACEN", "Suporte a auditorias"].map(t => <CheckItem key={t} text={t} color="rgba(255,255,255,0.5)" />)}
+          </div>
+        </div>
+        <div>
+          <p className="text-[10px] uppercase tracking-wider mb-2" style={{ color: "#4a9429" }}>Diferenciais 4U</p>
+          <div className="flex flex-col gap-2">
+            {["Governança bancária", "Provisões IFRS 9", "Índices de Basileia"].map(t => <CheckItem key={t} text={t} color="#4a9429" />)}
+          </div>
+        </div>
+      </div>
+    </StoryCard>
+  );
+}
+
+function MF2_7() {
+  return (
+    <StoryCard id="s2-mf-7">
+      <div className="absolute inset-0" style={{ background: "linear-gradient(155deg,#050505,#0a0a0a)" }} />
+      <Logo />
+      <Footer />
+      <div className="relative z-20 flex flex-col justify-center h-full px-7 pt-20 pb-14">
+        <div className="flex items-center gap-3 mb-1">
+          <ShieldCheck size={22} color="#fff" />
+          <span className="text-white font-extrabold" style={{ fontSize: 20 }}>Corretoras de Seguros</span>
+        </div>
+        <p className="text-[11px] uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.4)" }}>Reguladas SUSEP</p>
+        <div className="mb-5">
+          <p className="text-white/50 text-[10px] uppercase tracking-wider mb-2">Escopo Principal</p>
+          <div className="flex flex-col gap-2">
+            {["Contabilidade SUSEP", "Governança interna", "Precisão de dados"].map(t => <CheckItem key={t} text={t} color="rgba(255,255,255,0.5)" />)}
+          </div>
+        </div>
+        <div>
+          <p className="text-[10px] uppercase tracking-wider mb-2" style={{ color: "#4a9429" }}>Diferenciais 4U</p>
+          <div className="flex flex-col gap-2">
+            {["Especialização em Seguros", "Provisões técnicas", "Processos automatizados"].map(t => <CheckItem key={t} text={t} color="#4a9429" />)}
+          </div>
+        </div>
+      </div>
+    </StoryCard>
+  );
+}
+
 // ─── CONTABILIDADE ESPECIALIZADA ─────────────────────────────────────────────
 
 function CE2_1() {
@@ -1266,7 +1629,13 @@ export default function Stories2() {
           <IF2_1 /><IF2_2 /><IF2_3 /><IF2_4 />
           <IF2_5 /><IF2_6 /><IF2_7 /><IF2_8 />
 
-          <SectionLabel color="#888">Contabilidade Especializada — 6 cards</SectionLabel>
+          <SectionLabel color="#4a9429">BPO Contabilidade — 5 cards</SectionLabel>
+          <BPO2_1 /><BPO2_2 /><BPO2_3 /><BPO2_4 /><BPO2_5 />
+
+          <SectionLabel color="#888">Mercado Financeiro — 7 cards</SectionLabel>
+          <MF2_1 /><MF2_2 /><MF2_3 /><MF2_4 /><MF2_5 /><MF2_6 /><MF2_7 />
+
+          <SectionLabel color="#555">Contabilidade Especializada — 6 cards</SectionLabel>
           <CE2_1 /><CE2_2 /><CE2_3 /><CE2_4 /><CE2_5 /><CE2_6 />
 
           <SectionLabel color="#f97316">Soluções Tecnológicas — 7 cards</SectionLabel>
