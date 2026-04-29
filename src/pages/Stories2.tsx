@@ -7,8 +7,24 @@ import {
   MessageSquare, ClipboardCheck, PieChart, Landmark,
   AlertCircle, ArrowRight, Users, DollarSign, Settings,
   Layers, BarChart2, BookOpen, Calculator, Network,
-  CheckCircle2
+  CheckCircle2, Download
 } from "lucide-react";
+import html2canvas from "html2canvas";
+
+// ─── Download helper ──────────────────────────────────────────────────────────
+
+async function downloadCard(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const btns = el.querySelectorAll<HTMLElement>(".dl-btn");
+  btns.forEach(b => (b.style.display = "none"));
+  const canvas = await html2canvas(el, { scale: 2, useCORS: true, allowTaint: true });
+  btns.forEach(b => (b.style.display = ""));
+  const link = document.createElement("a");
+  link.download = `${id}.png`;
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+}
 
 // ─── Base Components ──────────────────────────────────────────────────────────
 
@@ -27,6 +43,14 @@ function StoryCard({ id, children, style, className = "" }: StoryCardProps) {
       style={{ width: 390, aspectRatio: "9/16", ...style }}
     >
       {children}
+      <button
+        className="dl-btn absolute bottom-12 right-3 z-30 flex items-center gap-1 rounded-full px-3 py-1.5"
+        style={{ background: "rgba(0,0,0,0.6)", color: "#fff", backdropFilter: "blur(4px)", fontSize: 11, fontWeight: 700 }}
+        onClick={() => downloadCard(id)}
+      >
+        <Download size={11} />
+        Baixar
+      </button>
     </div>
   );
 }
@@ -1041,7 +1065,7 @@ function QS2_2() {
         <Tag>Diretoria</Tag>
         <h2 className="text-white font-bold mt-2 mb-7 leading-tight" style={{ fontSize: 24 }}>Antônio Dias</h2>
         <div className="flex items-start gap-4 mb-5">
-          <img src="/antonio-neno.jpeg" alt="Antônio Dias" className="rounded-2xl object-cover flex-shrink-0" style={{ width: 90, height: 110, border: "2px solid rgba(255,255,255,0.2)" }} />
+          <img src="/antonio-neno.jpeg" alt="Antônio Dias" className="rounded-2xl object-cover flex-shrink-0" style={{ width: 90, height: 110, border: "2px solid rgba(255,255,255,0.2)", objectPosition: "top center" }} />
           <div>
             <p className="text-white font-bold" style={{ fontSize: 15 }}>Antônio Dias</p>
             <p className="text-[11px] tracking-wide uppercase mb-2" style={{ color: "rgba(255,255,255,0.5)" }}>Sócio-Diretor</p>

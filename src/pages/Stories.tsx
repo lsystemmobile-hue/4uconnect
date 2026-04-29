@@ -4,8 +4,24 @@ import {
   Check, Globe, Cpu, MessageCircle,
   Star, Heart, Lock, Award, Users, Leaf,
   Building2, Briefcase, BarChart, MapPin, Phone, Instagram,
-  MessageSquare
+  MessageSquare, Download
 } from "lucide-react";
+import html2canvas from "html2canvas";
+
+// ─── Download helper ──────────────────────────────────────────────────────────
+
+async function downloadCard(id: string) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const btns = el.querySelectorAll<HTMLElement>(".dl-btn");
+  btns.forEach(b => (b.style.display = "none"));
+  const canvas = await html2canvas(el, { scale: 2, useCORS: true, allowTaint: true });
+  btns.forEach(b => (b.style.display = ""));
+  const link = document.createElement("a");
+  link.download = `${id}.png`;
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+}
 
 // ─── Story Card Base ─────────────────────────────────────────────────────────
 
@@ -23,6 +39,14 @@ function StoryCard({ id, bg, children }: StoryCardProps) {
       style={{ width: 390, aspectRatio: "9/16" }}
     >
       {children}
+      <button
+        className="dl-btn absolute bottom-12 right-3 z-30 flex items-center gap-1 rounded-full px-3 py-1.5"
+        style={{ background: "rgba(0,0,0,0.6)", color: "#fff", backdropFilter: "blur(4px)", fontSize: 11, fontWeight: 700 }}
+        onClick={() => downloadCard(id)}
+      >
+        <Download size={11} />
+        Baixar
+      </button>
     </div>
   );
 }
@@ -600,7 +624,7 @@ function QS2() {
         <div className="flex flex-col gap-5">
           {[
             {
-              img: "/antonio-neno.jpeg",
+              img: "/antonio-neno.jpeg", objectPosition: "top center",
               name: "Antônio Dias",
               role: "Sócio-Diretor",
               desc: "Especialista em M&A, compliance e estruturação societária para o mercado financeiro.",
@@ -617,7 +641,7 @@ function QS2() {
                 src={p.img}
                 alt={p.name}
                 className="rounded-full object-cover flex-shrink-0"
-                style={{ width: 72, height: 72, border: "2px solid rgba(255,255,255,0.3)" }}
+                style={{ width: 72, height: 72, border: "2px solid rgba(255,255,255,0.3)", objectPosition: (p as any).objectPosition ?? "center" }}
               />
               <div>
                 <p className="text-white font-bold" style={{ fontSize: 15 }}>{p.name}</p>
