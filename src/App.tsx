@@ -13,6 +13,7 @@ import InteligenciaFinanceira from "./pages/InteligenciaFinanceira";
 
 import QuemSomos from "./pages/QuemSomos";
 import SolucoesTecnologicas from "./pages/SolucoesTecnologicas";
+import Stories from "./pages/Stories";
 import NotFound from "./pages/NotFound";
 
 import { useSmoothScroll } from "./hooks/use-smooth-scroll";
@@ -27,23 +28,27 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <div className="relative overflow-x-hidden min-h-screen">
-            <ScrollToTop />
-            <Header />
-            <main>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/contabilidade-digital" element={<ContabilidadeDigital />} />
-                <Route path="/contabilidade" element={<Contabilidade />} />
-                <Route path="/inteligencia-financeira" element={<InteligenciaFinanceira />} />
-
-                <Route path="/solucoes-tecnologicas" element={<SolucoesTecnologicas />} />
-                <Route path="/quem-somos" element={<QuemSomos />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </main>
-            <FloatingButtons />
-          </div>
+          <Routes>
+            <Route path="/stories" element={<Stories />} />
+            <Route path="*" element={
+              <div className="relative overflow-x-hidden min-h-screen">
+                <ScrollToTop />
+                <Header />
+                <main>
+                  <Routes>
+                    <Route path="/" element={<Index />} />
+                    <Route path="/contabilidade-digital" element={<ContabilidadeDigital />} />
+                    <Route path="/contabilidade" element={<Contabilidade />} />
+                    <Route path="/inteligencia-financeira" element={<InteligenciaFinanceira />} />
+                    <Route path="/solucoes-tecnologicas" element={<SolucoesTecnologicas />} />
+                    <Route path="/quem-somos" element={<QuemSomos />} />
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </main>
+                <FloatingButtons />
+              </div>
+            } />
+          </Routes>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
