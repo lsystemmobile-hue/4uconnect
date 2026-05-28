@@ -139,15 +139,15 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
   const systemInstruction = `${AGENT_BEHAVIOR}\n\n---\n\n${knowledgeBase}`;
 
   const payload = {
-    system_instruction: { parts: [{ text: systemInstruction }] },
+    systemInstruction: { parts: [{ text: systemInstruction }] },
     contents: buildGeminiContents(messages),
     generationConfig: {
       temperature: 0.5,
-      maxOutputTokens: 1024, // margem para o modelo fechar frases completas
+      maxOutputTokens: 1024,
     },
   };
 
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${GOOGLE_MODEL}:generateContent`;
+  const apiUrl = `https://generativelanguage.googleapis.com/v1/models/${GOOGLE_MODEL}:generateContent`;
 
   for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
     // ── Chamada HTTP com timeout ─────────────────────────────────────────────
