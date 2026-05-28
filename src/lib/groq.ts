@@ -117,7 +117,7 @@ const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
 export const sendMessageToAssistant = async (messages: Message[], _currentPage?: string): Promise<string> => {
   const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
-  const GOOGLE_MODEL   = import.meta.env.VITE_GOOGLE_MODEL || "gemini-2.5-flash";
+  const GOOGLE_MODEL   = import.meta.env.VITE_GOOGLE_MODEL || "gemini-1.5-flash";
 
   if (!GOOGLE_API_KEY) {
     throw new Error("Chave de API não configurada. Fale com o suporte.");
@@ -165,6 +165,9 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
     const data = await response.json();
 
     if (!response.ok) {
+      const apiMessage = data?.error?.message ?? "";
+      console.error(`[Gemini] HTTP ${response.status} | modelo: ${GOOGLE_MODEL} | erro: ${apiMessage}`);
+
       if (RETRYABLE_STATUS.has(response.status) && attempt < MAX_RETRIES - 1) {
         await sleep(1200 * (attempt + 1));
         continue;
@@ -172,8 +175,8 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
       if (response.status === 429)
         throw new Error("O assistente está muito ocupado agora. Aguarde alguns segundos e tente novamente.");
       if (response.status === 400)
-        throw new Error("Não foi possível processar a mensagem. Tente reformular.");
-      throw new Error(data?.error?.message || `Erro ${response.status} na comunicação com o assistente.`);
+        throw new Error("Não foi possível enviar a mensagem. Tente novamente em instantes.");
+      throw new Error(apiMessage || `Erro ${response.status} na comunicação com o assistente.`);
     }
 
     // ── Resposta válida ──────────────────────────────────────────────────────
