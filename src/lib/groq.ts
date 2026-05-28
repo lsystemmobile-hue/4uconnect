@@ -115,13 +115,25 @@ const TIMEOUT_MS  = 30_000; // 30 segundos
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
+// Modelos em ordem de preferência — o primeiro disponível para a chave é usado
+const MODEL_PRIORITY = [
+  "gemini-1.5-flash",
+  "gemini-1.5-flash-8b",
+  "gemini-1.0-pro",
+];
+
 export const sendMessageToAssistant = async (messages: Message[], _currentPage?: string): Promise<string> => {
   const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
-  const GOOGLE_MODEL   = import.meta.env.VITE_GOOGLE_MODEL || "gemini-1.5-flash";
 
   if (!GOOGLE_API_KEY) {
     throw new Error("Chave de API não configurada. Fale com o suporte.");
   }
+
+  // Usa a variável de ambiente se definida e válida, senão o primeiro da lista
+  const envModel = import.meta.env.VITE_GOOGLE_MODEL;
+  const GOOGLE_MODEL = (envModel && !envModel.includes("preview") && !envModel.includes("2.5") && !envModel.includes("3-flash"))
+    ? envModel
+    : MODEL_PRIORITY[0];
 
   const knowledgeBase = await loadKnowledgeBase();
   const systemInstruction = `${AGENT_BEHAVIOR}\n\n---\n\n${knowledgeBase}`;
@@ -174,9 +186,7 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
       }
       if (response.status === 429)
         throw new Error("O assistente está muito ocupado agora. Aguarde alguns segundos e tente novamente.");
-      if (response.status === 400)
-        throw new Error("Não foi possível enviar a mensagem. Tente novamente em instantes.");
-      throw new Error(apiMessage || `Erro ${response.status} na comunicação com o assistente.`);
+      throw new Error(apiMessage || `Erro ${response.status} ao conectar com o assistente.`);
     }
 
     // ── Resposta válida ──────────────────────────────────────────────────────
