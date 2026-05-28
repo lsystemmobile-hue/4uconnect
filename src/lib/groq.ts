@@ -115,12 +115,7 @@ const TIMEOUT_MS  = 30_000; // 30 segundos
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
-// Modelos em ordem de preferência — o primeiro disponível para a chave é usado
-const MODEL_PRIORITY = [
-  "gemini-2.0-flash-exp",
-  "gemini-1.5-flash-001",
-  "gemini-1.5-flash",
-];
+const GOOGLE_MODEL = "gemini-2.0-flash-lite";
 
 export const sendMessageToAssistant = async (messages: Message[], _currentPage?: string): Promise<string> => {
   const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
@@ -128,8 +123,6 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
   if (!GOOGLE_API_KEY) {
     throw new Error("Chave de API não configurada. Fale com o suporte.");
   }
-
-  const GOOGLE_MODEL = MODEL_PRIORITY[0];
 
   const knowledgeBase = await loadKnowledgeBase();
   const systemInstruction = `${AGENT_BEHAVIOR}\n\n---\n\n${knowledgeBase}`;
