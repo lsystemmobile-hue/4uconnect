@@ -115,7 +115,7 @@ const TIMEOUT_MS  = 30_000; // 30 segundos
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
-const GOOGLE_MODEL = "gemini-2.0-flash-lite";
+const GOOGLE_MODEL = "gemini-2.5-flash";
 
 export const sendMessageToAssistant = async (messages: Message[], _currentPage?: string): Promise<string> => {
   const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
@@ -170,7 +170,7 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
       console.error(`[Gemini] HTTP ${response.status} | modelo: ${GOOGLE_MODEL} | erro: ${apiMessage}`);
 
       if (RETRYABLE_STATUS.has(response.status) && attempt < MAX_RETRIES - 1) {
-        await sleep(1200 * (attempt + 1));
+        await sleep(2000 * (attempt + 1));
         continue;
       }
       if (response.status === 429)
