@@ -117,9 +117,9 @@ const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
 // Modelos em ordem de preferência — o primeiro disponível para a chave é usado
 const MODEL_PRIORITY = [
+  "gemini-2.0-flash-exp",
+  "gemini-1.5-flash-001",
   "gemini-1.5-flash",
-  "gemini-1.5-flash-8b",
-  "gemini-1.0-pro",
 ];
 
 export const sendMessageToAssistant = async (messages: Message[], _currentPage?: string): Promise<string> => {
@@ -129,17 +129,13 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
     throw new Error("Chave de API não configurada. Fale com o suporte.");
   }
 
-  // Usa a variável de ambiente se definida e válida, senão o primeiro da lista
-  const envModel = import.meta.env.VITE_GOOGLE_MODEL;
-  const GOOGLE_MODEL = (envModel && !envModel.includes("preview") && !envModel.includes("2.5") && !envModel.includes("3-flash"))
-    ? envModel
-    : MODEL_PRIORITY[0];
+  const GOOGLE_MODEL = MODEL_PRIORITY[0];
 
   const knowledgeBase = await loadKnowledgeBase();
   const systemInstruction = `${AGENT_BEHAVIOR}\n\n---\n\n${knowledgeBase}`;
 
   const payload = {
-    systemInstruction: { parts: [{ text: systemInstruction }] },
+    system_instruction: { parts: [{ text: systemInstruction }] },
     contents: buildGeminiContents(messages),
     generationConfig: {
       temperature: 0.5,
@@ -147,7 +143,7 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
     },
   };
 
-  const apiUrl = `https://generativelanguage.googleapis.com/v1/models/${GOOGLE_MODEL}:generateContent`;
+  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${GOOGLE_MODEL}:generateContent`;
 
   for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
     // ── Chamada HTTP com timeout ─────────────────────────────────────────────
