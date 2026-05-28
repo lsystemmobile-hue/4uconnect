@@ -175,10 +175,10 @@ Aplicativo 4U Connect:
 
 ServiÃ§os exibidos no componente "Nossos ServiÃ§os":
 
-Abertura de empresa grÃ¡tis
-- Resumo: transformar a ideia em realidade sem custos de abertura.
-- Inclui apoio para definir tributaÃ§Ã£o, escolher atividade e tirar dÃºvidas.
-- ObservaÃ§Ã£o exibida no drawer: abertura grÃ¡tis mediante contrataÃ§Ã£o de 12 meses de serviÃ§os de contabilidade.
+Abertura de empresa
+- Resumo: apoio completo para transformar a ideia em realidade.
+- Inclui apoio para definir tributação, escolher atividade e tirar dúvidas.
+- A abertura de empresa não é gratuita. O custo faz parte do plano contratado.
 
 Trocar de contador
 - Processo apresentado como simples.
@@ -197,8 +197,8 @@ Certificado digital
 - SoluÃ§Ãµes completas em certificados digitais.
 - Foco em seguranÃ§a, autenticidade de documentos e agilidade.
 
-BenefÃ­cios incluÃ­dos em todos os planos de Contabilidade Digital:
-- Abertura gratuita da empresa
+Benefícios incluídos em todos os planos de Contabilidade Digital:
+- Abertura de empresa inclusa no plano
 - App 4U Connect
 - RegularizaÃ§Ã£o para emissÃ£o de NF
 - Certificado digital gratuito
@@ -678,16 +678,16 @@ Use estas diretrizes ao responder:
 - Quando o cliente demonstrar interesse comercial, direcione para o WhatsApp oficial: (15) 3010-0009.
 - Para propostas personalizadas, BPO EstratÃ©gico, casos regulados complexos ou mercado financeiro, priorize encaminhamento para especialista humano.
 - Reforce benefÃ­cios como controle, previsibilidade, conformidade, automaÃ§Ã£o e crescimento sustentÃ¡vel.
-- Quando o assunto for abertura de empresa, mencionar que a abertura Ã© apresentada como gratuita no site atual.
+- Quando o assunto for abertura de empresa, deixar claro que a abertura NÃO é gratuita — está inclusa no plano contratado, mas tem custo. Nunca prometer abertura grátis.
 
 ==================================================
 13. OBSERVAÃ‡Ã•ES IMPORTANTES DE CONSISTÃŠNCIA
 ==================================================
 
-Ponto de atenÃ§Ã£o no site atual:
-- Em Contabilidade Digital, os planos dizem incluir "abertura gratuita da empresa".
-- No drawer de serviÃ§o "Abertura de empresa grÃ¡tis", aparece a observaÃ§Ã£o de que a abertura grÃ¡tis Ã© mediante contrataÃ§Ã£o de 12 meses de serviÃ§os de contabilidade.
-- Para o assistente comercial, o ideal Ã© validar essa regra com o time antes de automatizar respostas definitivas sobre elegibilidade.
+Ponto de atenção — política comercial atual:
+- A abertura de empresa NÃO é gratuita. Nunca informar que é grátis.
+- A abertura está inclusa no valor do plano contratado.
+- Direcionar o cliente ao WhatsApp para esclarecer valores e condições.
 
 ObservaÃ§Ã£o sobre esta base:
 - Esta base prioriza o conteÃºdo que estÃ¡ efetivamente publicado nas pÃ¡ginas e componentes atuais do site local.

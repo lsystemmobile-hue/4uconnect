@@ -297,6 +297,7 @@ const ContabilidadeDigital = () => {
                   <img
                     src="/app.png"
                     alt="Aplicativo 4U Connect"
+                    loading="lazy"
                     className="w-full max-w-[400px] mx-auto drop-shadow-[0_35px_35px_rgba(34,197,94,0.15)]"
                   />
                 </div>

@@ -67,51 +67,41 @@ let knowledgeBaseCache: Promise<string> | null = null;
 
 const loadKnowledgeBase = async () => {
   if (!knowledgeBaseCache) {
-    knowledgeBaseCache = fetch(KNOWLEDGE_BASE_URL, {
-      headers: {
-        "Cache-Control": "no-cache",
-      },
-    }).then(async (response) => {
-      if (!response.ok) {
-        throw new Error("Não foi possível carregar a base de conhecimento da 4U Connect.");
-      }
-
-      return response.text();
+    knowledgeBaseCache = fetch(KNOWLEDGE_BASE_URL).then(async (res) => {
+      if (!res.ok) throw new Error("Não foi possível carregar a base de conhecimento.");
+      return res.text();
     });
   }
-
   try {
     return await knowledgeBaseCache;
-  } catch (error) {
+  } catch (err) {
     knowledgeBaseCache = null;
-    throw error;
+    throw err;
   }
 };
 
-const buildGeminiContents = (messages: Message[]) => {
-  return messages
-    .filter((message) => message.role !== "system")
-    .map((message) => ({
-      role: message.role === "assistant" ? "model" : "user",
-      parts: [{ text: message.content }],
+const buildGeminiContents = (messages: Message[]) =>
+  messages
+    .filter((m) => m.role !== "system")
+    .map((m) => ({
+      role: m.role === "assistant" ? "model" : "user",
+      parts: [{ text: m.content }],
     }));
-};
 
-const extractGeminiText = (data: any) => {
+const extractGeminiText = (data: any): string => {
   const parts = data?.candidates?.[0]?.content?.parts;
-
-  if (!Array.isArray(parts)) {
-    return "";
-  }
-
-  return parts
-    .map((part: { text?: string }) => part?.text ?? "")
-    .join("")
-    .trim();
+  if (!Array.isArray(parts)) return "";
+  return parts.map((p: { text?: string }) => p?.text ?? "").join("").trim();
 };
 
-const getFinishReason = (data: any) => {
-  return data?.candidates?.[0]?.finishReason || "";
+const getFinishReason = (data: any): string =>
+  data?.candidates?.[0]?.finishReason ?? "";
+
+// Fetch com timeout para não travar indefinidamente
+const fetchWithTimeout = (url: string, options: RequestInit, ms: number): Promise<Response> => {
+  const ctrl = new AbortController();
+  const id = setTimeout(() => ctrl.abort(), ms);
+  return fetch(url, { ...options, signal: ctrl.signal }).finally(() => clearTimeout(id));
 };
 
 export interface Message {
@@ -119,63 +109,92 @@ export interface Message {
   content: string;
 }
 
-export const sendMessageToAssistant = async (messages: Message[], _currentPage?: string) => {
+const RETRYABLE_STATUS = new Set([429, 500, 503]);
+const MAX_RETRIES = 3;
+const TIMEOUT_MS  = 30_000; // 30 segundos
+
+const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
+
+export const sendMessageToAssistant = async (messages: Message[], _currentPage?: string): Promise<string> => {
   const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
-  const GOOGLE_MODEL = import.meta.env.VITE_GOOGLE_MODEL || "gemini-3-flash-preview";
+  const GOOGLE_MODEL   = import.meta.env.VITE_GOOGLE_MODEL || "gemini-2.5-flash";
 
   if (!GOOGLE_API_KEY) {
-    throw new Error("VITE_GOOGLE_API_KEY não configurada.");
+    throw new Error("Chave de API não configurada. Fale com o suporte.");
   }
 
   const knowledgeBase = await loadKnowledgeBase();
   const systemInstruction = `${AGENT_BEHAVIOR}\n\n---\n\n${knowledgeBase}`;
 
   const payload = {
-    system_instruction: {
-      parts: [{ text: systemInstruction }],
-    },
+    system_instruction: { parts: [{ text: systemInstruction }] },
     contents: buildGeminiContents(messages),
     generationConfig: {
       temperature: 0.5,
-      maxOutputTokens: 600,
+      maxOutputTokens: 1024, // margem para o modelo fechar frases completas
     },
   };
 
   const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${GOOGLE_MODEL}:generateContent`;
 
-  try {
-    const response = await fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-goog-api-key": GOOGLE_API_KEY,
-      },
-      body: JSON.stringify(payload),
-    });
+  for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+    // ── Chamada HTTP com timeout ─────────────────────────────────────────────
+    let response: Response;
+    try {
+      response = await fetchWithTimeout(
+        apiUrl,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-goog-api-key": GOOGLE_API_KEY,
+          },
+          body: JSON.stringify(payload),
+        },
+        TIMEOUT_MS,
+      );
+    } catch (fetchErr: any) {
+      if (fetchErr?.name === "AbortError") {
+        if (attempt < MAX_RETRIES - 1) { await sleep(1500); continue; }
+        throw new Error("O assistente demorou para responder. Verifique sua conexão e tente novamente.");
+      }
+      throw new Error("Falha na conexão. Verifique sua internet e tente novamente.");
+    }
 
+    // ── Resposta HTTP com erro ───────────────────────────────────────────────
     const data = await response.json();
 
     if (!response.ok) {
-      console.error("Erro na API do Google:", response.status, data);
-      throw new Error(data?.error?.message || `Erro ${response.status} na comunicação com a API do Google.`);
+      if (RETRYABLE_STATUS.has(response.status) && attempt < MAX_RETRIES - 1) {
+        await sleep(1200 * (attempt + 1));
+        continue;
+      }
+      if (response.status === 429)
+        throw new Error("O assistente está muito ocupado agora. Aguarde alguns segundos e tente novamente.");
+      if (response.status === 400)
+        throw new Error("Não foi possível processar a mensagem. Tente reformular.");
+      throw new Error(data?.error?.message || `Erro ${response.status} na comunicação com o assistente.`);
     }
 
-    const text = extractGeminiText(data);
+    // ── Resposta válida ──────────────────────────────────────────────────────
+    const text         = extractGeminiText(data);
     const finishReason = getFinishReason(data);
 
+    // Resposta vazia: tenta novamente
     if (!text) {
-      console.error("Resposta vazia da API do Google:", data);
-      throw new Error("A API do Google não retornou uma resposta válida.");
+      if (attempt < MAX_RETRIES - 1) { await sleep(1000); continue; }
+      throw new Error("O assistente não retornou resposta. Tente novamente.");
     }
 
-    if (finishReason && finishReason !== "STOP") {
-      console.error("Resposta potencialmente incompleta da API do Google:", finishReason, data);
-      throw new Error("A resposta do assistente foi interrompida antes de concluir. Tente novamente.");
+    // SAFETY: conteúdo bloqueado pela política do Google
+    if (finishReason === "SAFETY") {
+      throw new Error("Mensagem bloqueada por política de segurança. Reformule a pergunta.");
     }
 
+    // MAX_TOKENS ou outros motivos: retorna o texto disponível em vez de lançar erro.
+    // O system prompt limita respostas a 2-3 linhas, então o texto já é utilizável.
     return text;
-  } catch (error: any) {
-    console.error("Erro no GoogleService:", error);
-    throw error;
   }
+
+  throw new Error("O assistente está indisponível no momento. Tente novamente em breve.");
 };

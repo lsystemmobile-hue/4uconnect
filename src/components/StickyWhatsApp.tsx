@@ -40,7 +40,7 @@ const StickyWhatsApp = () => {
                         Online
                     </p>
                     {/* Setinha centralizada */}
-                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white border-r border-b border-white/20 transform rotate-45"></div>
+                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white border-r border-b border-gray-200 transform rotate-45"></div>
                 </div>
             </div>
 

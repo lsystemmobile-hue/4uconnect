@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ChatAssistant from "./ChatAssistant";
 import StickyWhatsApp from "./StickyWhatsApp";
 import { useLocation } from "react-router-dom";
@@ -8,23 +8,23 @@ const FloatingButtons = () => {
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const location = useLocation();
+    const lastCall = useRef(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            // Mostra os botões após 400px de scroll (geralmente passa o hero)
-            if (window.scrollY > 400) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
+            // Throttle: executa no máximo 1x a cada 100ms
+            const now = Date.now();
+            if (now - lastCall.current < 100) return;
+            lastCall.current = now;
+
+            setIsVisible(window.scrollY > 400);
         };
 
-        window.addEventListener("scroll", handleScroll);
-        // Verifica posição inicial
+        window.addEventListener("scroll", handleScroll, { passive: true });
         handleScroll();
 
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [location.pathname]); // Reinicia ou verifica ao mudar de rota
+    }, [location.pathname]);
 
     // Não exibe os botões na página Home
     if (location.pathname === "/") return null;

@@ -1,11 +1,9 @@
-import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import {
     MapPin,
     Globe,
     Instagram,
     MessageCircle,
-    Send,
     CheckCircle2,
     Users,
     Linkedin,
@@ -16,66 +14,15 @@ import {
     Lock,
     Award,
     TrendingUp,
+    Mail,
 } from "lucide-react";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "sonner";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import emailjs from "@emailjs/browser";
 
 const QuemSomos = () => {
     useScrollReveal();
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: "",
-    });
-
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-
-        try {
-            const result = await emailjs.send(
-                import.meta.env.VITE_EMAILJS_SERVICE_ID,
-                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-                {
-                    from_name: formData.name,
-                    from_email: formData.email,
-                    name: formData.name, // Adicionado para coincidir com {{name}} no corpo
-                    phone: formData.phone,
-                    company: formData.company,
-                    message: formData.message,
-                    title: `Novo contato de ${formData.name}`, // Adicionado para coincidir com {{title}} no assunto
-                    to_email: "comercial@4uconnect.com.br"
-                },
-                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-            );
-
-            if (result.text === 'OK') {
-                toast.success("Mensagem enviada com sucesso! Em breve entraremos em contato.");
-                setFormData({ name: "", email: "", phone: "", company: "", message: "" });
-            }
-        } catch (error) {
-            console.error("Erro ao enviar e-mail:", error);
-            toast.error("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.");
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
 
     const whatsappNumber = "551530100009";
     const whatsappMessage = encodeURIComponent(
@@ -182,6 +129,7 @@ const QuemSomos = () => {
                                 <img
                                     src="/reuniao.jpg"
                                     alt="4U Connect Team Meeting"
+                                    loading="lazy"
                                     className="w-full h-full object-cover hover:scale-105 transition-all duration-1000"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-4u-navy/80 to-transparent"></div>
@@ -294,6 +242,7 @@ const QuemSomos = () => {
                                     <img
                                         src="/antonio-neno.jpeg"
                                         alt="Antônio Dias"
+                                        loading="lazy"
                                         className="absolute inset-0 w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
                                     />
                                     {/* Geometric Accent */}
@@ -369,6 +318,7 @@ const QuemSomos = () => {
                                     <img
                                         src="/antonio.jpg"
                                         alt="Fernando Alves"
+                                        loading="lazy"
                                         className="absolute inset-0 w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
                                     />
                                     {/* Geometric Accent */}
@@ -392,84 +342,48 @@ const QuemSomos = () => {
 
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl mx-auto">
-                        {/* Contact Form Container */}
+                        {/* Contato direto */}
                         <div className="opacity-0 animate-fade-in" style={{ animationDelay: "200ms" }}>
-                            <div className="p-8 md:p-12 rounded-none bg-4u-navy text-white border-2 border-white/10 shadow-2xl shadow-4u-navy/20 relative group">
+                            <div className="p-8 md:p-12 rounded-none bg-4u-navy text-white border-2 border-white/10 shadow-2xl shadow-4u-navy/20 relative group h-full flex flex-col justify-center">
                                 <div className="absolute top-0 right-0 w-2 h-0 bg-4u-green group-hover:h-full transition-all duration-500" />
-                                <h2 className="text-3xl font-bold mb-2">Envie uma Mensagem</h2>
-                                <p className="text-white/70 mb-10">Solicite uma proposta personalizada ou tire suas dúvidas com nosso time.</p>
 
-                                <form onSubmit={handleSubmit} className="space-y-6">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div className="space-y-2">
-                                            <label className="text-sm font-bold ml-1">Nome Completo *</label>
-                                            <Input
-                                                name="name"
-                                                value={formData.name}
-                                                onChange={handleChange}
-                                                placeholder="Como podemos te chamar?"
-                                                required
-                                                className="h-14 rounded-none border-none bg-white/10 text-white placeholder:text-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-4u-green/50 focus-visible:ring-offset-0 focus:bg-white/15 transition-all shadow-inner"
-                                            />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <label className="text-sm font-bold ml-1">E-mail Corporativo *</label>
-                                            <Input
-                                                name="email"
-                                                type="email"
-                                                value={formData.email}
-                                                onChange={handleChange}
-                                                placeholder="seu@empresa.com"
-                                                required
-                                                className="h-14 rounded-none border-none bg-white/10 text-white placeholder:text-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-4u-green/50 focus-visible:ring-offset-0 focus:bg-white/15 transition-all shadow-inner"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div className="space-y-2">
-                                            <label className="text-sm font-bold ml-1">Telefone / WhatsApp</label>
-                                            <Input
-                                                name="phone"
-                                                value={formData.phone}
-                                                onChange={handleChange}
-                                                placeholder="(00) 00000-0000"
-                                                className="h-14 rounded-none border-none bg-white/10 text-white placeholder:text-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-4u-green/50 focus-visible:ring-offset-0 focus:bg-white/15 transition-all shadow-inner"
-                                            />
-                                        </div>
-                                        <div className="space-y-2">
-                                            <label className="text-sm font-bold ml-1">Nome da Empresa</label>
-                                            <Input
-                                                name="company"
-                                                value={formData.company}
-                                                onChange={handleChange}
-                                                placeholder="Sua empresa"
-                                                className="h-14 rounded-none border-none bg-white/10 text-white placeholder:text-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-4u-green/50 focus-visible:ring-offset-0 focus:bg-white/15 transition-all shadow-inner"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label className="text-sm font-bold ml-1">Mensagem *</label>
-                                        <Textarea
-                                            name="message"
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            placeholder="Descreva brevemente sua necessidade..."
-                                            required
-                                            rows={4}
-                                            className="rounded-none border-none bg-white/10 text-white placeholder:text-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-4u-green/50 focus-visible:ring-offset-0 focus:bg-white/15 transition-all resize-none shadow-inner"
-                                        />
-                                    </div>
-                                    <Button
-                                        type="submit"
-                                        disabled={isSubmitting}
-                                        className="w-full h-14 bg-4u-green hover:bg-white hover:text-4u-green rounded-none font-bold text-lg shadow-lg shadow-4u-green/20 transition-all duration-300 transform hover:-translate-y-1 active:scale-95 relative overflow-hidden group/btn"
+                                <h2 className="text-3xl font-bold mb-3">Fale com um Especialista</h2>
+                                <p className="text-white/70 mb-10 text-lg leading-relaxed">
+                                    Solicite uma proposta personalizada ou tire suas dúvidas diretamente com nosso time pelo WhatsApp ou e-mail.
+                                </p>
+
+                                <div className="flex flex-col gap-4">
+                                    <a
+                                        href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group/btn flex items-center gap-4 w-full px-8 py-5 bg-4u-green rounded-none font-bold text-lg transition-all duration-300 hover:bg-white hover:text-4u-green hover:-translate-y-1 hover:shadow-xl hover:shadow-4u-green/20 active:scale-95"
                                     >
-                                        <span className="relative z-10 flex items-center justify-center gap-2">
-                                            {isSubmitting ? "Enviando..." : <><Send size={20} /> Enviar Mensagem Agora</>}
-                                            <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-4u-green group-hover/btn:bg-4u-green scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300" />
-                                        </span>
-                                    </Button>
-                                </form>
+                                        <WhatsAppIcon size={24} className="transition-transform group-hover/btn:rotate-12 flex-shrink-0" />
+                                        <span>Chamar no WhatsApp</span>
+                                    </a>
+
+                                    <a
+                                        href="mailto:comercial@4uconnect.com.br"
+                                        className="group/btn flex items-center gap-4 w-full px-8 py-5 bg-white/10 border-2 border-white/20 rounded-none font-bold text-lg transition-all duration-300 hover:bg-white hover:text-4u-navy hover:border-white hover:-translate-y-1 hover:shadow-xl active:scale-95"
+                                    >
+                                        <Mail size={24} className="transition-transform group-hover/btn:scale-110 flex-shrink-0" />
+                                        <span>comercial@4uconnect.com.br</span>
+                                    </a>
+                                </div>
+
+                                <div className="mt-10 pt-8 border-t border-white/10 flex flex-col gap-3">
+                                    {[
+                                        "Retorno em até 1 hora em horário comercial",
+                                        "Atendimento personalizado para o seu negócio",
+                                        "Sem compromisso na primeira conversa",
+                                    ].map((item) => (
+                                        <div key={item} className="flex items-center gap-3 text-white/80">
+                                            <CheckCircle2 size={16} className="text-4u-green flex-shrink-0" />
+                                            <span className="text-sm font-medium">{item}</span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
 

@@ -19,7 +19,8 @@ const Index = () => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
+          poster="/fundo.jpg"
           className="w-full h-full object-cover bg-black"
         >
           <source src="/video.mp4" type="video/mp4" />

@@ -21,10 +21,9 @@ interface ServiceItem {
 const services: ServiceItem[] = [
     {
         icon: Building2,
-        title: "Abertura de empresa grátis",
-        shortDescription: "Transforme sua ideia em realidade sem custos de abertura.",
-        fullDescription: "Na 4U_Connect, você não apenas abre sua empresa de forma gratuita, mas também recebe todo o apoio necessário para definir a melhor forma de tributação, escolher a atividade que mais combina com o seu negócio e tirar todas as suas dúvidas. Estamos ao seu lado em cada passo, para que você comece a sua jornada empreendedora com toda a confiança e segurança.",
-        note: "Observação: Abertura grátis mediante a contratação de 12 meses de serviços de contabilidade.",
+        title: "Abertura de empresa",
+        shortDescription: "Transforme sua ideia em realidade com apoio especializado.",
+        fullDescription: "Na 4U Connect, você recebe todo o apoio necessário para definir a melhor forma de tributação, escolher a atividade que mais combina com o seu negócio e tirar todas as suas dúvidas. Estamos ao seu lado em cada passo, para que você comece a sua jornada empreendedora com toda a confiança e segurança.",
         color: "bg-emerald-500"
     },
     {

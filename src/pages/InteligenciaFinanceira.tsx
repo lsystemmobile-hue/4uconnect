@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
+import { smoothScrollToId } from "@/lib/utils";
 import {
   TrendingUp,
   PieChart,
@@ -107,9 +108,7 @@ const InteligenciaFinanceira = () => {
             <button
               onClick={() => {
                 setActiveTab('bpo');
-                setTimeout(() => {
-                  document.getElementById('bpo-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
+                smoothScrollToId('bpo-content');
               }}
               className={`group w-full max-w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 relative overflow-hidden ${activeTab === 'bpo'
                 ? 'bg-white text-4u-navy shadow-2xl shadow-white/30 border-2 border-white'
@@ -127,9 +126,7 @@ const InteligenciaFinanceira = () => {
             <button
               onClick={() => {
                 setActiveTab('contabilidade');
-                setTimeout(() => {
-                  document.getElementById('contabilidade-content')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 100);
+                smoothScrollToId('contabilidade-content');
               }}
               className={`group w-full max-w-[350px] px-8 py-4 rounded-none font-bold text-sm md:text-base transition-all duration-500 flex items-center justify-center gap-3 relative overflow-hidden ${activeTab === 'contabilidade'
                 ? 'bg-white text-4u-navy shadow-2xl shadow-white/30 border-2 border-white'
@@ -618,7 +615,7 @@ const InteligenciaFinanceira = () => {
                 <div className="bg-white p-8 border-2 border-border/50 hover:border-4u-navy/30 transition-all duration-500 scroll-reveal opacity-0 translate-y-8 transition-all duration-700">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-16 h-16 rounded-none overflow-hidden border-2 border-4u-navy/20 shadow-lg">
-                      <img src="/antonio-neno.jpeg" alt="Antônio Dias" className="w-full h-full object-cover object-top" />
+                      <img src="/antonio-neno.jpeg" alt="Antônio Dias" loading="lazy" className="w-full h-full object-cover object-top" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-4u-navy">Antônio Dias</h3>
@@ -642,7 +639,7 @@ const InteligenciaFinanceira = () => {
                 <div className="bg-white p-8 border-2 border-border/50 hover:border-4u-navy/30 transition-all duration-500 scroll-reveal opacity-0 translate-y-8 transition-all duration-700" style={{ transitionDelay: '200ms' }}>
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-16 h-16 rounded-none overflow-hidden border-2 border-4u-navy/20 shadow-lg">
-                      <img src="/antonio.jpg" alt="Fernando Alves" className="w-full h-full object-cover object-top" />
+                      <img src="/antonio.jpg" alt="Fernando Alves" loading="lazy" className="w-full h-full object-cover object-top" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-4u-navy">Fernando Alves</h3>

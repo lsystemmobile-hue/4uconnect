@@ -40,22 +40,28 @@ export const useSmoothScroll = () => {
             const target = e.target as HTMLElement;
             const anchor = target.closest("a");
 
-            if (anchor && anchor.hash && anchor.hash.startsWith("#") && anchor.origin === window.location.origin) {
-                e.preventDefault();
+            if (!anchor || !anchor.hash || !anchor.hash.startsWith("#")) return;
+            if (anchor.origin !== window.location.origin) return;
 
-                const id = anchor.hash.substring(1);
-                const element = document.getElementById(id);
+            // Só intercepta se for âncora da mesma página (não cross-page)
+            const isSamePage =
+                anchor.pathname === window.location.pathname ||
+                anchor.pathname === "";
 
-                if (element) {
-                    const headerOffset = 110;
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = window.pageYOffset + elementPosition - headerOffset;
+            if (!isSamePage) return;
 
-                    smoothScrollTo(offsetPosition);
+            e.preventDefault();
 
-                    // Atualiza a URL
-                    window.history.pushState(null, "", anchor.hash);
-                }
+            const id = anchor.hash.substring(1);
+            const element = document.getElementById(id);
+
+            if (element) {
+                const headerOffset = 110;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = window.pageYOffset + elementPosition - headerOffset;
+
+                smoothScrollTo(offsetPosition);
+                window.history.pushState(null, "", anchor.hash);
             }
         };
 
