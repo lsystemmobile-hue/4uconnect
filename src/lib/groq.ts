@@ -80,24 +80,6 @@ const loadKnowledgeBase = async () => {
   }
 };
 
-const buildGeminiContents = (messages: Message[]) =>
-  messages
-    .filter((m) => m.role !== "system")
-    .map((m) => ({
-      role: m.role === "assistant" ? "model" : "user",
-      parts: [{ text: m.content }],
-    }));
-
-const extractGeminiText = (data: any): string => {
-  const parts = data?.candidates?.[0]?.content?.parts;
-  if (!Array.isArray(parts)) return "";
-  return parts.map((p: { text?: string }) => p?.text ?? "").join("").trim();
-};
-
-const getFinishReason = (data: any): string =>
-  data?.candidates?.[0]?.finishReason ?? "";
-
-// Fetch com timeout para não travar indefinidamente
 const fetchWithTimeout = (url: string, options: RequestInit, ms: number): Promise<Response> => {
   const ctrl = new AbortController();
   const id = setTimeout(() => ctrl.abort(), ms);
@@ -109,46 +91,50 @@ export interface Message {
   content: string;
 }
 
+const GROQ_MODEL    = "llama-3.3-70b-versatile";
+const GROQ_API_URL  = "https://api.groq.com/openai/v1/chat/completions";
 const RETRYABLE_STATUS = new Set([429, 500, 503]);
-const MAX_RETRIES = 3;
-const TIMEOUT_MS  = 30_000; // 30 segundos
+const MAX_RETRIES   = 3;
+const TIMEOUT_MS    = 30_000;
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
-const GOOGLE_MODEL = "gemini-2.5-flash";
-
 export const sendMessageToAssistant = async (messages: Message[], _currentPage?: string): Promise<string> => {
-  const GOOGLE_API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
+  const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 
-  if (!GOOGLE_API_KEY) {
+  if (!GROQ_API_KEY) {
     throw new Error("Chave de API não configurada. Fale com o suporte.");
   }
 
   const knowledgeBase = await loadKnowledgeBase();
-  const systemInstruction = `${AGENT_BEHAVIOR}\n\n---\n\n${knowledgeBase}`;
+  const systemPrompt  = `${AGENT_BEHAVIOR}\n\n---\n\n${knowledgeBase}`;
+
+  // Groq usa formato OpenAI: system message + histórico de conversa
+  const groqMessages = [
+    { role: "system", content: systemPrompt },
+    ...messages
+      .filter((m) => m.role !== "system")
+      .map((m) => ({ role: m.role, content: m.content })),
+  ];
 
   const payload = {
-    system_instruction: { parts: [{ text: systemInstruction }] },
-    contents: buildGeminiContents(messages),
-    generationConfig: {
-      temperature: 0.5,
-      maxOutputTokens: 1024,
-    },
+    model: GROQ_MODEL,
+    messages: groqMessages,
+    temperature: 0.5,
+    max_tokens: 1024,
   };
 
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${GOOGLE_MODEL}:generateContent`;
-
   for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
-    // ── Chamada HTTP com timeout ─────────────────────────────────────────────
     let response: Response;
+
     try {
       response = await fetchWithTimeout(
-        apiUrl,
+        GROQ_API_URL,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "x-goog-api-key": GOOGLE_API_KEY,
+            "Authorization": `Bearer ${GROQ_API_KEY}`,
           },
           body: JSON.stringify(payload),
         },
@@ -162,12 +148,11 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
       throw new Error("Falha na conexão. Verifique sua internet e tente novamente.");
     }
 
-    // ── Resposta HTTP com erro ───────────────────────────────────────────────
     const data = await response.json();
 
     if (!response.ok) {
       const apiMessage = data?.error?.message ?? "";
-      console.error(`[Gemini] HTTP ${response.status} | modelo: ${GOOGLE_MODEL} | erro: ${apiMessage}`);
+      console.error(`[Groq] HTTP ${response.status} | modelo: ${GROQ_MODEL} | erro: ${apiMessage}`);
 
       if (RETRYABLE_STATUS.has(response.status) && attempt < MAX_RETRIES - 1) {
         await sleep(2000 * (attempt + 1));
@@ -175,26 +160,23 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
       }
       if (response.status === 429)
         throw new Error("O assistente está muito ocupado agora. Aguarde alguns segundos e tente novamente.");
+      if (response.status === 401)
+        throw new Error("Chave de API inválida. Fale com o suporte.");
       throw new Error(apiMessage || `Erro ${response.status} ao conectar com o assistente.`);
     }
 
-    // ── Resposta válida ──────────────────────────────────────────────────────
-    const text         = extractGeminiText(data);
-    const finishReason = getFinishReason(data);
+    const text = (data?.choices?.[0]?.message?.content ?? "").trim();
+    const finishReason = data?.choices?.[0]?.finish_reason ?? "";
 
-    // Resposta vazia: tenta novamente
     if (!text) {
       if (attempt < MAX_RETRIES - 1) { await sleep(1000); continue; }
       throw new Error("O assistente não retornou resposta. Tente novamente.");
     }
 
-    // SAFETY: conteúdo bloqueado pela política do Google
-    if (finishReason === "SAFETY") {
+    if (finishReason === "content_filter") {
       throw new Error("Mensagem bloqueada por política de segurança. Reformule a pergunta.");
     }
 
-    // MAX_TOKENS ou outros motivos: retorna o texto disponível em vez de lançar erro.
-    // O system prompt limita respostas a 2-3 linhas, então o texto já é utilizável.
     return text;
   }
 
