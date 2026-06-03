@@ -91,7 +91,7 @@ export interface Message {
   content: string;
 }
 
-const GROQ_MODEL    = "llama-3.3-70b-versatile";
+const GROQ_MODEL    = "llama-3.1-8b-instant";
 const GROQ_API_URL  = "https://api.groq.com/openai/v1/chat/completions";
 const RETRYABLE_STATUS = new Set([429, 500, 503]);
 const MAX_RETRIES   = 3;
