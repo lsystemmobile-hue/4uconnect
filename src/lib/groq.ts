@@ -80,6 +80,14 @@ const loadKnowledgeBase = async () => {
   }
 };
 
+const buildContents = (messages: Message[]) =>
+  messages
+    .filter((m) => m.role !== "system")
+    .map((m) => ({
+      role: m.role === "assistant" ? "model" : "user",
+      parts: [{ text: m.content }],
+    }));
+
 const fetchWithTimeout = (url: string, options: RequestInit, ms: number): Promise<Response> => {
   const ctrl = new AbortController();
   const id = setTimeout(() => ctrl.abort(), ms);
@@ -91,8 +99,8 @@ export interface Message {
   content: string;
 }
 
-const GROQ_MODEL    = "llama-3.1-8b-instant";
-const GROQ_API_URL  = "https://api.groq.com/openai/v1/chat/completions";
+const GEMINI_MODEL  = "gemini-2.5-flash";
+const GEMINI_URL    = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 const RETRYABLE_STATUS = new Set([429, 500, 503]);
 const MAX_RETRIES   = 3;
 const TIMEOUT_MS    = 30_000;
@@ -100,28 +108,23 @@ const TIMEOUT_MS    = 30_000;
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
 export const sendMessageToAssistant = async (messages: Message[], _currentPage?: string): Promise<string> => {
-  const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
+  const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 
-  if (!GROQ_API_KEY) {
+  if (!API_KEY) {
     throw new Error("Chave de API não configurada. Fale com o suporte.");
   }
 
   const knowledgeBase = await loadKnowledgeBase();
-  const systemPrompt  = `${AGENT_BEHAVIOR}\n\n---\n\n${knowledgeBase}`;
-
-  // Groq usa formato OpenAI: system message + histórico de conversa
-  const groqMessages = [
-    { role: "system", content: systemPrompt },
-    ...messages
-      .filter((m) => m.role !== "system")
-      .map((m) => ({ role: m.role, content: m.content })),
-  ];
 
   const payload = {
-    model: GROQ_MODEL,
-    messages: groqMessages,
-    temperature: 0.5,
-    max_tokens: 1024,
+    system_instruction: {
+      parts: [{ text: `${AGENT_BEHAVIOR}\n\n---\n\n${knowledgeBase}` }],
+    },
+    contents: buildContents(messages),
+    generationConfig: {
+      temperature: 0.5,
+      maxOutputTokens: 1024,
+    },
   };
 
   for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
@@ -129,12 +132,12 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
 
     try {
       response = await fetchWithTimeout(
-        GROQ_API_URL,
+        GEMINI_URL,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${GROQ_API_KEY}`,
+            "x-goog-api-key": API_KEY,
           },
           body: JSON.stringify(payload),
         },
@@ -151,8 +154,8 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
     const data = await response.json();
 
     if (!response.ok) {
-      const apiMessage = data?.error?.message ?? "";
-      console.error(`[Groq] HTTP ${response.status} | modelo: ${GROQ_MODEL} | erro: ${apiMessage}`);
+      const apiMsg = data?.error?.message ?? "";
+      console.error(`[Gemini] HTTP ${response.status} | modelo: ${GEMINI_MODEL} | erro: ${apiMsg}`);
 
       if (RETRYABLE_STATUS.has(response.status) && attempt < MAX_RETRIES - 1) {
         await sleep(2000 * (attempt + 1));
@@ -160,20 +163,22 @@ export const sendMessageToAssistant = async (messages: Message[], _currentPage?:
       }
       if (response.status === 429)
         throw new Error("O assistente está muito ocupado agora. Aguarde alguns segundos e tente novamente.");
-      if (response.status === 401)
-        throw new Error("Chave de API inválida. Fale com o suporte.");
-      throw new Error(apiMessage || `Erro ${response.status} ao conectar com o assistente.`);
+      throw new Error(apiMsg || `Erro ${response.status} ao conectar com o assistente.`);
     }
 
-    const text = (data?.choices?.[0]?.message?.content ?? "").trim();
-    const finishReason = data?.choices?.[0]?.finish_reason ?? "";
+    const parts = data?.candidates?.[0]?.content?.parts;
+    const text  = Array.isArray(parts)
+      ? parts.map((p: { text?: string }) => p?.text ?? "").join("").trim()
+      : "";
+
+    const finishReason = data?.candidates?.[0]?.finishReason ?? "";
 
     if (!text) {
       if (attempt < MAX_RETRIES - 1) { await sleep(1000); continue; }
       throw new Error("O assistente não retornou resposta. Tente novamente.");
     }
 
-    if (finishReason === "content_filter") {
+    if (finishReason === "SAFETY") {
       throw new Error("Mensagem bloqueada por política de segurança. Reformule a pergunta.");
     }
 
