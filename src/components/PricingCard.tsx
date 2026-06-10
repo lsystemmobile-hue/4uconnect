@@ -15,6 +15,7 @@ interface PricingCardProps {
   featured?: boolean;
   delay?: number;
   variant?: "green" | "black" | "navy" | "orange";
+  whatsappMessage?: string;
 }
 
 const PricingCard = ({
@@ -25,6 +26,7 @@ const PricingCard = ({
   featured = false,
   delay = 0,
   variant = "green",
+  whatsappMessage,
 }: PricingCardProps) => {
   const getVariantStyles = () => {
     switch (variant) {
@@ -187,7 +189,7 @@ const PricingCard = ({
           })}
         </ul>
         <a
-          href="https://wa.me/551530100009?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20plano%20[NOME_DO_PLANO]."
+          href={`https://wa.me/551530100009?text=${encodeURIComponent(whatsappMessage ?? `Olá! Gostaria de saber mais sobre o Plano ${name}.`)}`}
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
@@ -195,9 +197,6 @@ const PricingCard = ({
             styles.button
           )}
           style={styles.buttonStyle}
-          onClick={(e) => {
-            (e.currentTarget as HTMLAnchorElement).href = (e.currentTarget as HTMLAnchorElement).href.replace("[NOME_DO_PLANO]", encodeURIComponent(name));
-          }}
         >
           Começar Agora
         </a>

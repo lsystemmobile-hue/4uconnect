@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { Menu, X, Home, Cpu, Calculator, TrendingUp, Users, Zap } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const [searchParams] = useSearchParams();
+  const isLP = searchParams.get("lp") === "1";
 
-  const navItems = [
+  const allNavItems = [
     { name: "Home", path: "/", icon: Home },
     { name: "Contabilidade Digital", path: "/contabilidade-digital", icon: Cpu },
     { name: "Contabilidade", path: "/contabilidade", icon: Calculator },
@@ -14,6 +16,13 @@ const Header = () => {
     { name: "Soluções Tecnológicas", path: "/solucoes-tecnologicas", icon: Zap },
     { name: "Quem somos", path: "/quem-somos", icon: Users },
   ];
+
+  const lpNavItems = [
+    { name: "Inteligência Financeira", path: "/inteligencia-financeira", icon: TrendingUp },
+    { name: "Quem somos", path: "/quem-somos", icon: Users },
+  ];
+
+  const navItems = isLP ? lpNavItems : allNavItems;
 
   const getHeaderBg = () => {
     switch (location.pathname) {
@@ -54,7 +63,7 @@ const Header = () => {
             {navItems.map((item) => (
               <Link
                 key={item.path}
-                to={item.path}
+                to={isLP ? `${item.path}?lp=1` : item.path}
                 className={`flex items-center gap-2 text-sm font-medium transition-all duration-300 relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-white after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left ${isActive(item.path)
                   ? "text-white after:scale-x-100"
                   : "text-white/80 hover:text-white"
@@ -86,7 +95,7 @@ const Header = () => {
           {navItems.map((item) => (
             <Link
               key={item.path}
-              to={item.path}
+              to={isLP ? `${item.path}?lp=1` : item.path}
               onClick={() => setIsOpen(false)}
               className={`flex items-center gap-3 text-lg font-medium py-3 px-4 rounded-xl transition-all duration-300 ${isActive(item.path)
                 ? "bg-white/10 text-white"

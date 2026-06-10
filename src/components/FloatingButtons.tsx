@@ -1,14 +1,22 @@
 import { useState, useEffect, useRef } from "react";
 import ChatAssistant from "./ChatAssistant";
 import StickyWhatsApp from "./StickyWhatsApp";
-import { useLocation } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { cn } from "@/lib/utils";
+
+const LP_WHATSAPP_MESSAGES: Record<string, string> = {
+    "/inteligencia-financeira": "Olá! Vim pelo anúncio e gostaria de saber mais sobre os serviços de Inteligência Financeira da 4U Connect.",
+};
 
 const FloatingButtons = () => {
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const location = useLocation();
+    const [searchParams] = useSearchParams();
     const lastCall = useRef(0);
+
+    const isLP = searchParams.get("lp") === "1";
+    const customMessage = isLP ? LP_WHATSAPP_MESSAGES[location.pathname] : undefined;
 
     useEffect(() => {
         const handleScroll = () => {
@@ -36,7 +44,7 @@ const FloatingButtons = () => {
         )}>
             {/* WhatsApp Button - Esconde quando o chat está aberto */}
             {!isChatOpen && (
-                <StickyWhatsApp />
+                <StickyWhatsApp message={customMessage} />
             )}
 
             {/* Chat Assistant */}

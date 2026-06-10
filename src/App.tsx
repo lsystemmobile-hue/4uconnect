@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useSearchParams } from "react-router-dom";
 import Header from "./components/Header";
 import FloatingButtons from "./components/FloatingButtons";
 import ScrollToTop from "./components/ScrollToTop";
@@ -26,6 +26,16 @@ const PageLoader = () => (
 );
 
 const queryClient = new QueryClient();
+
+const PresentationModeGuard = () => {
+  const [searchParams] = useSearchParams();
+  if (searchParams.get("lp") === "1") return null;
+  return (
+    <Suspense fallback={null}>
+      <PresentationMode />
+    </Suspense>
+  );
+};
 
 const App = () => {
   useSmoothScroll();
@@ -52,9 +62,7 @@ const App = () => {
               </Suspense>
             </main>
             <FloatingButtons />
-            <Suspense fallback={null}>
-              <PresentationMode />
-            </Suspense>
+            <PresentationModeGuard />
           </div>
         </BrowserRouter>
       </TooltipProvider>

@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { smoothScrollToId } from "@/lib/utils";
 import {
   TrendingUp,
@@ -30,6 +31,8 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const InteligenciaFinanceira = () => {
   const [lightboxImg, setLightboxImg] = useState<{ src: string; label: string; desc: string } | null>(null);
+  const [searchParams] = useSearchParams();
+  const isLP = searchParams.get("lp") === "1";
   useScrollReveal([]);
 
   const dashboardImages = [
@@ -85,7 +88,7 @@ const InteligenciaFinanceira = () => {
             className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-12 opacity-0 animate-fade-in leading-relaxed"
             style={{ animationDelay: "200ms" }}
           >
-            Soluções completas em gestão financeira e contabilidade para empresas de alta complexidade
+            Soluções completas em gestão financeira para empresas de alta complexidade
           </p>
 
           {/* CTA Button */}
@@ -214,30 +217,33 @@ const InteligenciaFinanceira = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
                 {[
-                  { title: "Contas a Pagar", desc: "Gestão completa de obrigações.", icon: ArrowRight },
-                  { title: "Contas a Receber", desc: "Controle de faturamentos e recebíveis.", icon: ArrowRight },
-                  { title: "Conciliação Bancária", desc: "Conformidade bancária diária.", icon: Landmark },
-                  { title: "Fluxo de Caixa", desc: "Gestão e análise detalhada.", icon: TrendingUp },
-                  { title: "Dashboard BI", desc: "Indicadores em tempo real (4U Digital).", icon: BarChart },
-                  { title: "Comunicação", desc: "Atendimento centralizado e ágil.", icon: MessageCircle },
-                  { title: "Personalização", desc: "Atendimento consultivo e próximo.", icon: User },
-                  { title: "Automação", desc: "Rotinas financeiras automatizadas.", icon: Zap },
-                  { title: "Relatórios", desc: "Projeções e análises mensais.", icon: ClipboardCheck },
-                  { title: "Integração ERP", desc: "Conexão total com seu sistema.", icon: Settings },
+                  { title: "Contas a Pagar", desc: "Gestão completa de obrigações.", icon: ArrowRight, waMsg: "Olá! Tenho interesse no serviço de Contas a Pagar do BPO Financeiro da 4U Connect." },
+                  { title: "Contas a Receber", desc: "Controle de faturamentos e recebíveis.", icon: ArrowRight, waMsg: "Olá! Tenho interesse no serviço de Contas a Receber do BPO Financeiro da 4U Connect." },
+                  { title: "Conciliação Bancária", desc: "Conformidade bancária diária.", icon: Landmark, waMsg: "Olá! Tenho interesse no serviço de Conciliação Bancária do BPO Financeiro da 4U Connect." },
+                  { title: "Fluxo de Caixa", desc: "Gestão e análise detalhada.", icon: TrendingUp, waMsg: "Olá! Tenho interesse no serviço de Fluxo de Caixa do BPO Financeiro da 4U Connect." },
+                  { title: "Dashboard BI", desc: "Indicadores em tempo real (4U Digital).", icon: BarChart, waMsg: "Olá! Tenho interesse no serviço de Dashboard BI (4U Digital) da 4U Connect." },
+                  { title: "Comunicação", desc: "Atendimento centralizado e ágil.", icon: MessageCircle, waMsg: "Olá! Gostaria de saber mais sobre os serviços de BPO Financeiro da 4U Connect." },
+                  { title: "Personalização", desc: "Atendimento consultivo e próximo.", icon: User, waMsg: "Olá! Gostaria de saber mais sobre o atendimento personalizado de BPO Financeiro da 4U Connect." },
+                  { title: "Automação", desc: "Rotinas financeiras automatizadas.", icon: Zap, waMsg: "Olá! Tenho interesse no serviço de Automação Financeira da 4U Connect." },
+                  { title: "Relatórios", desc: "Projeções e análises mensais.", icon: ClipboardCheck, waMsg: "Olá! Tenho interesse nos Relatórios e Projeções do BPO Financeiro da 4U Connect." },
+                  { title: "Integração ERP", desc: "Conexão total com seu sistema.", icon: Settings, waMsg: "Olá! Tenho interesse na Integração ERP do BPO Financeiro da 4U Connect." },
                 ].map((item, i) => (
-                  <div
+                  <a
                     key={i}
-                    className="scroll-reveal opacity-0 translate-y-8 transition-all duration-700 group p-6 rounded-none bg-muted/30 border-2 border-border/50 hover:shadow-xl hover:border-4u-navy/30 relative overflow-hidden"
+                    href={`https://wa.me/551530100009?text=${encodeURIComponent(item.waMsg)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="scroll-reveal opacity-0 translate-y-8 transition-all duration-700 group p-6 rounded-none bg-muted/30 border-2 border-border/50 hover:shadow-xl hover:border-4u-navy/30 hover:bg-4u-navy/5 relative overflow-hidden block"
                     style={{ transitionDelay: `${i * 50}ms` }}
                   >
                     <div className="relative z-10 text-center">
                       <div className="w-12 h-12 rounded-none bg-4u-navy/10 text-4u-navy flex items-center justify-center mb-4 mx-auto group-hover:bg-4u-navy group-hover:text-white transition-all duration-500">
                         {item.icon ? <item.icon size={24} /> : <CheckCircle2 size={24} />}
                       </div>
-                      <h3 className="font-bold text-4u-navy mb-2 text-sm">{item.title}</h3>
+                      <h3 className="font-bold text-4u-navy mb-2 text-sm group-hover:text-4u-navy">{item.title}</h3>
                       <p className="text-[10px] text-muted-foreground leading-tight">{item.desc}</p>
                     </div>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
@@ -465,6 +471,7 @@ const InteligenciaFinanceira = () => {
                   ]}
                   variant="navy"
                   delay={0}
+                  whatsappMessage="Olá! Gostaria de contratar o Plano ESSENCIAL de BPO Financeiro da 4U Connect."
                 />
                 <PricingCard
                   name="PREMIUM"
@@ -481,6 +488,7 @@ const InteligenciaFinanceira = () => {
                   ]}
                   variant="navy"
                   delay={100}
+                  whatsappMessage="Olá! Gostaria de contratar o Plano PREMIUM de BPO Financeiro da 4U Connect."
                 />
                 <PricingCard
                   name="ESTRATÉGICO"
@@ -495,6 +503,7 @@ const InteligenciaFinanceira = () => {
                   ]}
                   variant="navy"
                   delay={200}
+                  whatsappMessage="Olá! Gostaria de saber mais sobre o Plano ESTRATÉGICO de BPO Financeiro da 4U Connect."
                 />
               </div>
             </div>
@@ -535,7 +544,7 @@ const InteligenciaFinanceira = () => {
           </section>
       </div>
 
-      <Footer variant="navy" />
+      {!isLP && <Footer variant="navy" />}
     </div>
   );
 };

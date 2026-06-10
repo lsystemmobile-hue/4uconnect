@@ -2,11 +2,15 @@ import { Headset, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
 
-const StickyWhatsApp = () => {
+interface StickyWhatsAppProps {
+    message?: string;
+}
+
+const StickyWhatsApp = ({ message }: StickyWhatsAppProps) => {
     const [showTooltip, setShowTooltip] = useState(false);
     const whatsappNumber = "551530100009";
     const whatsappMessage = encodeURIComponent(
-        "Olá! Vim pelo site e gostaria de saber mais sobre os serviços da 4U Connect."
+        message ?? "Olá! Vim pelo site e gostaria de saber mais sobre os serviços da 4U Connect."
     );
 
     useEffect(() => {
