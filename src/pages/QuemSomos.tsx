@@ -20,9 +20,12 @@ import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import PageHero from "@/components/PageHero";
 import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { useSearchParams } from "react-router-dom";
 
 const QuemSomos = () => {
     useScrollReveal();
+    const [searchParams] = useSearchParams();
+    const isLP = searchParams.get("lp") === "1";
 
     const whatsappNumber = "551530100009";
     const whatsappMessage = encodeURIComponent(
@@ -458,7 +461,7 @@ const QuemSomos = () => {
                 </div>
             </section>
 
-            <Footer variant="navy" />
+            {!isLP && <Footer variant="navy" />}
         </div>
     );
 };

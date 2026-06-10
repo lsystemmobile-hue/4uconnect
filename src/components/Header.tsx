@@ -50,7 +50,7 @@ const Header = () => {
     <header className={`fixed top-0 left-0 w-full z-[9999] transition-all duration-500 backdrop-blur-xl border-b border-white/10 ${getHeaderBg()}`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+          <Link to={isLP ? "/inteligencia-financeira?lp=1" : "/"} className="flex items-center gap-2 flex-shrink-0">
             <img
               src="/logo-branca.png"
               alt="4U Connect - Inteligência Financeira e Contabilidade"
