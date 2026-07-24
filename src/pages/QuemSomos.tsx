@@ -439,7 +439,7 @@ const QuemSomos = () => {
                                 <h4 className="font-bold text-4u-navy mb-4 ml-1">Nossa presença digital</h4>
                                 <div className="flex gap-4">
                                     <a
-                                        href="https://instagram.com/4u.connect"
+                                        href="https://instagram.com/4uconnectoficial"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-14 h-14 bg-white border-2 border-border rounded-none flex items-center justify-center text-4u-navy hover:bg-4u-navy hover:text-white hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 active:scale-95"

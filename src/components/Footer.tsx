@@ -109,12 +109,12 @@ const Footer = ({ variant = "black" }: FooterProps) => {
               <li className="flex items-center gap-2">
                 <Instagram size={16} className={iconColor} />
                 <a
-                  href="https://instagram.com/4u.connect"
+                  href="https://instagram.com/4uconnectoficial"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/70 transition-colors text-sm"
                 >
-                  @4u.connect
+                  @4uconnectoficial
                 </a>
               </li>
             </ul>

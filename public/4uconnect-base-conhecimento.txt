@@ -1,4 +1,4 @@
-﻿4U CONNECT - BASE DE CONHECIMENTO DO ASSISTENTE
+4U CONNECT - BASE DE CONHECIMENTO DO ASSISTENTE
 Atualizado a partir do site local em 30/03/2026
 Fonte principal: pÃ¡ginas React em src/pages e componentes compartilhados
 
@@ -53,8 +53,8 @@ Website:
 - https://4uconnect.com.br
 
 Instagram:
-- https://instagram.com/4u.connect
-- @4u.connect
+- https://instagram.com/4uconnectoficial
+- @4uconnectoficial
 
 WhatsApp oficial:
 - (15) 3010-0009
